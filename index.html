@@ -4,161 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GTAINE — Офіційний сайт</title>
-  <meta name="description" content="GTAINE — український RP-проект. Форум, вікі, розіграші та завантаження гри." />
-  <link rel="stylesheet" href="assets/style.css">
+  <meta name="description" content="GTAINE — український RP-проект. Завантаження, вікі, розіграші." />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
+
 <body>
   <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar__inner">
-        <a class="brand" href="./">
-          <span class="brand__badge">GI</span>
-          <span class="brand__name">
-            <span class="brand__title">GTAINE</span>
-            <span class="brand__sub">Український RP-проєкт</span>
-          </span>
-        </a>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <span class="brand__badge">GI</span>
+        <span class="brand__name">
+          <span class="brand__title">GTAINE</span>
+          <span class="brand__sub">Український RP-проект</span>
+        </span>
+      </a>
 
-        <div class="navwrap">
-          <nav class="nav">
-            <a class="nav__link is-active" href="./">Головна</a>
-            <a class="nav__link" href="./forum.html">Форум</a>
-            <a class="btn btn--ghost" href="./wiki/">Перейти у Вікі</a>
-            <a class="nav__link" href="./giveaway.html">Розіграш</a>
-          </nav>
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link is-active" href="./">Головна</a>
+          <a class="nav__link" href="./forum.html">Форум</a>
+          <a class="nav__link" href="./wiki/">Вікі</a>
+          <a class="nav__link" href="./giveaway.html">Розіграш</a>
+          <a class="nav__link" href="./download.html">Завантажити</a>
+        </nav>
 
-          <!-- Кабінет: поки заглушка, потім підключимо -->
-          <a class="btn btn--cabinet" href="./cabinet.html">КАБІНЕТ</a>
+        <div class="header__right">
+          <a class="btn btn--ghost" href="./cabinet.html">Кабінет</a>
+          <!-- Аватар: поки placeholder, потім замінимо на картинку -->
+          <div class="avatar" title="Профіль">GI</div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- HERO -->
-  <main class="container hero">
-    <div class="hero__card">
-      <div class="hero__content">
-        <section>
-          <div class="pill"><span class="dot"></span> ONLY UA • Офіційний сайт</div>
+  <section class="hero hero--home">
+    <div class="container hero__grid">
+      <div class="glass">
+        <div class="kicker">GTAINE • ОФІЦІЙНО</div>
+        <h1>Український RP-світ</h1>
+        <p class="lead">
+          Завантажуй лаунчер — залітай у гру. Сайт, вікі та комунікація — тільки українською.
+        </p>
 
-          <h1>ОНЛАЙН ГРА ПРО УКРАЇНУ — GTAINE</h1>
-          <p class="subline">
-            GTAINE — український RP-проєкт з форумом, вікі та івентами. Тут ти знайдеш правила, довідку, актуальні новини,
-            а також зможеш завантажити гру та зайти в особистий кабінет.
-          </p>
+        <div class="actions">
+          <a class="btn btn--primary" href="./download.html">Завантажити лаунчер</a>
+          <a class="btn btn--ghost" href="./wiki/">Перейти у Вікі</a>
+          <a class="btn btn--ghost" href="./forum.html">Форум</a>
+        </div>
+      </div>
 
-          <div class="cta">
-            <!-- сюди вставиш реальне посилання на завантаження лаунчера/клієнта -->
-          <a class="btn primary" href="download.html">⬇ Завантажити гру</a>
+      <aside class="side">
+        <div class="statGrid">
+          <div class="stat"><b>🟢 Онлайн</b><span>124</span></div>
+          <div class="stat"><b>🎁 Розіграш</b><span>Активний</span></div>
+          <div class="stat"><b>🛠️ Роботи</b><span>12+</span></div>
+          <div class="stat"><b>🏛️ Орг</b><span>4+</span></div>
+        </div>
 
-            <a class="btn btn--outline" href="./forum.html">Перейти на форум</a>
-          </div>
-        </section>
+        <div class="news">
+          <b>Оголошення</b>
+          <div class="n">• Набір у державні організації</div>
+          <div class="n">• Оновлення сайту</div>
+          <div class="n">• Розіграш у Discord</div>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-        <aside class="rightbox">
-          <div class="rightbox__title">
-            <b>Швидкі посилання</b>
-            <span class="mini">GTAINE</span>
-          </div>
-
-          <a class="quick" href="./forum.html">💬 Форум (заявки/скарги)</a>
-          <a class="quick" href="./wiki.html">📚 Вікі (правила/терміни)</a>
-          <a class="quick" href="./giveaway.html">🎁 Розіграш (івенти)</a>
-          <a class="quick" href="./support.html">🛠 Технічна підтримка</a>
-
-          <div class="mini">
-            * Уся комунікація — тільки українською.
-          </div>
-        </aside>
+  <!-- ДЕРЖАВНІ ОРГАНІЗАЦІЇ -->
+  <section class="org-section">
+    <div class="container">
+      <h2>Державні організації</h2>
+      <div class="org-grid">
+        <div class="org-card">
+          <h3>Національна поліція</h3>
+          <p>Охорона порядку та боротьба зі злочинністю.</p>
+        </div>
+        <div class="org-card">
+          <h3>СБУ</h3>
+          <p>Контррозвідка та державна безпека.</p>
+        </div>
+        <div class="org-card">
+          <h3>Медична служба</h3>
+          <p>Порятунок життя та екстрена допомога.</p>
+        </div>
+        <div class="org-card">
+          <h3>ЗСУ</h3>
+          <p>Захист держави та стратегічна оборона.</p>
+        </div>
       </div>
     </div>
-<section class="org-section">
-  <div class="container">
-    <h2>Державні організації</h2>
+  </section>
 
-    <div class="org-grid">
-      <div class="org-card">
-        <h3>Національна поліція</h3>
-        <p>Охорона порядку та боротьба зі злочинністю.</p>
-      </div>
-
-      <div class="org-card">
-        <h3>СБУ</h3>
-        <p>Контррозвідка та державна безпека.</p>
-      </div>
-
-      <div class="org-card">
-        <h3>Медична служба</h3>
-        <p>Порятунок життя та екстрена допомога.</p>
-      </div>
-
-      <div class="org-card">
-        <h3>Армія України</h3>
-        <p>Захист держави та стратегічна оборона.</p>
-      </div>
-    </div>
-  </div>
-</section>
-    <section class="stats-section">
-  <div class="container">
-    <h2>Статистика сервера</h2>
-
-    <div class="stats-grid">
-      <div class="stat-card">
-        <h3>1 248</h3>
-        <p>Гравців онлайн</p>
-      </div>
-
-      <div class="stat-card">
-        <h3>25 000+</h3>
-        <p>Зареєстрованих акаунтів</p>
-      </div>
-
-      <div class="stat-card">
-        <h3>150+</h3>
-        <p>Активних організацій</p>
-      </div>
-
-      <div class="stat-card">
-        <h3>24/7</h3>
-        <p>Працює сервер</p>
+  <!-- СТАТИСТИКА -->
+  <section class="stats-section">
+    <div class="container">
+      <h2>Статистика сервера</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>1 248</h3>
+          <p>Гравців онлайн</p>
+        </div>
+        <div class="stat-card">
+          <h3>25 000+</h3>
+          <p>Зареєстрованих акаунтів</p>
+        </div>
+        <div class="stat-card">
+          <h3>12+</h3>
+          <p>Робіт на сервері</p>
+        </div>
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Працює сервер</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-    <footer class="footer">
+  </section>
+
+  <!-- РОБОТИ -->
+  <section class="jobs-section">
+    <div class="container">
+      <h2>Роботи</h2>
+
+      <div class="jobs-grid">
+        <div class="job-card"><h3>Курʼєр</h3><p>Доставка посилок по місту.</p></div>
+        <div class="job-card"><h3>Таксист</h3><p>Перевезення гравців по місту.</p></div>
+        <div class="job-card"><h3>Далекобійник</h3><p>Міжміські перевезення вантажів.</p></div>
+        <div class="job-card"><h3>Шахтар</h3><p>Видобуток ресурсів.</p></div>
+        <div class="job-card"><h3>Механік</h3><p>Ремонт транспорту.</p></div>
+        <div class="job-card"><h3>Фермер</h3><p>Вирощування та продаж продукції.</p></div>
+        <div class="job-card"><h3>Рибалка</h3><p>Ловля риби та продаж.</p></div>
+        <div class="job-card"><h3>Будівельник</h3><p>Робота на будівництві.</p></div>
+        <div class="job-card"><h3>Інкасатор</h3><p>Перевезення грошових коштів.</p></div>
+        <div class="job-card"><h3>Евакуатор</h3><p>Евакуація транспорту.</p></div>
+        <div class="job-card"><h3>Працівник аеропорту</h3><p>Обслуговування літаків та багажу.</p></div>
+        <div class="job-card"><h3>Водій автобуса</h3><p>Міські перевезення пасажирів.</p></div>
+        <div class="job-card"><h3>Автоугонщик</h3><p>Нелегальна діяльність для ризикових гравців.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
       <div>© 2026 GTAINE — Усі права захищені.</div>
-      <div>
-        <a href="./forum.html">Форум</a> •
-        <a href="./wiki.html">Вікі</a> •
-        <a href="./cabinet.html">Кабінет</a>
-      </div>
-      <section class="jobs-section">
-  <div class="container">
-    <h2>Роботи для новачків</h2>
-<div class="jobs-grid">
-
-  <div class="job-card"><h3>Курʼєр</h3><p>Доставка посилок по місту.</p></div>
-  <div class="job-card"><h3>Таксист</h3><p>Перевезення гравців по місту.</p></div>
-  <div class="job-card"><h3>Далекобійник</h3><p>Міжміські перевезення вантажів.</p></div>
-  <div class="job-card"><h3>Шахтар</h3><p>Видобуток ресурсів.</p></div>
-  <div class="job-card"><h3>Механік</h3><p>Ремонт транспорту.</p></div>
-  <div class="job-card"><h3>Фермер</h3><p>Вирощування та продаж продукції.</p></div>
-  <div class="job-card"><h3>Рибалка</h3><p>Ловля риби та продаж.</p></div>
-  <div class="job-card"><h3>Будівельник</h3><p>Робота на будівництві.</p></div>
-  <div class="job-card"><h3>Інкасатор</h3><p>Перевезення грошових коштів.</p></div>
-  <div class="job-card"><h3>Евакуатор</h3><p>Евакуація транспорту.</p></div>
-  <div class="job-card"><h3>Працівник аеропорту</h3><p>Обслуговування літаків та багажу.</p></div>
-  <div class="job-card"><h3>Водій автобуса</h3><p>Міські перевезення пасажирів.</p></div>
-  <div class="job-card"><h3>Автоугонщик</h3><p>Нелегальна діяльність для ризикових гравців.</p></div>
-
-</div>
+      <div class="footer__links">
+        <a href="./forum.html">Форум</a>
+        <span>•</span>
+        <a href="./wiki/">Вікі</a>
+        <span>•</span>
+        <a href="./download.html">Завантажити</a>
       </div>
     </div>
-  </div>
-</section>
-    </footer>
-  </main>
+  </footer>
 </body>
 </html>
