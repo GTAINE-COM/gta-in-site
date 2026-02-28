@@ -4,56 +4,151 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GTAINE Wiki</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <meta name="description" content="GTAINE Wiki — база знань сервера: механіки, роботи, транспорт, предмети та правила." />
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
-<body>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="brand">
-      <div class="brand__badge">G</div>
-      <div class="brand__text">
-        <div class="brand__title">GTAINE Wiki</div>
-        <div class="brand__sub">База знань сервера</div>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="../">
+        <span class="brand__badge">GI</span>
+        <span class="brand__name">
+          <span class="brand__title">GTAINE Wiki</span>
+          <span class="brand__sub">База знань сервера</span>
+        </span>
+      </a>
+
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link" href="../">Головна</a>
+          <a class="nav__link" href="../forum.html">Форум</a>
+          <a class="nav__link is-active" href="./">Вікі</a>
+          <a class="nav__link" href="../giveaway.html">Розіграш</a>
+        </nav>
+
+        <a class="btn btn--cabinet" href="../cabinet.html">КАБІНЕТ</a>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Вікі GTAINE</h1>
-    <p>Повна інформація про механіки, роботи, фракції та правила.</p>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__left">
+            <div class="kicker">GTAINE • Вікі</div>
+            <h1>Вікі GTAINE</h1>
+            <p class="lead">
+              Повна інформація про механіки, роботи, транспорт, предмети, фракції та правила.
+            </p>
 
-<section class="org-section">
-  <div class="container">
-    <div class="org-grid">
+            <div class="actions">
+              <a class="btn btn--primary" href="./transports/">Транспорт</a>
+              <a class="btn btn--ghost" href="./jobs/">Роботи</a>
+            </div>
+          </div>
 
-      <a href="jobs.html" class="org-card">
-        <h3>Роботи</h3>
-        <p>Повний список професій.</p>
-      </a>
+          <aside class="rightbox">
+            <div class="rightbox__title">
+              <b>Швидкі розділи</b>
+              <span class="mini">GTAINE</span>
+            </div>
 
-      <a href="factions.html" class="org-card">
-        <h3>Фракції</h3>
-        <p>Державні та кримінальні структури.</p>
-      </a>
+            <a class="quick" href="./transports/">🚗 Транспорт</a>
+            <a class="quick" href="./things/">🧪 Предмети</a>
+            <a class="quick" href="./jobs/">🛠️ Роботи</a>
+            <a class="quick" href="./orgs/">🏛️ Організації</a>
+            <a class="quick" href="./rules/">📌 Правила</a>
 
-      <a href="rules.html" class="org-card">
-        <h3>Правила</h3>
-        <p>Основні правила сервера.</p>
-      </a>
+            <div class="miniNote">* Уся комунікація — тільки українською.</div>
+          </aside>
+        </div>
 
-      <a href="commands.html" class="org-card">
-        <h3>Команди</h3>
-        <p>Список доступних команд.</p>
-      </a>
+        <!-- GRID like Ukraine GTA -->
+        <div class="wiki-grid">
+          <a class="wiki-card" href="./skins/">
+            <div class="wiki-card__top"><div class="wiki-card__img">🧍</div></div>
+            <div class="wiki-card__meta">Категорія</div>
+            <div class="wiki-card__title">Скіни</div>
+          </a>
 
-    </div>
-  </div>
-</section>
+          <a class="wiki-card" href="./accessories/">
+            <div class="wiki-card__top"><div class="wiki-card__img">🎒</div></div>
+            <div class="wiki-card__meta">Категорія</div>
+            <div class="wiki-card__title">Аксесуари</div>
+          </a>
 
+          <a class="wiki-card" href="./transports/">
+            <div class="wiki-card__top"><div class="wiki-card__img">🚗</div></div>
+            <div class="wiki-card__meta">Категорія</div>
+            <div class="wiki-card__title">Транспорт</div>
+          </a>
+
+          <a class="wiki-card" href="./things/">
+            <div class="wiki-card__top"><div class="wiki-card__img">🧪</div></div>
+            <div class="wiki-card__meta">Категорія</div>
+            <div class="wiki-card__title">Предмети</div>
+          </a>
+        </div>
+
+        <!-- LISTS like Ukraine GTA -->
+        <div class="wiki-lists">
+          <div class="wiki-list">
+            <div class="wiki-list__head">
+              <span class="wiki-list__icon">🧩</span>
+              <b>Оновлення | івенти</b>
+            </div>
+            <ul class="wiki-ul">
+              <li><a href="./updates/">Оновлення 1.0 — старт сезону</a></li>
+              <li><a href="./updates/">Зимовий івент</a></li>
+              <li><a href="./updates/">Бонуси для новачків</a></li>
+            </ul>
+            <a class="wiki-more" href="./updates/">Розгорнути список</a>
+          </div>
+
+          <div class="wiki-list">
+            <div class="wiki-list__head">
+              <span class="wiki-list__icon">🛠️</span>
+              <b>Роботи</b>
+            </div>
+            <ul class="wiki-ul">
+              <li><a href="./jobs/">Таксист</a></li>
+              <li><a href="./jobs/">Евакуатор</a></li>
+              <li><a href="./jobs/">Автоугонщик</a></li>
+            </ul>
+            <a class="wiki-more" href="./jobs/">Розгорнути список</a>
+          </div>
+
+          <div class="wiki-list">
+            <div class="wiki-list__head">
+              <span class="wiki-list__icon">🏛️</span>
+              <b>Державні організації</b>
+            </div>
+            <ul class="wiki-ul">
+              <li><a href="./orgs/">Національна поліція</a></li>
+              <li><a href="./orgs/">СБУ</a></li>
+              <li><a href="./orgs/">ДCНС</a></li>
+            </ul>
+            <a class="wiki-more" href="./orgs/">Розгорнути список</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>© 2026 GTAINE — Усі права захищені.</div>
+        <div>
+          <a href="../forum.html">Форум</a> •
+          <a href="./">Вікі</a> •
+          <a href="../cabinet.html">Кабінет</a>
+        </div>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
