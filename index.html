@@ -1,169 +1,157 @@
 <!doctype html>
 <html lang="uk">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTAINE — Офіційний сайт</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GTAINE — Офіційний сайт</title>
+  <meta name="description" content="GTAINE — український RP-проект. Завантаження, wiki, розіграші." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
 </head>
 
 <body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
+        <span class="brand__name">
+          <span class="brand__title">GTAINE</span>
+          <span class="brand__sub">Український RP-проект</span>
+        </span>
+      </a>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-
-    <a class="brand" href="#">
-      <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
-      <span class="brand__name">
-        <span class="brand__title">GTAINE</span>
-        <span class="brand__sub">Український RP-проєкт</span>
-      </span>
-    </a>
-
-    <div class="navwrap">
-      <nav class="nav">
-        <a class="nav__link is-active" href="#">Головна</a>
-        <a class="nav__link" href="#">Форум</a>
-        <a class="nav__link" href="#">Wiki</a>
-        <a class="nav__link" href="#">Розіграш</a>
-      </nav>
-    </div>
-
-    <div class="topbar__actions">
-      <a class="pill" href="#">Кабінет</a>
-    </div>
-
-  </div>
-</header>
-
-<section class="hero section">
-  <div class="container hero__grid">
-
-    <div class="card">
-      <div class="card__inner">
-        <div class="hero__kicker">GTAINE • ОФІЦІЙНО</div>
-        <h1 class="hero__title">Український RP-світ</h1>
-        <p class="hero__text">
-          Заходь у справжній role-play світ. Державні організації, роботи,
-          розіграші та стабільний онлайн.
-        </p>
-
-        <div class="btnrow">
-          <a class="btn btn--primary" href="#">Завантажити лаунчер</a>
-          <a class="btn btn--soft" href="#">Перейти на форум</a>
-        </div>
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link is-active" href="./">Головна</a>
+          <a class="nav__link" href="./forum.html">Форум</a>
+          <a class="nav__link" href="./wiki/">Wiki</a>
+          <a class="nav__link" href="./giveaway.html">Розіграш</a>
+          <a class="nav__link" href="./download.html">Завантажити</a>
+        </nav>
+        <a class="nav__link" href="./cabinet.html">Кабінет</a>
+        <span class="pill"><span class="pill__dot"></span>GI</span>
       </div>
     </div>
+  </header>
 
-    <div class="card panel">
-      <div class="chips">
-        <div class="chip">
-          <div class="chip__left">
-            <div class="dot"></div> Онлайн
+  <main class="main">
+    <div class="container">
+
+      <section class="hero">
+        <div class="card hero__left">
+          <div class="small">GTAINE • ОФІЦІЙНО</div>
+          <h1 class="h1 hero__title">Український RP-світ</h1>
+          <p class="p hero__subtitle">
+            Завантажуй лаунчер — залітай у гру. Сайт, wiki та комунікація — тільки українською.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--accent" href="./download.html">Завантажити лаунчер</a>
+            <a class="btn" href="./wiki/">Перейти у Wiki</a>
+            <a class="btn" href="./forum.html">Форум</a>
           </div>
-          <div class="chip__value">248</div>
         </div>
 
-        <div class="chip">
-          <div class="chip__left">Роботи</div>
-          <div class="chip__value">12+</div>
+        <div class="card hero__right">
+          <div class="statsRow">
+            <div class="stat">
+              <div class="stat__left"><span class="stat__icon">🟢</span><span class="stat__label">Онлайн</span></div>
+              <div class="stat__value">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat__left"><span class="stat__icon">🎁</span><span class="stat__label">Розіграш</span></div>
+              <div class="stat__value">Активний</div>
+            </div>
+            <div class="stat">
+              <div class="stat__left"><span class="stat__icon">🛠️</span><span class="stat__label">Роботи</span></div>
+              <div class="stat__value">12+</div>
+            </div>
+            <div class="stat">
+              <div class="stat__left"><span class="stat__icon">🏛️</span><span class="stat__label">Орг</span></div>
+              <div class="stat__value">4+</div>
+            </div>
+          </div>
+
+          <div class="card soft" style="padding:16px">
+            <div style="font-weight:1000;margin-bottom:10px">Оголошення</div>
+            <ul style="color:rgba(255,255,255,.78);line-height:1.55;padding-left:18px">
+              <li>Набір у державні організації</li>
+              <li>Оновлення сайту</li>
+              <li>Розіграш у Discord</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="box">
-        <div class="box__title">Оновлення</div>
-        <div class="box__list">
-          <div>• Нові держ. організації</div>
-          <div>• Баланс економіки</div>
-          <div>• Покращена оптимізація</div>
+      <section class="section">
+        <div class="section__title">Державні організації</div>
+        <div class="grid org">
+          <div class="tile">
+            <div class="tile__title">Національна поліція</div>
+            <div class="tile__desc">Патруль, розшук, порядок у місті.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">СБУ</div>
+            <div class="tile__desc">Контррозвідка та державна безпека.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">Медична служба</div>
+            <div class="tile__desc">Порятунок життя та екстрена допомога.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">ЗСУ</div>
+            <div class="tile__desc">Захист держави та стратегічна служба.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">ДСНС</div>
+            <div class="tile__desc">Рятувальні операції, виклики та пожежі.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">ДКВС</div>
+            <div class="tile__desc">Утримання засуджених та виконання покарань.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">НПУ (підрозділи)</div>
+            <div class="tile__desc">Спецпідрозділи та операції.</div>
+          </div>
+          <div class="tile">
+            <div class="tile__title">МОЗ</div>
+            <div class="tile__desc">Організація медичних процесів.</div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-  </div>
-</section>
+      <section class="section">
+        <div class="section__title">Роботи</div>
+        <div class="grid jobs">
+          <div class="tile"><div class="tile__title">Кур’єр</div><div class="tile__desc">Доставка посилок по місту.</div></div>
+          <div class="tile"><div class="tile__title">Таксист</div><div class="tile__desc">Перевезення гравців по мапі.</div></div>
+          <div class="tile"><div class="tile__title">Далекобійник</div><div class="tile__desc">Рейси між містами, вантажі.</div></div>
+          <div class="tile"><div class="tile__title">Шахтар</div><div class="tile__desc">Видобуток ресурсів.</div></div>
+          <div class="tile"><div class="tile__title">Механік</div><div class="tile__desc">Ремонт транспорту.</div></div>
+          <div class="tile"><div class="tile__title">Фермер</div><div class="tile__desc">Вирощування продукції.</div></div>
+          <div class="tile"><div class="tile__title">Рибалка</div><div class="tile__desc">Лови рибу та продавай.</div></div>
+          <div class="tile"><div class="tile__title">Будівельник</div><div class="tile__desc">Робота на будівництві.</div></div>
+          <div class="tile"><div class="tile__title">Інкасатор</div><div class="tile__desc">Перевезення грошей.</div></div>
+          <div class="tile"><div class="tile__title">Евакуатор</div><div class="tile__desc">Евакуація транспорту.</div></div>
+          <div class="tile"><div class="tile__title">Працівник аеропорту</div><div class="tile__desc">Обслуговування авіазони.</div></div>
+          <div class="tile"><div class="tile__title">Водій автобуса</div><div class="tile__desc">Міські маршрути пасажирів.</div></div>
+        </div>
+      </section>
 
-<section class="section">
-  <div class="container">
-    <h2 class="section__title">Державні організації</h2>
-
-    <div class="grid grid--org">
-
-      <div class="tile">
-        <div class="tile__title">СБУ</div>
-        <div class="tile__desc">Контррозвідка та боротьба зі злочинністю.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">НПУ</div>
-        <div class="tile__desc">Національна поліція України.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">ЗСУ</div>
-        <div class="tile__desc">Збройні сили України.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">МОЗ</div>
-        <div class="tile__desc">Медицина та служба порятунку.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">ДСНС</div>
-        <div class="tile__desc">Рятувальні операції.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">ВРУ</div>
-        <div class="tile__desc">Законодавчий орган держави.</div>
-      </div>
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div>© 2026 GTAINE</div>
+          <div class="footer__links">
+            <a href="./forum.html">Форум</a>
+            <a href="./wiki/">Wiki</a>
+            <a href="./giveaway.html">Розіграш</a>
+            <a href="./download.html">Завантажити</a>
+          </div>
+        </div>
+      </footer>
 
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="section__title">Роботи</h2>
-
-    <div class="grid grid--jobs">
-
-      <div class="tile">
-        <div class="badge">Популярно</div>
-        <div class="tile__title">Далекобійник</div>
-        <div class="tile__desc">Перевезення вантажів по всій мапі.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">Шахтар</div>
-        <div class="tile__desc">Видобуток ресурсів.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">Евакуаторщик</div>
-        <div class="tile__desc">Переміщення пошкоджених авто.</div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__title">Водій автобуса</div>
-        <div class="tile__desc">Перевезення пасажирів.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__muted">© 2026 GTAINE — Усі права захищені</div>
-    <div class="footer__links">
-      <a href="#">Форум</a>
-      <a href="#">Wiki</a>
-      <a href="#">Discord</a>
-    </div>
-  </div>
-</footer>
-
+  </main>
 </body>
 </html>
