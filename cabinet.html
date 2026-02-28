@@ -4,128 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Кабінет — GTAINE</title>
-  <meta name="description" content="Особистий кабінет GTAINE — профіль, майно, рейтинг, рулетка." />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
-
-  <style>
-    /* --- CABINET (добавка, можно потом вынести в style.css) --- */
-    .cab-wrap{padding:28px 0 60px}
-    .cab-grid{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start}
-    @media (max-width: 980px){.cab-grid{grid-template-columns:1fr}.cab-side{position:static}}
-    .cab-card{background:rgba(10,12,18,.55);border:1px solid rgba(255,255,255,.08);border-radius:18px;backdrop-filter: blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .cab-side{position:sticky;top:88px;padding:16px}
-    .cab-badge{display:flex;gap:12px;align-items:center;padding:14px;margin-bottom:10px}
-    .cab-badge .shield{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.03));display:grid;place-items:center;border:1px solid rgba(255,255,255,.10)}
-    .cab-badge .shield span{font-weight:900}
-    .cab-badge .meta{line-height:1.15}
-    .cab-badge .meta .t{font-weight:800}
-    .cab-badge .meta .s{opacity:.75;font-size:13px;margin-top:4px}
-
-    .cab-nav{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-    .cab-nav button{
-      width:100%;
-      text-align:left;
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      cursor:pointer;
-      font-weight:700;
-      display:flex;
-      gap:10px;
-      align-items:center;
-      transition:.15s ease;
-    }
-    .cab-nav button:hover{transform:translateY(-1px);background:rgba(255,255,255,.06)}
-    .cab-nav button.active{
-      background:linear-gradient(90deg, rgba(255,70,55,.95), rgba(255,140,60,.92));
-      border-color:rgba(255,255,255,.12);
-      box-shadow:0 14px 26px rgba(255,90,40,.18)
-    }
-    .cab-nav .muted{opacity:.8;font-weight:600}
-    .cab-logout{
-      margin-top:14px;
-      background:linear-gradient(90deg, rgba(255,40,60,.95), rgba(140,20,40,.95)) !important;
-    }
-
-    .cab-main{padding:16px}
-    .cab-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}
-    .cab-head h1{margin:0;font-size:28px;letter-spacing:.2px}
-    .cab-sub{opacity:.75;margin:2px 0 0}
-
-    .kpi{display:grid;grid-template-columns:1.2fr repeat(3, 1fr);gap:14px;margin-top:14px}
-    @media (max-width: 1100px){.kpi{grid-template-columns:1fr 1fr}.kpi .wide{grid-column:1/-1}}
-    .kpi .box{padding:16px}
-    .kpi .title{opacity:.75;font-size:13px}
-    .kpi .value{font-weight:900;font-size:26px;margin-top:6px}
-    .kpi .hint{opacity:.65;font-size:12px;margin-top:6px}
-
-    .profile{display:flex;gap:14px;align-items:center}
-    .avatar{
-      width:72px;height:72px;border-radius:22px;
-      background:linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.10);
-      display:grid;place-items:center;
-      font-weight:900;
-      overflow:hidden;
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .pname{font-weight:900;font-size:18px}
-    .pid{opacity:.75;font-size:13px;margin-top:2px}
-
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-    @media (max-width: 900px){.grid2{grid-template-columns:1fr}}
-    .table{width:100%;border-collapse:separate;border-spacing:0 10px}
-    .table th{opacity:.7;font-weight:800;text-align:left;font-size:12px;padding:0 10px}
-    .row{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
-    .row td{padding:14px 10px}
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);font-weight:800;font-size:12px}
-
-    /* --- LOGIN --- */
-    .auth{max-width:920px;margin:0 auto}
-    .auth-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
-    @media (max-width: 980px){.auth-grid{grid-template-columns:1fr}}
-    .auth .box{padding:18px}
-    .field{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-    .field label{opacity:.75;font-weight:700;font-size:13px}
-    .field input{
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:12px;
-      padding:12px 12px;
-      color:#fff;
-      outline:none;
-    }
-    .field input:focus{border-color:rgba(255,140,60,.55);box-shadow:0 0 0 4px rgba(255,140,60,.12)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:14px;border:0;cursor:pointer;font-weight:900;
-      color:#0b0f14;
-      background:linear-gradient(90deg, #ff6a2b, #ffb23a);
-      box-shadow:0 16px 28px rgba(255,122,40,.18);
-    }
-    .btn.secondary{
-      background:rgba(255,255,255,.08);
-      color:#fff;border:1px solid rgba(255,255,255,.12);
-      box-shadow:none;
-    }
-    .auth-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .msg{margin-top:10px;opacity:.9}
-    .msg.bad{color:#ff7a7a}
-    .msg.good{color:#7affb2}
-
-    .hide{display:none !important;}
-  </style>
 </head>
 
 <body>
-  <!-- TOPBAR (как на главной) -->
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="./">
-        <img class="brand__badge" src="assets/logo.png" alt="GTAINE">
+        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
         <span class="brand__name">
           <span class="brand__title">GTAINE</span>
           <span class="brand__sub">Український RP-проект</span>
@@ -136,426 +23,50 @@
         <nav class="nav">
           <a class="nav__link" href="./">Головна</a>
           <a class="nav__link" href="./forum.html">Форум</a>
-          <a class="nav__link" href="./wiki/">Вікі</a>
-          <a class="nav__link" href="./roulette.html">Рулетка</a>
+          <a class="nav__link" href="./wiki/">Wiki</a>
           <a class="nav__link" href="./giveaway.html">Розіграш</a>
           <a class="nav__link" href="./download.html">Завантажити</a>
         </nav>
-        <a class="chip is-active" href="./cabinet.html">Кабінет</a>
+        <a class="nav__link is-active" href="./cabinet.html">Кабінет</a>
       </div>
     </div>
   </header>
 
-  <main class="cab-wrap">
+  <main class="main">
     <div class="container">
-      <!-- LOGIN -->
-      <section id="auth" class="auth cab-card">
-        <div class="cab-main">
-          <div class="cab-head">
-            <div>
-              <h1>Особистий кабінет</h1>
-              <div class="cab-sub">Вхід по <b>пошті</b> та <b>паролю</b> (демо на сайті). 22222 .</div>
+      <div class="card page">
+        <div class="page__head">
+          <div>
+            <div class="small">КАБІНЕТ</div>
+            <div class="page__title">Особистий кабінет</div>
+            <p class="p page__lead">Тут буде авторизація/профіль. Поки що заглушка.</p>
+            <div class="hero__actions" style="margin-top:16px">
+              <a class="btn btn--accent" href="./">На головну</a>
+              <a class="btn" href="./wiki/">До Wiki</a>
             </div>
           </div>
 
-          <div class="auth-grid">
-            <div class="box cab-card">
-              <div style="font-weight:900;font-size:16px">Авторизація</div>
-
-              <div class="field">
-                <label>Пошта</label>
-                <input id="email" type="email" placeholder="you@email.com" autocomplete="username">
-              </div>
-
-              <div class="field">
-                <label>Пароль</label>
-                <input id="pass" type="password" placeholder="••••••••" autocomplete="current-password">
-              </div>
-
-              <div class="auth-actions">
-                <button class="btn" id="btnLogin">Увійти</button>
-                <button class="btn secondary" id="btnDemo">Демо-вхід (тест)</button>
-              </div>
-
-              <div id="authMsg" class="msg"></div>
-            </div>
-
-            <div class="box cab-card">
-              <div style="font-weight:900;font-size:16px">Що буде в кабінеті</div>
-              <ul style="margin:12px 0 0;opacity:.85;line-height:1.55">
-                <li>Основна інформація (нік, ID, статус, гроші)</li>
-                <li>Ваше майно (будинки, бізнеси, транспорт)</li>
-                <li>Рейтинг (FORBES)</li>
-                <li>Ігрова рулетка</li>
-              </ul>
-              <div style="margin-top:12px;opacity:.7;font-size:12px">
-                ⚠️ Зараз це клієнтська версія без сервера. Для “як в грі” потрібен API.
-              </div>
-            </div>
+          <div class="card soft" style="padding:16px;min-width:260px">
+            <div style="font-weight:1000;margin-bottom:10px">Що буде в кабінеті</div>
+            <ul style="color:rgba(255,255,255,.78);line-height:1.55;padding-left:18px">
+              <li>Профіль гравця</li>
+              <li>Статистика акаунта</li>
+              <li>Підключення сервісів</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- DASHBOARD -->
-      <section id="dash" class="hide">
-        <div class="cab-grid">
-          <!-- SIDE -->
-          <aside class="cab-side cab-card">
-            <div class="cab-badge cab-card">
-              <div class="shield"><span id="srv">GI</span></div>
-              <div class="meta">
-                <div class="t" id="region">GTAINE</div>
-                <div class="s"><span id="who">—</span></div>
-              </div>
-            </div>
-
-            <div class="cab-nav">
-              <button class="active" data-tab="info">👋 <span>Основна інформація</span></button>
-              <button data-tab="property">🚗 <span>Ваше майно</span></button>
-              <button data-tab="rating">🏆 <span>Рейтинг (FORBES)</span></button>
-              <button data-tab="roulette">🎰 <span>Ігрова рулетка</span></button>
-              <button class="cab-logout" id="btnLogout">🚪 <span>Вийти з кабінету</span></button>
-              <div class="muted" style="margin-top:6px;font-size:12px;opacity:.65">
-                Дані зараз демо. Підключимо API — буде реальна синхра з грою.
-              </div>
-            </div>
-          </aside>
-
-          <!-- MAIN -->
-          <section class="cab-main cab-card">
-            <!-- INFO TAB -->
-            <div class="tab" id="tab-info">
-              <div class="cab-head">
-                <div>
-                  <h1>Привіт, <span id="nick">—</span>!</h1>
-                  <div class="cab-sub">Це твоя основна інформація.</div>
-                </div>
-                <span class="pill">🟢 Онлайн: <b id="online">0</b></span>
-              </div>
-
-              <div class="kpi">
-                <div class="box cab-card wide">
-                  <div class="profile">
-                    <div class="avatar" id="ava">
-                      <span id="avaText">GI</span>
-                    </div>
-                    <div>
-                      <div class="pname" id="pname">—</div>
-                      <div class="pid">Ігровий ID: <b id="pid">—</b> • Останній вхід: <b id="last">—</b></div>
-                      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-                        <span class="pill">👑 Статус: <b id="status">—</b></span>
-                        <span class="pill">🎖 Рівень: <b id="lvl">—</b></span>
-                        <span class="pill">🏛 Організація: <b id="org">—</b></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="box cab-card">
-                  <div class="title">Карбованці</div>
-                  <div class="value" id="coins">0</div>
-                  <div class="hint">GTAINE coins</div>
-                </div>
-
-                <div class="box cab-card">
-                  <div class="title">Моя готівка</div>
-                  <div class="value" id="cash">₴0</div>
-                  <div class="hint">Гроші при собі</div>
-                </div>
-
-                <div class="box cab-card">
-                  <div class="title">На рахунках</div>
-                  <div class="value" id="bank">₴0</div>
-                  <div class="hint">Банк/карти</div>
-                </div>
-              </div>
-
-              <div class="grid2">
-                <div class="box cab-card">
-                  <div style="font-weight:900">Ваші навички (демо)</div>
-                  <div style="opacity:.7;margin-top:6px;font-size:12px">Пізніше витягнемо з API.</div>
-                  <div style="margin-top:12px;display:grid;gap:10px">
-                    <div class="pill">M4: <b>32%</b></div>
-                    <div class="pill">MP5: <b>4%</b></div>
-                    <div class="pill">Sniper: <b>4%</b></div>
-                  </div>
-                </div>
-
-                <div class="box cab-card">
-                  <div style="font-weight:900">Додаткова інформація</div>
-                  <div style="margin-top:12px;display:grid;gap:10px">
-                    <div class="pill">EXP: <b id="exp">83,200</b> / <span style="opacity:.7">105,000</span></div>
-                    <div class="pill">Телефон: <b id="phone">Відсутній</b></div>
-                    <div class="pill">Тариф: <b id="plan">Закінчився</b></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- PROPERTY TAB -->
-            <div class="tab hide" id="tab-property">
-              <div class="cab-head">
-                <div>
-                  <h1>Ваше майно</h1>
-                  <div class="cab-sub">Будинки / бізнеси / транспорт (зараз демо).</div>
-                </div>
-              </div>
-
-              <div class="grid2">
-                <div class="box cab-card">
-                  <div style="font-weight:900">Твої будинки / квартири</div>
-                  <div style="opacity:.75;margin-top:8px" id="homes">Наразі у вас немає житла</div>
-                </div>
-                <div class="box cab-card">
-                  <div style="font-weight:900">Твої бізнеси</div>
-                  <div style="opacity:.75;margin-top:8px" id="biz">Наразі у вас немає бізнесів</div>
-                </div>
-              </div>
-
-              <div class="box cab-card" style="margin-top:14px">
-                <div style="font-weight:900">Твій транспорт</div>
-                <div style="opacity:.75;margin-top:8px" id="cars">Наразі у вас немає транспорту</div>
-              </div>
-            </div>
-
-            <!-- RATING TAB -->
-            <div class="tab hide" id="tab-rating">
-              <div class="cab-head">
-                <div>
-                  <h1>FORBES (Рейтинг)</h1>
-                  <div class="cab-sub">Топ багатіїв (демо список).</div>
-                </div>
-              </div>
-
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width:90px">Місце</th>
-                    <th>Імʼя</th>
-                    <th style="width:220px">Грошей</th>
-                    <th style="width:140px">Рівень</th>
-                  </tr>
-                </thead>
-                <tbody id="ratingRows"></tbody>
-              </table>
-            </div>
-
-            <!-- ROULETTE TAB -->
-            <div class="tab hide" id="tab-roulette">
-              <div class="cab-head">
-                <div>
-                  <h1>Ігрова рулетка</h1>
-                  <div class="cab-sub">Можеш відкрити рулетку в окремій вкладці або тут.</div>
-                </div>
-              </div>
-
-              <div class="box cab-card">
-                <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-                  <div>
-                    <div style="font-weight:900">Рулетка GTAINE</div>
-                    <div style="opacity:.7;font-size:12px;margin-top:4px">Зараз у тебе: <b id="rc">0</b> coins</div>
-                  </div>
-                  <div style="display:flex;gap:10px;flex-wrap:wrap">
-                    <a class="btn secondary" href="./roulette.html">Відкрити рулетку</a>
-                    <button class="btn" id="btnFreeSpin">Безкоштовний спін (демо)</button>
-                  </div>
-                </div>
-
-                <div id="spinMsg" class="msg" style="margin-top:12px"></div>
-              </div>
-            </div>
-
-          </section>
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div>© 2026 GTAINE</div>
+          <div class="footer__links">
+            <a href="./">Головна</a>
+            <a href="./wiki/">Wiki</a>
+          </div>
         </div>
-      </section>
+      </footer>
     </div>
   </main>
-
-  <script>
-    // =========================
-    //  GTAINE CABINET (DEMO)
-    //  Без сервера. Пізніше замінимо fetch на ваш API.
-    // =========================
-
-    const $ = (s) => document.querySelector(s);
-    const auth = $("#auth");
-    const dash = $("#dash");
-    const authMsg = $("#authMsg");
-
-    const STORAGE_KEY = "gtaine_user_v1";
-
-    // Демо-база (фейк). Потом заменишь на API.
-    const DEMO_USERS = [
-      {
-        email: "demo@gtaine.com",
-        pass: "123456",
-        profile: {
-          nick: "Vladyslav Liutskeforovych",
-          id: 40167,
-          status: "Без PREMIUM",
-          lvl: 21,
-          org: "Відсутня",
-          coins: 8,
-          cash: 208572,
-          bank: 23535,
-          last: "16.02.2026 12:11:23",
-          region: "GTAINE",
-          server: "GI"
-        },
-        property: {
-          homes: [],
-          biz: [],
-          cars: ["Audi Q7 (білий)"]
-        }
-      }
-    ];
-
-    function formatMoneyUAH(n){
-      const s = (n||0).toLocaleString("uk-UA");
-      return "₴" + s;
-    }
-
-    function setActiveTab(name){
-      document.querySelectorAll(".cab-nav button[data-tab]").forEach(b=>{
-        b.classList.toggle("active", b.dataset.tab === name);
-      });
-      document.querySelectorAll(".tab").forEach(t=>t.classList.add("hide"));
-      $("#tab-" + name).classList.remove("hide");
-    }
-
-    function saveSession(user){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-    }
-    function loadSession(){
-      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); }
-      catch { return null; }
-    }
-    function clearSession(){
-      localStorage.removeItem(STORAGE_KEY);
-    }
-
-    function findUser(email, pass){
-      return DEMO_USERS.find(u => u.email.toLowerCase() === String(email).toLowerCase() && u.pass === String(pass)) || null;
-    }
-
-    // Рендер кабинета
-    function renderCabinet(user){
-      const p = user.profile;
-
-      $("#srv").textContent = p.server || "GI";
-      $("#region").textContent = p.region || "GTAINE";
-      $("#who").textContent = p.nick;
-
-      $("#nick").textContent = p.nick.split(" ")[0] || p.nick;
-      $("#pname").textContent = p.nick;
-      $("#pid").textContent = p.id;
-      $("#last").textContent = p.last;
-
-      $("#status").textContent = p.status;
-      $("#lvl").textContent = p.lvl;
-      $("#org").textContent = p.org;
-
-      $("#coins").textContent = (p.coins ?? 0).toLocaleString("uk-UA");
-      $("#cash").textContent = formatMoneyUAH(p.cash);
-      $("#bank").textContent = formatMoneyUAH(p.bank);
-
-      $("#rc").textContent = (p.coins ?? 0);
-
-      // аватар (пока буквами)
-      const initials = (p.nick || "GI").split(" ").slice(0,2).map(x=>x[0]).join("").toUpperCase();
-      $("#avaText").textContent = initials;
-
-      // Property
-      const pr = user.property || {homes:[],biz:[],cars:[]};
-      $("#homes").textContent = pr.homes.length ? pr.homes.join(", ") : "Наразі у вас немає житла";
-      $("#biz").textContent   = pr.biz.length ? pr.biz.join(", ") : "Наразі у вас немає бізнесів";
-      $("#cars").textContent  = pr.cars.length ? pr.cars.join(", ") : "Наразі у вас немає транспорту";
-
-      // Rating demo
-      const rating = [
-        { place: 1, name: "Джон Уікк [789]", money: 4575707725, lvl: 28 },
-        { place: 2, name: "Ната Уікк [693]", money: 4143893696, lvl: 30 },
-        { place: 3, name: "Міша Азамов", money: 2412438501, lvl: 22 },
-        { place: 4, name: p.nick + " [" + p.id + "]", money: (p.cash+p.bank), lvl: p.lvl },
-      ].sort((a,b)=>b.money-a.money).map((x,i)=>({...x, place:i+1}));
-
-      $("#ratingRows").innerHTML = rating.map(r => `
-        <tr class="row">
-          <td><span class="pill">#${r.place}</span></td>
-          <td style="font-weight:900">${r.name}</td>
-          <td style="font-weight:900;color:rgba(170,255,200,.95)">${formatMoneyUAH(r.money)}</td>
-          <td><span class="pill">${r.lvl} LVL</span></td>
-        </tr>
-      `).join("");
-
-      // online demo
-      $("#online").textContent = "0";
-    }
-
-    function openDash(user){
-      auth.classList.add("hide");
-      dash.classList.remove("hide");
-      renderCabinet(user);
-      setActiveTab("info");
-    }
-    function openAuth(){
-      dash.classList.add("hide");
-      auth.classList.remove("hide");
-      authMsg.textContent = "";
-      authMsg.className = "msg";
-    }
-
-    // Навигация внутри кабинета
-    document.querySelectorAll(".cab-nav button[data-tab]").forEach(btn=>{
-      btn.addEventListener("click", ()=> setActiveTab(btn.dataset.tab));
-    });
-
-    $("#btnLogout").addEventListener("click", ()=>{
-      clearSession();
-      openAuth();
-    });
-
-    // Логин
-    $("#btnLogin").addEventListener("click", ()=>{
-      const email = $("#email").value.trim();
-      const pass  = $("#pass").value;
-
-      const user = findUser(email, pass);
-      if(!user){
-        authMsg.textContent = "Невірна пошта або пароль (поки демо). Натисни “Демо-вхід”.";
-        authMsg.className = "msg bad";
-        return;
-      }
-      saveSession(user);
-      openDash(user);
-    });
-
-    $("#btnDemo").addEventListener("click", ()=>{
-      const user = DEMO_USERS[0];
-      saveSession(user);
-      openDash(user);
-    });
-
-    // Free spin demo (в кабинете)
-    $("#btnFreeSpin").addEventListener("click", ()=>{
-      const sess = loadSession();
-      if(!sess) return;
-
-      const mult = [0, 0.5, 1, 1.5, 2][Math.floor(Math.random()*5)];
-      const win = Math.round(50 * mult);
-      sess.profile.coins = Math.max(0, (sess.profile.coins||0) + win);
-
-      saveSession(sess);
-      renderCabinet(sess);
-
-      const msg = $("#spinMsg");
-      msg.className = "msg " + (win>0 ? "good" : "bad");
-      msg.textContent = win>0 ? `✅ Виграш: +${win} coins (x${mult})` : `❌ Програш (x${mult})`;
-    });
-
-    // Авто-вход если уже логинился
-    const sess = loadSession();
-    if(sess) openDash(sess);
-  </script>
 </body>
 </html>
