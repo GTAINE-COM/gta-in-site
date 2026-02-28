@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GTAINE — Кабінет</title>
-  <meta name="description" content="Особистий кабінет GTAINE: профіль, статистика, підключення сервісів." />
+  <title>Кабінет — GTAINE</title>
+  <meta name="description" content="Особистий кабінет GTAINE" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.png.png">
+  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="./">
-        <img class="brand__badge" src="assets/gtaine-logo.png.png" alt="GTAINE">
+        <img class="brand__badge" src="assets/logo.png" alt="GTAINE">
         <span class="brand__name">
           <span class="brand__title">GTAINE</span>
           <span class="brand__sub">Український RP-проект</span>
@@ -26,257 +26,356 @@
           <a class="nav__link" href="./">Головна</a>
           <a class="nav__link" href="./forum.html">Форум</a>
           <a class="nav__link" href="./wiki/">Вікі</a>
+          <a class="nav__link" href="./roulette.html">Рулетка</a>
           <a class="nav__link" href="./giveaway.html">Розіграш</a>
           <a class="nav__link" href="./download.html">Завантажити</a>
         </nav>
 
-        <a class="btn btn--cabinet is-active" href="./cabinet.html">Кабінет</a>
+        <a class="btn btn--ghost is-active" href="./cabinet.html" id="cabBtn">Кабінет</a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main>
-    <section class="hero">
-      <div class="container hero__grid">
-
-        <!-- LEFT CARD -->
-        <div class="card hero__card">
-          <div class="kicker">КАБІНЕТ</div>
-          <h1 class="h1">Особистий кабінет</h1>
-          <p class="lead">
-            
+  <main class="page">
+    <div class="container">
+      <section class="hero hero--tight">
+        <div class="hero__card">
+          <div class="hero__kicker">GTAINE • АККАУНТ</div>
+          <h1 class="hero__title">Особистий кабінет</h1>
+          <p class="hero__text">
+            Авторизація через <b>пошту та пароль</b> як у грі.
           </p>
 
-          <div class="notice">
-            <b>⚠️ Важно:</b>
-          </div>
-
-          <div class="actions">
-            <a class="btn btn--primary" href="./">На головну</a>
-            <a class="btn" href="./wiki/">До Вікі</a>
-          </div>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="stack">
-
-          <!-- PROFILE PREVIEW -->
-          <div class="card">
-            <div class="row row--between row--center">
-              <div>
-                <div class="kicker">ПРОФІЛЬ</div>
-                <div class="h2" id="profileTitle">Гість</div>
-                <div class="muted" id="profileSub">Не авторизований</div>
-              </div>
-
-              <div class="avatar" id="avatar">GI</div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="stats">
-              <div class="stat">
-                <div class="stat__label">Рівень</div>
-                <div class="stat__value" id="lvl">—</div>
-              </div>
-              <div class="stat">
-                <div class="stat__label">Годин в грі</div>
-                <div class="stat__value" id="hours">—</div>
-              </div>
-              <div class="stat">
-                <div class="stat__label">Статус</div>
-                <div class="stat__value" id="status">—</div>
-              </div>
-            </div>
-          </div>
-
           <!-- LOGIN CARD -->
-          <div class="card">
-            <div class="kicker">ВХІД</div>
-            <h2 class="h2">Збережи свій нік</h2>
-            <p class="muted">Це зробить “кабінет” персональним (локально у твоєму браузері).</p>
+          <div class="grid2" id="loginGrid">
+            <div class="card">
+              <div class="card__title">Вхід</div>
 
-            <form id="loginForm" class="form">
-              <label class="label">
-                Нікнейм
-                <input class="input" id="nick" placeholder="Напр. Влад / Qniks / GTAINE_Admin" maxlength="24" />
+              <label class="field">
+                <span class="field__label">Пошта</span>
+                <input class="field__input" id="email" type="email" placeholder="you@email.com" autocomplete="email">
               </label>
 
-              <label class="label">
-                Discord (необов’язково)
-                <input class="input" id="discord" placeholder="Напр. user#1234 або @user" maxlength="32" />
+              <label class="field" style="margin-top:10px;">
+                <span class="field__label">Пароль</span>
+                <input class="field__input" id="password" type="password" placeholder="••••••••" autocomplete="current-password">
               </label>
 
-              <div class="row">
-                <button class="btn btn--primary" type="submit">Зберегти</button>
-                <button class="btn" type="button" id="logoutBtn">Скинути</button>
+              <div class="row" style="margin-top:12px;">
+                <button class="btn btn--primary" id="loginBtn">Увійти</button>
+                <button class="btn btn--ghost" id="clearBtn">Очистити</button>
               </div>
 
-              <div class="hint" id="hint"></div>
-            </form>
+              <div class="result" id="loginMsg" style="margin-top:12px;">Введи дані для входу</div>
+
+              <div class="note" style="margin-top:12px;">
+                🔒 Пароль не зберігається на сайті. Після входу зберігається лише токен сесії.
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__title">Що буде в кабінеті</div>
+              <ul style="margin:0; padding-left:18px; line-height:1.7;">
+                <li><b>Моє майно</b> (будинки, авто, бізнеси)</li>
+                <li><b>Список Forbes</b> (топ по балансу)</li>
+                <li><b>Вікі</b> (швидкі посилання)</li>
+                <li>Статистика акаунту (рівень/баланс/фракція)</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- QUICK LINKS -->
-          <div class="card">
-            <div class="kicker">ШВИДКІ ДІЇ</div>
-            <div class="quick">
-              <a class="chip" href="./download.html">⬇️ Завантаження</a>
-              <a class="chip" href="./forum.html">💬 Форум</a>
-              <a class="chip" href="./giveaway.html">🎁 Розіграш</a>
-              <a class="chip" href="./wiki/">📚 Вікі</a>
+          <!-- PROFILE -->
+          <div class="grid2" id="profileGrid" style="display:none;">
+            <div class="card">
+              <div class="card__title">Профіль</div>
+
+              <div class="balance">
+                <div class="balance__num" id="nick">—</div>
+                <div class="balance__sub" id="emailView">—</div>
+              </div>
+
+              <div class="row row--small" style="margin-top:12px;">
+                <div class="pill">Баланс: <b id="money">—</b></div>
+                <div class="pill">Рівень: <b id="level">—</b></div>
+                <div class="pill">Фракція: <b id="faction">—</b></div>
+              </div>
+
+              <div class="row" style="margin-top:12px;">
+                <button class="btn btn--ghost" id="refreshBtn">Оновити</button>
+                <button class="btn btn--ghost" id="logoutBtn">Вийти</button>
+              </div>
+
+              <div class="result" id="profileMsg" style="margin-top:12px;">Готово ✅</div>
+            </div>
+
+            <div class="card">
+              <div class="card__title">Швидкі посилання</div>
+              <div class="row row--small">
+                <a class="btn btn--ghost" href="./wiki/" target="_blank">Вікі</a>
+                <a class="btn btn--ghost" href="./wiki/transports/" target="_blank">Транспорт</a>
+                <a class="btn btn--ghost" href="./wiki/things/" target="_blank">Предмети</a>
+                <a class="btn btn--ghost" href="./roulette.html" target="_blank">Рулетка</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- MY PROPERTY + FORBES -->
+          <div class="grid2" id="dataGrid" style="display:none; margin-top:14px;">
+            <div class="card">
+              <div class="card__title">Моє майно</div>
+              <div id="property" class="listbox">—</div>
+            </div>
+
+            <div class="card">
+              <div class="card__title">Forbes (топ гравців)</div>
+              <div id="forbes" class="listbox">—</div>
             </div>
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>© 2026 GTAINE</div>
-      <div class="footer__links">
-        <a href="./">Головна</a>
-        <span>•</span>
-        <a href="./wiki/">Вікі</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Minimal extra CSS (щоб не ламати твій style.css) -->
-  <style>
-    .hero__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:start}
-    .stack{display:grid;gap:16px}
-    .kicker{letter-spacing:.16em;text-transform:uppercase;font-size:12px;opacity:.7;margin-bottom:8px}
-    .h1{font-size:52px;line-height:1.05;margin:0 0 10px}
-    .h2{font-size:22px;margin:6px 0}
-    .lead{opacity:.85;line-height:1.5;margin:0 0 12px}
-    .muted{opacity:.75}
-    .notice{margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
-    .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-    .row{display:flex;gap:10px}
-    .row--between{justify-content:space-between}
-    .row--center{align-items:center}
-    .divider{height:1px;background:rgba(255,255,255,.10);margin:14px 0}
-    .avatar{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-weight:700;
-      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .stat{padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-    .stat__label{font-size:12px;opacity:.7}
-    .stat__value{font-size:18px;font-weight:700;margin-top:4px}
-    .form{margin-top:10px;display:grid;gap:10px}
-    .label{display:grid;gap:6px;font-size:13px;opacity:.9}
-    .input{width:100%;padding:12px 12px;border-radius:14px;background:rgba(0,0,0,.25);
-      border:1px solid rgba(255,255,255,.12);color:#fff;outline:none}
-    .input:focus{border-color:rgba(255,255,255,.22)}
-    .hint{font-size:13px;opacity:.85;margin-top:6px}
-    .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .chip{display:inline-flex;gap:8px;align-items:center;padding:10px 12px;border-radius:999px;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);text-decoration:none;color:inherit}
-    @media (max-width: 980px){.hero__grid{grid-template-columns:1fr}.h1{font-size:40px}}
-  </style>
-
   <script>
-    const LS_KEY = "gtaine_profile_v1";
+    // =====================
+    // НАСТРОЙКА API
+    // =====================
+    const API_BASE = "https://YOUR-API-DOMAIN"; // <-- ЗАМІНИ НА СВІЙ ДОМЕН API
+    const TOKEN_KEY = "gtaine_token";
+    const USER_KEY  = "gtaine_user_public";
 
-    function initials(txt){
-      const t = (txt || "").trim();
-      if(!t) return "GI";
-      const parts = t.split(/\s+/).slice(0,2);
-      return parts.map(p => p[0].toUpperCase()).join("");
+    // ui
+    const cabBtn = document.getElementById('cabBtn');
+
+    const loginGrid = document.getElementById('loginGrid');
+    const profileGrid = document.getElementById('profileGrid');
+    const dataGrid = document.getElementById('dataGrid');
+
+    const emailEl = document.getElementById('email');
+    const passEl  = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const loginMsg = document.getElementById('loginMsg');
+
+    const nickEl = document.getElementById('nick');
+    const emailViewEl = document.getElementById('emailView');
+    const moneyEl = document.getElementById('money');
+    const levelEl = document.getElementById('level');
+    const factionEl = document.getElementById('faction');
+    const profileMsg = document.getElementById('profileMsg');
+
+    const propertyBox = document.getElementById('property');
+    const forbesBox = document.getElementById('forbes');
+
+    const refreshBtn = document.getElementById('refreshBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    function setMsg(el, text, good=true){
+      el.textContent = text;
+      el.classList.toggle('result--good', !!good);
+      el.classList.toggle('result--bad', !good);
     }
 
-    function setProfile(data){
-      const title = document.getElementById("profileTitle");
-      const sub = document.getElementById("profileSub");
-      const avatar = document.getElementById("avatar");
+    function getToken(){
+      return localStorage.getItem(TOKEN_KEY);
+    }
+    function setToken(t){
+      localStorage.setItem(TOKEN_KEY, t);
+    }
+    function clearToken(){
+      localStorage.removeItem(TOKEN_KEY);
+    }
 
-      const lvl = document.getElementById("lvl");
-      const hours = document.getElementById("hours");
-      const status = document.getElementById("status");
+    function setPublicUser(u){
+      localStorage.setItem(USER_KEY, JSON.stringify(u));
+      if(u?.nick) cabBtn.textContent = u.nick;
+    }
+    function getPublicUser(){
+      try { return JSON.parse(localStorage.getItem(USER_KEY) || "null"); }
+      catch { return null; }
+    }
 
-      if(!data){
-        title.textContent = "Гість";
-        sub.textContent = "Не авторизований";
-        avatar.textContent = "GI";
-        lvl.textContent = "—";
-        hours.textContent = "—";
-        status.textContent = "—";
+    async function api(path, opts={}){
+      const headers = opts.headers ? {...opts.headers} : {};
+      headers["Content-Type"] = "application/json";
+
+      const token = getToken();
+      if(token) headers["Authorization"] = "Bearer " + token;
+
+      const res = await fetch(API_BASE + path, { ...opts, headers });
+      const text = await res.text();
+      let data = null;
+      try { data = text ? JSON.parse(text) : null; } catch { data = { raw:text }; }
+
+      if(!res.ok){
+        const msg = data?.message || "Помилка API";
+        throw new Error(msg);
+      }
+      return data;
+    }
+
+    function renderProperty(items){
+      if(!items || !items.length){
+        propertyBox.innerHTML = "<div class='muted'>Немає майна</div>";
+        return;
+      }
+      propertyBox.innerHTML = items.map(x => `
+        <div class="lbrow">
+          <div class="lbtitle">${escapeHtml(x.title)}</div>
+          <div class="lbsub">${escapeHtml(x.desc || "")}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderForbes(rows){
+      if(!rows || !rows.length){
+        forbesBox.innerHTML = "<div class='muted'>Порожньо</div>";
+        return;
+      }
+      forbesBox.innerHTML = rows.map((x,i)=>`
+        <div class="lbrow">
+          <div class="lbtitle">#${i+1} ${escapeHtml(x.nick)}</div>
+          <div class="lbsub">Баланс: ${escapeHtml(String(x.money))}</div>
+        </div>
+      `).join("");
+    }
+
+    function showProfile(profile){
+      nickEl.textContent = profile.nick || "—";
+      emailViewEl.textContent = profile.email || "—";
+      moneyEl.textContent = profile.money ?? "—";
+      levelEl.textContent = profile.level ?? "—";
+      factionEl.textContent = profile.faction ?? "—";
+
+      setPublicUser({ nick: profile.nick || "Кабінет" });
+
+      loginGrid.style.display = "none";
+      profileGrid.style.display = "";
+      dataGrid.style.display = "";
+
+      renderProperty(profile.property || []);
+    }
+
+    function showLogin(){
+      loginGrid.style.display = "";
+      profileGrid.style.display = "none";
+      dataGrid.style.display = "none";
+      cabBtn.textContent = "Кабінет";
+    }
+
+    // html escape
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+      }[m]));
+    }
+
+    // =====================
+    // EVENTS
+    // =====================
+    clearBtn.addEventListener('click', ()=>{
+      emailEl.value = "";
+      passEl.value = "";
+      setMsg(loginMsg, "Введи дані для входу", true);
+    });
+
+    loginBtn.addEventListener('click', async ()=>{
+      const email = (emailEl.value || "").trim();
+      const password = passEl.value || "";
+
+      if(!email || !password){
+        setMsg(loginMsg, "Заповни пошту і пароль", false);
         return;
       }
 
-      title.textContent = data.nick || "Гравець";
-      sub.textContent = data.discord ? ("Discord: " + data.discord) : "Discord не вказано";
-      avatar.textContent = initials(data.nick);
+      loginBtn.disabled = true;
+      setMsg(loginMsg, "Заходимо…", true);
 
-      // Демо-статистика (потім можна зробити реальну)
-      lvl.textContent = data.lvl ?? 1;
-      hours.textContent = data.hours ?? 0;
-      status.textContent = "Активний";
-    }
-
-    function load(){
       try{
-        const raw = localStorage.getItem(LS_KEY);
-        if(!raw) return null;
-        return JSON.parse(raw);
-      }catch(e){ return null; }
-    }
+        const data = await api("/api/login", {
+          method:"POST",
+          body: JSON.stringify({ email, password })
+        });
 
-    function save(data){
-      localStorage.setItem(LS_KEY, JSON.stringify(data));
-    }
+        setToken(data.token);
+        showProfile(data.profile);
+        setMsg(profileMsg, "Успішний вхід ✅", true);
 
-    function clear(){
-      localStorage.removeItem(LS_KEY);
-    }
+        // forbes
+        const fb = await api("/api/forbes");
+        renderForbes(fb.rows);
 
-    // init
-    const saved = load();
-    setProfile(saved);
+      }catch(e){
+        setMsg(loginMsg, "Помилка: " + e.message, false);
+      }finally{
+        loginBtn.disabled = false;
+      }
+    });
 
-    const form = document.getElementById("loginForm");
-    const hint = document.getElementById("hint");
-    const nick = document.getElementById("nick");
-    const discord = document.getElementById("discord");
-    const logoutBtn = document.getElementById("logoutBtn");
+    refreshBtn.addEventListener('click', async ()=>{
+      refreshBtn.disabled = true;
+      setMsg(profileMsg, "Оновлюю…", true);
+      try{
+        const me = await api("/api/me");
+        showProfile(me.profile);
+        const fb = await api("/api/forbes");
+        renderForbes(fb.rows);
+        setMsg(profileMsg, "Оновлено ✅", true);
+      }catch(e){
+        setMsg(profileMsg, "Помилка: " + e.message, false);
+      }finally{
+        refreshBtn.disabled = false;
+      }
+    });
 
-    if(saved){
-      nick.value = saved.nick || "";
-      discord.value = saved.discord || "";
-    }
+    logoutBtn.addEventListener('click', async ()=>{
+      logoutBtn.disabled = true;
+      try{
+        // не обов'язково, але красиво
+        try { await api("/api/logout", { method:"POST" }); } catch {}
+      }finally{
+        clearToken();
+        localStorage.removeItem(USER_KEY);
+        showLogin();
+        logoutBtn.disabled = false;
+      }
+    });
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const n = nick.value.trim();
-      const d = discord.value.trim();
+    // =====================
+    // INIT
+    // =====================
+    (async function init(){
+      const pu = getPublicUser();
+      if(pu?.nick) cabBtn.textContent = pu.nick;
 
-      if(n.length < 2){
-        hint.textContent = "Введи нік (мінімум 2 символи).";
+      if(!getToken()){
+        showLogin();
         return;
       }
 
-      // Демо: створюємо профіль
-      const data = {
-        nick: n,
-        discord: d,
-        lvl: Math.max(1, Math.min(99, (n.length % 20) + 1)),
-        hours: (n.length * 3) % 250
-      };
-
-      save(data);
-      setProfile(data);
-      hint.textContent = "Збережено ✅ (це локально у твоєму браузері)";
-    });
-
-    logoutBtn.addEventListener("click", () => {
-      clear();
-      setProfile(null);
-      nick.value = "";
-      discord.value = "";
-      hint.textContent = "Скинуто ✅";
-    });
+      // є токен — пробуємо взяти профіль
+      try{
+        const me = await api("/api/me");
+        showProfile(me.profile);
+        const fb = await api("/api/forbes");
+        renderForbes(fb.rows);
+      }catch{
+        // токен здох — назад на логін
+        clearToken();
+        showLogin();
+      }
+    })();
   </script>
+
+  <style>
+    /* маленькі стилі для списків, щоб гарно виглядало навіть якщо style.css не має */
+    .pill{ padding:8px 10px; border:1px solid rgba(255,255,255,.08); border-radius:12px; background:rgba(255,255,255,.03); }
+    .listbox{ margin-top:8px; display:flex; flex-direction:column; gap:10px; }
+    .lbrow{ padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
+    .lbtitle{ font-weight:700; }
+    .lbsub{ opacity:.8; margin-top:4px; font-size:14px; }
+    .muted{ opacity:.7; padding:10px; }
+  </style>
 </body>
 </html>
