@@ -35,11 +35,13 @@ a{color:inherit}
 
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
 .brand__badge{
-  width:40px;height:40px;border-radius:12px;
-  display:grid;place-items:center;
-  font-weight:900;
-  background:linear-gradient(90deg,#ff7a18,#ff3d00);
-  box-shadow:0 0 22px rgba(255,80,0,.35);
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+}
 }
 .brand__name{display:flex;flex-direction:column;line-height:1.1}
 .brand__title{font-weight:900;letter-spacing:.02em}
