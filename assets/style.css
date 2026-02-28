@@ -1,115 +1,292 @@
-/* ====== БАЗА ====== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+/* =========================
+   GTAINE — FULL STYLE.CSS
+   (clean + modern + works)
+   ========================= */
 
+/* ----- Reset ----- */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
 body{
-  background: linear-gradient(135deg,#02162d,#0a1f3f,#0c1a2b);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
   color:#fff;
+  background:
+    radial-gradient(900px 500px at 25% 35%, rgba(0,110,255,.18), transparent 55%),
+    radial-gradient(900px 500px at 70% 30%, rgba(255,200,0,.10), transparent 55%),
+    linear-gradient(135deg, #061529, #071f3d 45%, #081627);
   overflow-x:hidden;
+  line-height:1.45;
 }
 
-/* ====== СЕКЦИИ ====== */
-section{
-  padding:100px 20px;
-  position:relative;
+/* ----- Links ----- */
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.92}
+
+/* ----- Global spacing ----- */
+section{padding:90px 20px; position:relative}
+h1,h2,h3{font-weight:700}
+h2{font-size:32px; margin-bottom:40px; text-align:center}
+
+/* ----- Containers ----- */
+.container{max-width:1200px;margin:0 auto}
+
+/* =========================
+   Cards / Glass UI
+   ========================= */
+.card-glass{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.card-glass:hover{
+  border-color: rgba(0,140,255,0.35);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22);
+}
+
+/* =========================
+   GOV SECTION (Держ. орг)
+   ========================= */
+.gov-section{
+  overflow:hidden;
+}
+
+.gov-title{
+  font-size:34px;
+  margin-bottom:42px;
   text-align:center;
 }
 
-/* ====== ЗАГОЛОВКИ ====== */
-h2{
-  font-size:28px;
-  margin-bottom:40px;
-}
-
-/* ====== СЕТКИ ====== */
-.gov-grid,
-.jobs-grid{
+.gov-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:22px;
   max-width:1100px;
-  margin:auto;
+  margin:0 auto;
   position:relative;
   z-index:2;
 }
 
-/* ====== КАРТОЧКИ ====== */
-.gov-card,
-.job-card{
-  background:rgba(255,255,255,0.05);
+.gov-card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding:24px 22px;
   backdrop-filter: blur(10px);
-  border-radius:16px;
-  padding:25px;
-  transition:0.3s;
-  border:1px solid rgba(255,255,255,0.08);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  text-align:left;
+  min-height:110px;
 }
 
-.gov-card:hover,
-.job-card:hover{
-  transform:translateY(-6px);
-  border:1px solid rgba(255,255,255,0.2);
-}
-
-.gov-card h3,
-.job-card h3{
-  margin-bottom:10px;
+.gov-card h3{
   font-size:18px;
+  margin-bottom:10px;
+  letter-spacing:.2px;
 }
 
-.gov-card p,
-.job-card p{
-  font-size:14px;
-  opacity:0.8;
+.gov-card p{
+  font-size:13.5px;
+  opacity:.82;
 }
 
-/* ====== ФОН ДЕРЖ ОРГ ====== */
+.gov-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(0,140,255,0.35);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* Фон под углом (не на весь экран, а рядом с блоком) */
 .gov-section::before{
   content:"";
   position:absolute;
   left:50%;
   top:50%;
-  width:1300px;
-  height:650px;
-  transform:translate(-50%,-50%) rotate(-8deg) scale(1.2);
-  background:url("gov-bg.jpg.png") center/cover no-repeat;
-  opacity:0.15;
+  width:1400px;
+  height:720px;
+  transform: translate(-50%,-50%) rotate(-8deg) scale(1.1);
+  background: url("gov-bg.jpg.png") center/cover no-repeat;
+  opacity: .18;
+  filter: blur(0.8px);
+  border-radius: 34px;
   z-index:1;
-  filter:blur(1px);
-  border-radius:30px;
 }
 
-/* ====== ФОН РОБОТИ ====== */
+/* затемнение чтобы карточки читались */
+.gov-section::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:1400px;
+  height:720px;
+  transform: translate(-50%,-50%) rotate(-8deg);
+  background: radial-gradient(circle at 50% 45%, rgba(0,0,0,0.15), rgba(0,0,0,0.70));
+  border-radius: 34px;
+  z-index:1;
+}
+
+/* =========================
+   STATS SECTION
+   ========================= */
+.stats-section{
+  padding-top:70px;
+  padding-bottom:70px;
+}
+
+.stats-section h2{
+  margin-bottom:26px;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:18px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.stat-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding:22px 18px;
+  text-align:center;
+  backdrop-filter: blur(10px);
+  transition: .25s ease;
+}
+
+.stat-card:hover{
+  transform: translateY(-5px);
+  border-color: rgba(0,140,255,0.30);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+}
+
+.stat-card .num{
+  font-size:20px;
+  font-weight:800;
+  color: #4aa3ff;
+}
+
+.stat-card .label{
+  margin-top:6px;
+  font-size:12.5px;
+  opacity:.82;
+}
+
+/* =========================
+   JOBS SECTION (Роботи)
+   ========================= */
+.jobs-section{
+  overflow:hidden;
+}
+
+.jobs-title{
+  font-size:32px;
+  margin-bottom:40px;
+  text-align:center;
+}
+
+.jobs-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:18px;
+  max-width:1100px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+/* Поддержка двух вариантов: .job-card или .jobs-card */
+.job-card,
+.jobs-card{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding:18px 16px;
+  text-align:left;
+  backdrop-filter: blur(10px);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  min-height:86px;
+}
+
+.job-card:hover,
+.jobs-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(255,215,0,0.30);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22);
+}
+
+.job-card h3,
+.jobs-card h3{
+  font-size:14px;
+  margin-bottom:8px;
+  color: rgba(255,215,0,0.90);
+}
+
+.job-card p,
+.jobs-card p{
+  font-size:12.5px;
+  opacity:.82;
+}
+
+/* Фон работ */
 .jobs-section::before{
   content:"";
   position:absolute;
   left:50%;
   top:50%;
-  width:1300px;
-  height:700px;
-  transform:translate(-50%,-50%) rotate(-8deg) scale(1.2);
-  background:url("jobs-bg.jpg.png") center/cover no-repeat;
-  opacity:0.15;
+  width:1400px;
+  height:760px;
+  transform: translate(-50%,-50%) rotate(-8deg) scale(1.1);
+  background: url("jobs-bg.jpg.png") center/cover no-repeat;
+  opacity: .17;
+  filter: blur(0.8px);
+  border-radius: 34px;
   z-index:1;
-  filter:blur(1px);
-  border-radius:30px;
 }
 
-/* ====== СТАТИСТИКА ====== */
-.stats-grid{
-  display:flex;
-  gap:25px;
-  justify-content:center;
-  flex-wrap:wrap;
+.jobs-section::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:1400px;
+  height:760px;
+  transform: translate(-50%,-50%) rotate(-8deg);
+  background: radial-gradient(circle at 50% 45%, rgba(0,0,0,0.18), rgba(0,0,0,0.72));
+  border-radius: 34px;
+  z-index:1;
 }
 
-.stat-card{
-  background:rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:16px;
-  min-width:150px;
-  border:1px solid rgba(255,255,255,0.1);
+/* =========================
+   Small helpers (optional)
+   ========================= */
+hr{border:none;height:1px;background:rgba(255,255,255,0.08);margin:30px 0}
+.small{font-size:12px;opacity:.8}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1100px){
+  .gov-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+  .jobs-grid{grid-template-columns: repeat(3, minmax(0,1fr))}
+  .stats-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+  .gov-section::before,.gov-section::after{width:1200px;height:680px}
+  .jobs-section::before,.jobs-section::after{width:1200px;height:720px}
+}
+
+@media (max-width: 720px){
+  h2{font-size:26px}
+  .gov-title{font-size:28px}
+  .jobs-title{font-size:26px}
+  section{padding:70px 16px}
+  .gov-grid{grid-template-columns: 1fr}
+  .jobs-grid{grid-template-columns: repeat(2, minmax(0,1fr))}
+  .gov-section::before,.gov-section::after{width:980px;height:680px; opacity:.20}
+  .jobs-section::before,.jobs-section::after{width:980px;height:720px; opacity:.20}
+}
+
+@media (max-width: 420px){
+  .jobs-grid{grid-template-columns: 1fr}
 }
