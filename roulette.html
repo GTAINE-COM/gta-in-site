@@ -4,9 +4,127 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Рулетка — GTAINE</title>
-  <meta name="description" content="Ігрова рулетка GTAINE" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
+
+  <style>
+    .r-wrap{padding:28px 0 70px}
+    .card{
+      background:rgba(10,12,18,.55);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      backdrop-filter: blur(10px);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .r-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px}
+    .r-title{margin:0;font-size:34px;font-weight:900}
+    .r-sub{opacity:.75;margin-top:6px}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);font-weight:900}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;border:0;cursor:pointer;font-weight:900;
+      color:#0b0f14;
+      background:linear-gradient(90deg, #ff6a2b, #ffb23a);
+      box-shadow:0 16px 28px rgba(255,122,40,.18);
+      white-space:nowrap;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.08);
+      color:#fff;border:1px solid rgba(255,255,255,.12);
+      box-shadow:none;
+    }
+    .btn:disabled{opacity:.45;cursor:not-allowed}
+
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:14px}
+    @media (max-width: 980px){.grid{grid-template-columns:1fr}}
+
+    /* Reel */
+    .reelWrap{padding:16px}
+    .reelTop{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+    .reelBox{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      height:190px;
+    }
+    .pointer{
+      position:absolute;
+      left:50%;
+      top:10px;
+      transform:translateX(-50%);
+      width:0;height:0;
+      border-left:12px solid transparent;
+      border-right:12px solid transparent;
+      border-top:18px solid rgba(255,140,60,.95);
+      filter:drop-shadow(0 10px 14px rgba(0,0,0,.35));
+      z-index:5;
+    }
+    .reel{
+      position:absolute;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+      display:flex;
+      gap:12px;
+      padding:0 18px;
+      will-change: transform;
+    }
+    .item{
+      width:170px;
+      height:130px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      gap:8px;
+      user-select:none;
+    }
+    .icon{font-size:34px}
+    .iname{font-weight:900}
+    .irare{opacity:.7;font-size:12px}
+    .centerGlow{
+      position:absolute;
+      left:50%;
+      top:0;
+      transform:translateX(-50%);
+      width:220px;
+      height:100%;
+      background:linear-gradient(180deg, rgba(255,140,60,.14), rgba(0,0,0,0));
+      border-left:1px solid rgba(255,255,255,.08);
+      border-right:1px solid rgba(255,255,255,.08);
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+    .field{
+      display:flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+    }
+    .field input{width:84px;background:transparent;border:0;color:#fff;outline:none;font-weight:900}
+    .toggle{display:flex;align-items:center;gap:10px;margin-left:auto}
+    .msg{margin-top:10px;opacity:.9}
+    .msg.good{color:#7affb2}
+    .msg.bad{color:#ff7a7a}
+
+    .side{padding:16px}
+    .list{display:grid;gap:10px;margin-top:10px}
+    .logRow{
+      padding:12px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      display:flex;justify-content:space-between;gap:10px;align-items:center;
+      font-weight:800;
+    }
+    .small{opacity:.7;font-size:12px}
+  </style>
 </head>
 
 <body>
@@ -30,180 +148,322 @@
           <a class="nav__link" href="./giveaway.html">Розіграш</a>
           <a class="nav__link" href="./download.html">Завантажити</a>
         </nav>
-
-        <a class="btn btn--ghost" href="./cabinet.html" id="cabBtn">Кабінет</a>
+        <a class="chip" href="./cabinet.html">Кабінет</a>
       </div>
     </div>
   </header>
 
-  <!-- PAGE -->
-  <main class="page">
+  <main class="r-wrap">
     <div class="container">
-      <section class="hero hero--tight">
-        <div class="hero__card">
-          <div class="hero__kicker">GTAINE • ГРА</div>
-          <h1 class="hero__title">Ігрова рулетка</h1>
-          <p class="hero__text">
-            Вибирай ставку, крути — і отримуй приз. Поки що це клієнтська версія (працює в браузері).
-          </p>
-
-          <div class="grid2">
-            <div class="card">
-              <div class="card__title">Баланс</div>
-              <div class="balance">
-                <div class="balance__num" id="balance">1000</div>
-                <div class="balance__sub">GTAINE coins</div>
-              </div>
-
-              <div class="row">
-                <label class="field">
-                  <span class="field__label">Ставка</span>
-                  <input class="field__input" id="bet" type="number" min="10" step="10" value="100">
-                </label>
-
-                <button class="btn btn--primary" id="spinBtn">Крутити</button>
-              </div>
-
-              <div class="row row--small">
-                <button class="btn btn--ghost" id="resetBtn">Скинути баланс</button>
-                <button class="btn btn--ghost" id="addBtn">+500</button>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card__title">Колесо</div>
-
-              <div class="wheel">
-                <div class="wheel__ring" id="wheel">
-                  <div class="wheel__center" id="wheelText">ГОТОВИЙ?</div>
-                </div>
-                <div class="wheel__pointer"></div>
-              </div>
-
-              <div class="result" id="result">Натисни “Крутити”</div>
-
-              <div class="prizes">
-                <div class="prize"><span class="dot dot--win"></span> x2 (подвоєння ставки)</div>
-                <div class="prize"><span class="dot dot--mid"></span> x1.5</div>
-                <div class="prize"><span class="dot dot--mid"></span> +100</div>
-                <div class="prize"><span class="dot dot--lose"></span> 0 (програш)</div>
-              </div>
-            </div>
+      <section class="card">
+        <div class="r-head">
+          <div>
+            <h1 class="r-title">Ігрова рулетка</h1>
+            <div class="r-sub">Баланс і історія зберігаються в кабінеті (демо без сервера).</div>
           </div>
-
-          <div class="note">
-            ⚠️ Це демо. Щоб зробити “як в грі” по-справжньому (серверна рулетка), треба бекенд або API з вашого лаунчера.
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <span class="pill">🪙 Coins: <b id="coins">0</b></span>
+            <span class="pill">🎁 Free: <b id="freeSpins">0</b></span>
+            <a class="btn secondary" href="./cabinet.html">До кабінету</a>
           </div>
         </div>
       </section>
+
+      <div class="grid">
+        <!-- Reel -->
+        <section class="card reelWrap">
+          <div class="reelTop">
+            <div class="pill">🎯 Попади під стрілку</div>
+            <div class="pill">Ставка: <b id="costView">89</b> coins</div>
+          </div>
+
+          <div class="reelBox">
+            <div class="pointer"></div>
+            <div class="centerGlow"></div>
+            <div class="reel" id="reel"></div>
+          </div>
+
+          <div class="controls">
+            <div class="field">
+              <span class="small">Ціна</span>
+              <input id="cost" type="number" min="1" value="89">
+              <span class="small">coins</span>
+            </div>
+
+            <button class="btn secondary" id="btnFree">Крутити безкоштовно</button>
+            <button class="btn" id="btnSpin">КРУТИТИ ЗА 🪙</button>
+
+            <label class="toggle">
+              <span class="small">Швидко</span>
+              <input id="fast" type="checkbox">
+            </label>
+          </div>
+
+          <div id="msg" class="msg"></div>
+          <div class="small" style="margin-top:10px;opacity:.65">
+            ⚠️ Це клієнтська версія. Для “серверної” рулетки потрібен API (щоб не накручували coins).
+          </div>
+        </section>
+
+        <!-- Side -->
+        <aside class="card side">
+          <div style="font-weight:900;font-size:16px">Список ваших виграшів</div>
+          <div class="small" style="margin-top:6px">Останні 10 результатів</div>
+
+          <div class="list" id="log"></div>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn secondary" id="btnClear">Очистити історію</button>
+            <button class="btn secondary" id="btnAddFree">+1 Free (тест)</button>
+          </div>
+        </aside>
+      </div>
     </div>
   </main>
 
   <script>
-    // --- Кабінет кнопка ---
-    const cabBtn = document.getElementById('cabBtn');
-    const user = JSON.parse(localStorage.getItem('gtaine_user') || 'null');
-    if (user?.nick) cabBtn.textContent = user.nick;
+    // ======= Shared storage with cabinet.html =======
+    const STORAGE_KEY = "gtaine_user_v1";
+    const LOG_KEY = "gtaine_roulette_log_v1";
 
-    // --- Рулетка логіка ---
-    const STORAGE_KEY = 'gtaine_balance';
-    const balanceEl = document.getElementById('balance');
-    const betEl = document.getElementById('bet');
-    const spinBtn = document.getElementById('spinBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const addBtn = document.getElementById('addBtn');
-    const wheel = document.getElementById('wheel');
-    const wheelText = document.getElementById('wheelText');
-    const resultEl = document.getElementById('result');
+    const $ = (s)=>document.querySelector(s);
 
-    function getBalance(){
-      const v = Number(localStorage.getItem(STORAGE_KEY));
-      return Number.isFinite(v) && v > 0 ? v : 1000;
-    }
-    function setBalance(v){
-      localStorage.setItem(STORAGE_KEY, String(v));
-      balanceEl.textContent = v;
-    }
-    setBalance(getBalance());
-
-    const outcomes = [
-      { label: "x2", type:"mul", value: 2 },
-      { label: "0",  type:"lose", value: 0 },
-      { label: "+100", type:"add", value: 100 },
-      { label: "x1.5", type:"mul", value: 1.5 },
-      { label: "0",  type:"lose", value: 0 },
-      { label: "+100", type:"add", value: 100 },
-      { label: "x2", type:"mul", value: 2 },
-      { label: "0",  type:"lose", value: 0 },
+    // Prize pool (можно потом заменить на реальные предметы + картинки)
+    const PRIZES = [
+      { id:"money250", icon:"💵", name:"Гроші ₴250,000", rare:"звичайний", reward:{ type:"cash", amount:250000 }, weight:35 },
+      { id:"money2500", icon:"💰", name:"Гроші ₴2,250,000", rare:"рідкісний", reward:{ type:"cash", amount:2250000 }, weight:10 },
+      { id:"canister", icon:"⛽", name:"Каністра", rare:"звичайний", reward:{ type:"item", amount:1 }, weight:18 },
+      { id:"battery", icon:"🔋", name:"Акумулятор", rare:"звичайний", reward:{ type:"item", amount:1 }, weight:18 },
+      { id:"paint", icon:"🪣", name:"Синя фарба", rare:"рідкісний", reward:{ type:"item", amount:1 }, weight:10 },
+      { id:"skin1", icon:"🧥", name:"Скін: Відважна лиходійка", rare:"епічний", reward:{ type:"item", amount:1 }, weight:5 },
+      { id:"skin2", icon:"🧢", name:"Скін: Дівчина дайвер", rare:"епічний", reward:{ type:"item", amount:1 }, weight:3 },
+      { id:"skin3", icon:"😈", name:"Скін: Стильний мачо", rare:"легендарний", reward:{ type:"item", amount:1 }, weight:1 },
     ];
 
+    // Build reel items (длинная лента)
+    const reel = $("#reel");
+    const ITEMS_REPEAT = 60; // чем больше, тем длиннее прокрутка
+    const reelItems = [];
+    for(let i=0;i<ITEMS_REPEAT;i++){
+      const p = PRIZES[i % PRIZES.length];
+      reelItems.push(p);
+    }
+    reel.innerHTML = reelItems.map(p=>`
+      <div class="item">
+        <div class="icon">${p.icon}</div>
+        <div class="iname">${p.name}</div>
+        <div class="irare">${p.rare}</div>
+      </div>
+    `).join("");
+
+    function loadUser(){
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); }
+      catch { return null; }
+    }
+    function saveUser(u){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(u));
+    }
+
+    function loadLog(){
+      try { return JSON.parse(localStorage.getItem(LOG_KEY) || "[]"); }
+      catch { return []; }
+    }
+    function saveLog(arr){
+      localStorage.setItem(LOG_KEY, JSON.stringify(arr));
+    }
+
+    function weightedPick(){
+      const total = PRIZES.reduce((s,p)=>s+p.weight,0);
+      let r = Math.random()*total;
+      for(const p of PRIZES){
+        r -= p.weight;
+        if(r<=0) return p;
+      }
+      return PRIZES[0];
+    }
+
+    function renderBalances(){
+      const u = loadUser();
+      const coins = u?.profile?.coins ?? 0;
+      const free = u?.profile?.freeSpins ?? 0;
+      $("#coins").textContent = coins.toLocaleString("uk-UA");
+      $("#freeSpins").textContent = free.toLocaleString("uk-UA");
+    }
+
+    function renderLog(){
+      const log = loadLog().slice(0,10);
+      const box = $("#log");
+      box.innerHTML = log.length ? log.map(x=>`
+        <div class="logRow">
+          <span>${x.icon} ${x.name}</span>
+          <span class="small">${x.when}</span>
+        </div>
+      `).join("") : `<div class="small" style="opacity:.7;margin-top:10px">Поки що порожньо</div>`;
+    }
+
+    // --- Spin logic ---
     let spinning = false;
 
-    function randIndex(){
-      return Math.floor(Math.random()*outcomes.length);
+    function setMsg(text, good){
+      const m = $("#msg");
+      m.textContent = text;
+      m.className = "msg " + (good ? "good" : "bad");
     }
 
-    function applyOutcome(bet, out){
-      if(out.type === "lose") return 0;
-      if(out.type === "add") return bet + out.value;
-      if(out.type === "mul") return Math.round(bet * out.value);
-      return 0;
+    function nowStr(){
+      const d = new Date();
+      return d.toLocaleString("uk-UA");
     }
 
-    function showResult(text, good){
-      resultEl.textContent = text;
-      resultEl.classList.toggle('result--good', !!good);
-      resultEl.classList.toggle('result--bad', !good);
+    function applyReward(prize){
+      const u = loadUser();
+      if(!u){ return; }
+
+      // cash reward -> добавим в "cash"
+      if(prize.reward.type === "cash"){
+        u.profile.cash = (u.profile.cash || 0) + prize.reward.amount;
+      }
+      // item reward -> пока просто в историю (можно потом сделать инвентарь)
+      saveUser(u);
     }
 
-    spinBtn.addEventListener('click', () => {
+    function spendCoins(cost){
+      const u = loadUser();
+      if(!u) return {ok:false, reason:"Немає сесії. Зайди в кабінет і натисни Демо-вхід."};
+
+      u.profile.coins = u.profile.coins ?? 0;
+      u.profile.freeSpins = u.profile.freeSpins ?? 0;
+
+      // free spin
+      if(u.profile.freeSpins > 0){
+        u.profile.freeSpins -= 1;
+        saveUser(u);
+        return {ok:true, free:true};
+      }
+
+      // paid
+      if(u.profile.coins < cost) return {ok:false, reason:"Недостатньо coins."};
+      u.profile.coins -= cost;
+      saveUser(u);
+      return {ok:true, free:false};
+    }
+
+    function addLog(prize){
+      const arr = loadLog();
+      arr.unshift({ icon: prize.icon, name: prize.name, when: nowStr() });
+      saveLog(arr.slice(0,50));
+      renderLog();
+    }
+
+    async function spin(useFreeButton){
       if(spinning) return;
-
-      const bet = Math.max(10, Number(betEl.value || 0));
-      let bal = getBalance();
-
-      if(bet > bal){
-        showResult("Немає грошей на ставку 😅", false);
+      const u = loadUser();
+      if(!u){
+        setMsg("Спочатку зайди в кабінет (cabinet.html) і зроби Демо-вхід.", false);
         return;
       }
 
+      const cost = Math.max(1, parseInt($("#cost").value || "89", 10));
+      $("#costView").textContent = String(cost);
+
+      // если жмут free — пытаемся списать free (если нет — скажем)
+      if(useFreeButton){
+        if((u.profile.freeSpins ?? 0) <= 0){
+          setMsg("Немає безкоштовних спінів. Крути за coins.", false);
+          return;
+        }
+      }
+
+      const pay = spendCoins(cost);
+      if(!pay.ok){
+        setMsg(pay.reason, false);
+        renderBalances();
+        return;
+      }
+
+      renderBalances();
+
+      // choose prize
+      const prize = weightedPick();
+
+      // animation: прокрутка до нужного элемента
       spinning = true;
-      spinBtn.disabled = true;
+      $("#btnSpin").disabled = true;
+      $("#btnFree").disabled = true;
 
-      const pick = randIndex();
-      const out = outcomes[pick];
+      const fast = $("#fast").checked;
+      const duration = fast ? 1200 : 3200;
 
-      // Анімація колеса
-      const turns = 6 + Math.random()*2;
-      const degPer = 360 / outcomes.length;
-      const targetDeg = 360*turns + (pick * degPer) + (degPer/2);
+      // Найдем индекс ближайшего в ленте с таким призом ближе к концу
+      const allEls = Array.from(reel.children);
+      let targetIndex = allEls.length - 10;
+      for(let i = allEls.length - 1; i >= 0; i--){
+        const p = reelItems[i];
+        if(p.id === prize.id){ targetIndex = i; break; }
+      }
 
-      wheel.style.setProperty('--spin', `${targetDeg}deg`);
-      wheel.classList.add('wheel__ring--spin');
-      wheelText.textContent = "КРУТИТЬСЯ…";
+      // ширина карточки примерно 170 + gap 12 = 182
+      const step = 182;
+      const centerOffset = (window.innerWidth * 0.5) - 90; // примерно центр
+      const toX = -(targetIndex * step) + centerOffset;
 
-      setTimeout(() => {
-        // списуємо ставку
-        bal -= bet;
-        // виграш
-        const win = applyOutcome(bet, out);
-        bal += win;
+      reel.style.transition = `transform ${duration}ms cubic-bezier(.1,.9,.1,1)`;
+      reel.style.transform = `translate(${toX}px, -50%)`;
 
-        setBalance(bal);
+      setMsg(pay.free ? "🎁 Безкоштовний спін..." : "🎰 Крутимо...", true);
 
-        wheel.classList.remove('wheel__ring--spin');
-        wheelText.textContent = out.label;
+      await new Promise(r => setTimeout(r, duration + 120));
 
-        const good = win > 0;
-        showResult(good ? `Виграш: +${win} ✅` : `Програш 😭`, good);
+      // apply reward + log
+      applyReward(prize);
+      addLog(prize);
 
-        spinning = false;
-        spinBtn.disabled = false;
-      }, 1400);
+      setMsg(`✅ Випало: ${prize.icon} ${prize.name}`, true);
+
+      // enable again
+      spinning = false;
+      $("#btnSpin").disabled = false;
+      $("#btnFree").disabled = false;
+
+      // Обновить баланс (cash меняется в кабинете, coins/free уже тут)
+      renderBalances();
+    }
+
+    // Buttons
+    $("#btnSpin").addEventListener("click", ()=>spin(false));
+    $("#btnFree").addEventListener("click", ()=>spin(true));
+
+    $("#cost").addEventListener("input", ()=>{
+      const v = Math.max(1, parseInt($("#cost").value || "1", 10));
+      $("#costView").textContent = String(v);
     });
 
-    resetBtn.addEventListener('click', () => setBalance(1000));
-    addBtn.addEventListener('click', () => setBalance(getBalance()+500));
+    $("#btnClear").addEventListener("click", ()=>{
+      saveLog([]);
+      renderLog();
+      setMsg("Історію очищено.", true);
+    });
+
+    $("#btnAddFree").addEventListener("click", ()=>{
+      const u = loadUser();
+      if(!u){ setMsg("Зайди в кабінет і увійди.", false); return; }
+      u.profile.freeSpins = (u.profile.freeSpins ?? 0) + 1;
+      saveUser(u);
+      renderBalances();
+      setMsg("✅ Додано +1 Free (тест).", true);
+    });
+
+    // Init
+    renderBalances();
+    renderLog();
+    // если в кабинете еще нет поля freeSpins — добавим 0
+    (function normalize(){
+      const u = loadUser();
+      if(!u) return;
+      u.profile.freeSpins = u.profile.freeSpins ?? 0;
+      saveUser(u);
+      renderBalances();
+    })();
   </script>
 </body>
 </html>
