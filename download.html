@@ -1,98 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Завантажити GTAINE</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b1220;
-  color:white;
-  text-align:center;
-}
-
-.container{
-  max-width:900px;
-  margin:80px auto;
-  padding:20px;
-}
-
-h1{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-p{
-  color:#9bb0d0;
-  font-size:18px;
-}
-
-.button{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 30px;
-  font-size:18px;
-  background:#ff4b4b;
-  color:black;
-  font-weight:bold;
-  border-radius:10px;
-  text-decoration:none;
-}
-
-.button:hover{
-  background:#ff2a2a;
-}
-
-.card{
-  background:#111827;
-  padding:20px;
-  margin-top:40px;
-  border-radius:15px;
-  text-align:left;
-}
-
-.card h2{
-  margin-top:0;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Завантажити — GTAINE</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
 
-<div class="container">
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="./">
+      <span class="brand__badge">GI</span>
+      <span class="brand__name">
+        <span class="brand__title">GTAINE</span>
+        <span class="brand__sub">Український RP-проект</span>
+      </span>
+    </a>
 
-<h1>Завантажити GTAINE</h1>
-<p>Натисни кнопку нижче, щоб завантажити лаунчер гри.</p>
+    <nav class="nav">
+      <a class="nav__link" href="./">Головна</a>
+      <a class="nav__link" href="./forum.html">Форум</a>
+      <a class="nav__link" href="./wiki/">Вікі</a>
+      <a class="nav__link" href="./giveaway.html">Розіграш</a>
+      <a class="nav__link is-active" href="./download.html">Завантажити</a>
+    </nav>
+  </div>
+</header>
 
-<a class="button" 
-href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe">
-ЗАВАНТАЖИТИ ЛАУНЧЕР
-</a>
+<section class="hero hero--home">
+  <div class="container hero__grid">
+    <div class="glass">
+      <div class="kicker">ЗАВАНТАЖЕННЯ</div>
+      <h1>Лаунчер GTAINE</h1>
+      <p class="lead">Натисни кнопку нижче та завантаж лаунчер.</p>
 
-<div class="card">
-<h2>Як встановити:</h2>
-<ol>
-<li>Завантаж файл .exe</li>
-<li>Запусти його від імені адміністратора</li>
-<li>Пройди встановлення</li>
-<li>Запусти лаунчер та зайди в гру</li>
-</ol>
-</div>
+      <div class="actions">
+        <a class="btn btn--primary" href="https://cdn.discordapp.com/attachments/1470775138197835911/1472608533781680373/gtaine-launcher.exe?ex=69a3abd2&is=69a25a52&hm=8bf2eafb012f485a8ff42927e32f3afed7b20f5ec46ac13804841cea294e2c3c&">
+          Завантажити .exe
+        </a>
+        <a class="btn btn--ghost" href="./wiki/">Інструкція у Вікі</a>
+      </div>
+    </div>
 
-<div class="card">
-<h2>Системні вимоги:</h2>
-<ul>
-<li>Windows 10 / 11 (64-bit)</li>
-<li>8 GB RAM (рекомендовано 16)</li>
-<li>25 GB вільного місця</li>
-<li>Стабільний інтернет</li>
-</ul>
-</div>
+    <aside class="side">
+      <div class="news">
+        <b>Порада</b>
+        <div class="n">• Запускай лаунчер від імені адміністратора (якщо треба).</div>
+        <div class="n">• Дозволь доступ у брандмауері Windows.</div>
+      </div>
+    </aside>
+  </div>
+</section>
 
-</div>
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© 2026 GTAINE</div>
+    <div class="footer__links">
+      <a href="./">Головна</a><span>•</span><a href="./wiki/">Вікі</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
