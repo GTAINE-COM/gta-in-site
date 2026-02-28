@@ -271,3 +271,36 @@ h2{font-size:34px;margin:0 0 22px}
   .hero__grid{grid-template-columns:1fr}
   h1{font-size:42px}
 }
+/* ФОН: ДЕРЖ ОРГ */
+.gov-section{
+  position: relative;
+  overflow: hidden;
+}
+.gov-section::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background: url("gov-bg.jpg.png") center/cover no-repeat;
+  transform: rotate(-8deg);
+  opacity: 0.10;
+  filter: blur(2px);
+  z-index:0;
+}
+.gov-section .gov-grid{ position: relative; z-index:1; }
+
+/* ФОН: РОБОТИ */
+.jobs-section{
+  position: relative;
+  overflow: hidden;
+}
+.jobs-section::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background: url("jobs-bg.jpg.png") center/cover no-repeat;
+  transform: rotate(-8deg);
+  opacity: 0.10;
+  filter: blur(2px);
+  z-index:0;
+}
+.jobs-section .jobs-grid{ position: relative; z-index:1; }
