@@ -35,12 +35,15 @@ a{color:inherit}
 
 .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
 .brand__badge{
-  width:40px;
-  height:40px;
-  border-radius:12px;
-  object-fit:cover;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.04);
+  width:44px;
+  height:44px;
+  display:inline-block;
+  border-radius:14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  padding:6px;            /* ВАЖЛИВО: дає “повітря” для SVG */
+  object-fit: contain;    /* ВАЖЛИВО: не ріже картинку */
+  box-sizing:border-box;
 }
 }
 .brand__name{display:flex;flex-direction:column;line-height:1.1}
