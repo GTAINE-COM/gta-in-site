@@ -2,13 +2,59 @@
 <html lang="uk">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0; url=https://gtaine-forum.qniks.me/index.php/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Форум — GTAINE</title>
-  <link rel="canonical" href="https://gtaine-forum.qniks.me/index.php/">
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
 </head>
+
 <body>
-  <p>Переходимо на форум… Якщо не перекинуло — <a href="https://gtaine-forum.qniks.me/index.php/">натисни тут</a>.</p>
-  <script>location.replace("https://gtaine-forum.qniks.me/index.php/");</script>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
+        <span class="brand__name">
+          <span class="brand__title">GTAINE</span>
+          <span class="brand__sub">Український RP-проект</span>
+        </span>
+      </a>
+
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link" href="./">Головна</a>
+          <a class="nav__link is-active" href="./forum.html">Форум</a>
+          <a class="nav__link" href="./wiki/">Wiki</a>
+          <a class="nav__link" href="./giveaway.html">Розіграш</a>
+          <a class="nav__link" href="./download.html">Завантажити</a>
+        </nav>
+        <a class="nav__link" href="./cabinet.html">Кабінет</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="card page">
+        <div class="small">ФОРУМ</div>
+        <div class="page__title">Форум GTAINE</div>
+        <p class="p page__lead">https://gtaine-forum.qniks.me/index.php</p>
+
+        <div class="hero__actions" style="margin-top:16px">
+          <a class="btn btn--accent" href="#" onclick="alert('Додай посилання на форум у цей файл.');return false;">Перейти на форум</a>
+          <a class="btn" href="./">На головну</a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div>© 2026 GTAINE</div>
+          <div class="footer__links">
+            <a href="./">Головна</a>
+            <a href="./wiki/">Wiki</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
 </body>
 </html>
