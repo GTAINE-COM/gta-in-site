@@ -1,251 +1,212 @@
-/* ==============================
-   GTAINE CLEAN STABLE STYLE
-   ============================== */
+/* =========================
+   GTAINE STABLE VERSION
+   ========================= */
 
-/* ----- RESET ----- */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg,#061529,#0a1f3d);
-  color:#ffffff;
-  line-height:1.5;
-  overflow-x:hidden;
+  background: linear-gradient(135deg, #061529, #0a1f3d);
+  color: #ffffff;
+  line-height: 1.5;
 }
 
-/* ----- CONTAINER ----- */
-.container{
-  width:100%;
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 20px;
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* ----- SECTIONS ----- */
-section{
-  padding:80px 0;
+/* ================= HEADER ================= */
+
+.topbar {
+  padding: 18px 0;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* ----- HEADINGS ----- */
-h1,h2,h3{
-  font-weight:700;
+.topbar_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h2{
-  font-size:30px;
-  text-align:center;
-  margin-bottom:40px;
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
 }
 
-/* =========================
-   HEADER / HERO
-   ========================= */
-
-.hero{
-  padding:100px 20px 80px;
-  text-align:center;
+.brand_badge {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
 }
 
-.hero h1{
-  font-size:42px;
-  margin-bottom:15px;
+.brand_title {
+  font-weight: 700;
 }
 
-.hero p{
-  font-size:16px;
-  opacity:0.85;
-  margin-bottom:25px;
+.brand_sub {
+  font-size: 12px;
+  opacity: 0.7;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* ================= NAV ================= */
 
-.btn{
-  display:inline-block;
-  padding:12px 22px;
-  border-radius:10px;
-  font-weight:600;
-  font-size:14px;
-  cursor:pointer;
-  transition:0.25s;
-  text-decoration:none;
+.navwrap {
+  display: flex;
+  gap: 14px;
 }
 
-.btn-primary{
-  background:#ff7a00;
-  color:#fff;
+.navwrap a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.2s;
 }
 
-.btn-primary:hover{
-  background:#ff8c1a;
-  transform:translateY(-2px);
+.navwrap a:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-.btn-outline{
-  border:1px solid rgba(255,255,255,0.3);
-  color:#fff;
+/* ================= HERO ================= */
+
+.hero {
+  padding: 80px 0;
 }
 
-.btn-outline:hover{
-  background:rgba(255,255,255,0.1);
+.hero_grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 30px;
+  align-items: center;
 }
 
-/* =========================
-   GOV SECTION
-   ========================= */
-
-.gov-section{
-  padding-top:60px;
+.hero_box {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
-.gov-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  max-width:1100px;
-  margin:0 auto;
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
 }
 
-.gov-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.12);
-  border-radius:16px;
-  padding:25px;
-  backdrop-filter:blur(8px);
-  transition:0.25s;
+.hero p {
+  opacity: 0.8;
+  margin-bottom: 25px;
 }
 
-.gov-card:hover{
-  transform:translateY(-5px);
-  border-color:#008cff;
-  box-shadow:0 12px 30px rgba(0,0,0,0.3);
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  transition: 0.25s;
 }
 
-.gov-card h3{
-  font-size:18px;
-  margin-bottom:10px;
+.btn-primary {
+  background: #ff7a00;
+  color: white;
 }
 
-.gov-card p{
-  font-size:14px;
-  opacity:0.8;
+.btn-primary:hover {
+  background: #ff8c1a;
+  transform: translateY(-2px);
 }
 
-/* =========================
-   STATS SECTION
-   ========================= */
-
-.stats-section{
-  padding-top:60px;
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
 }
 
-.stats-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-  max-width:900px;
-  margin:0 auto;
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
 }
 
-.stat-card{
-  background:rgba(255,255,255,0.06);
-  border-radius:14px;
-  padding:25px;
-  text-align:center;
-  border:1px solid rgba(255,255,255,0.1);
-  transition:0.25s;
+/* ================= CARDS ================= */
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.25s;
 }
 
-.stat-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-.stat-number{
-  font-size:22px;
-  font-weight:700;
-  color:#4aa3ff;
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  gap: 20px;
 }
 
-.stat-label{
-  font-size:13px;
-  opacity:0.8;
-  margin-top:6px;
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-/* =========================
-   JOBS SECTION
-   ========================= */
+/* ================= SECTION ================= */
 
-.jobs-section{
-  padding-top:60px;
+section {
+  padding: 60px 0;
 }
 
-.jobs-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-  max-width:1100px;
-  margin:0 auto;
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
 }
 
-.job-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:14px;
-  padding:20px;
-  transition:0.25s;
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 40px 0;
+  text-align: center;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.job-card:hover{
-  transform:translateY(-5px);
-  border-color:#ffc400;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
+/* ================= RESPONSIVE ================= */
 
-.job-card h3{
-  font-size:15px;
-  margin-bottom:8px;
-  color:#ffc400;
-}
+@media (max-width: 900px) {
 
-.job-card p{
-  font-size:13px;
-  opacity:0.8;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  font-size:13px;
-  opacity:0.7;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media(max-width:768px){
-
-  .hero h1{
-    font-size:30px;
+  .hero_grid {
+    grid-template-columns: 1fr;
   }
 
-  h2{
-    font-size:24px;
+  .hero h1 {
+    font-size: 32px;
   }
 
-  section{
-    padding:60px 0;
+  .topbar_inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navwrap {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
 }
