@@ -1,12 +1,209 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Рулетка — тест</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рулетка — GTAINE</title>
+  <meta name="description" content="Ігрова рулетка GTAINE" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
 </head>
-<body style="font-family: Arial; padding: 40px;">
-  <h1>Рулетка працює ✅</h1>
-  <p>Якщо ти це бачиш — файл норм, проблема була в коді/збереженні.</p>
+
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <img class="brand__badge" src="assets/logo.png" alt="GTAINE">
+        <span class="brand__name">
+          <span class="brand__title">GTAINE</span>
+          <span class="brand__sub">Український RP-проект</span>
+        </span>
+      </a>
+
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link" href="./">Головна</a>
+          <a class="nav__link" href="./forum.html">Форум</a>
+          <a class="nav__link" href="./wiki/">Вікі</a>
+          <a class="nav__link is-active" href="./roulette.html">Рулетка</a>
+          <a class="nav__link" href="./giveaway.html">Розіграш</a>
+          <a class="nav__link" href="./download.html">Завантажити</a>
+        </nav>
+
+        <a class="btn btn--ghost" href="./cabinet.html" id="cabBtn">Кабінет</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="page">
+    <div class="container">
+      <section class="hero hero--tight">
+        <div class="hero__card">
+          <div class="hero__kicker">GTAINE • ГРА</div>
+          <h1 class="hero__title">Ігрова рулетка</h1>
+          <p class="hero__text">
+            Вибирай ставку, крути — і отримуй приз. Поки що це клієнтська версія (працює в браузері).
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div class="card__title">Баланс</div>
+              <div class="balance">
+                <div class="balance__num" id="balance">1000</div>
+                <div class="balance__sub">GTAINE coins</div>
+              </div>
+
+              <div class="row">
+                <label class="field">
+                  <span class="field__label">Ставка</span>
+                  <input class="field__input" id="bet" type="number" min="10" step="10" value="100">
+                </label>
+
+                <button class="btn btn--primary" id="spinBtn">Крутити</button>
+              </div>
+
+              <div class="row row--small">
+                <button class="btn btn--ghost" id="resetBtn">Скинути баланс</button>
+                <button class="btn btn--ghost" id="addBtn">+500</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__title">Колесо</div>
+
+              <div class="wheel">
+                <div class="wheel__ring" id="wheel">
+                  <div class="wheel__center" id="wheelText">ГОТОВИЙ?</div>
+                </div>
+                <div class="wheel__pointer"></div>
+              </div>
+
+              <div class="result" id="result">Натисни “Крутити”</div>
+
+              <div class="prizes">
+                <div class="prize"><span class="dot dot--win"></span> x2 (подвоєння ставки)</div>
+                <div class="prize"><span class="dot dot--mid"></span> x1.5</div>
+                <div class="prize"><span class="dot dot--mid"></span> +100</div>
+                <div class="prize"><span class="dot dot--lose"></span> 0 (програш)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            ⚠️ Це демо. Щоб зробити “як в грі” по-справжньому (серверна рулетка), треба бекенд або API з вашого лаунчера.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // --- Кабінет кнопка ---
+    const cabBtn = document.getElementById('cabBtn');
+    const user = JSON.parse(localStorage.getItem('gtaine_user') || 'null');
+    if (user?.nick) cabBtn.textContent = user.nick;
+
+    // --- Рулетка логіка ---
+    const STORAGE_KEY = 'gtaine_balance';
+    const balanceEl = document.getElementById('balance');
+    const betEl = document.getElementById('bet');
+    const spinBtn = document.getElementById('spinBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const addBtn = document.getElementById('addBtn');
+    const wheel = document.getElementById('wheel');
+    const wheelText = document.getElementById('wheelText');
+    const resultEl = document.getElementById('result');
+
+    function getBalance(){
+      const v = Number(localStorage.getItem(STORAGE_KEY));
+      return Number.isFinite(v) && v > 0 ? v : 1000;
+    }
+    function setBalance(v){
+      localStorage.setItem(STORAGE_KEY, String(v));
+      balanceEl.textContent = v;
+    }
+    setBalance(getBalance());
+
+    const outcomes = [
+      { label: "x2", type:"mul", value: 2 },
+      { label: "0",  type:"lose", value: 0 },
+      { label: "+100", type:"add", value: 100 },
+      { label: "x1.5", type:"mul", value: 1.5 },
+      { label: "0",  type:"lose", value: 0 },
+      { label: "+100", type:"add", value: 100 },
+      { label: "x2", type:"mul", value: 2 },
+      { label: "0",  type:"lose", value: 0 },
+    ];
+
+    let spinning = false;
+
+    function randIndex(){
+      return Math.floor(Math.random()*outcomes.length);
+    }
+
+    function applyOutcome(bet, out){
+      if(out.type === "lose") return 0;
+      if(out.type === "add") return bet + out.value;
+      if(out.type === "mul") return Math.round(bet * out.value);
+      return 0;
+    }
+
+    function showResult(text, good){
+      resultEl.textContent = text;
+      resultEl.classList.toggle('result--good', !!good);
+      resultEl.classList.toggle('result--bad', !good);
+    }
+
+    spinBtn.addEventListener('click', () => {
+      if(spinning) return;
+
+      const bet = Math.max(10, Number(betEl.value || 0));
+      let bal = getBalance();
+
+      if(bet > bal){
+        showResult("Немає грошей на ставку 😅", false);
+        return;
+      }
+
+      spinning = true;
+      spinBtn.disabled = true;
+
+      const pick = randIndex();
+      const out = outcomes[pick];
+
+      // Анімація колеса
+      const turns = 6 + Math.random()*2;
+      const degPer = 360 / outcomes.length;
+      const targetDeg = 360*turns + (pick * degPer) + (degPer/2);
+
+      wheel.style.setProperty('--spin', `${targetDeg}deg`);
+      wheel.classList.add('wheel__ring--spin');
+      wheelText.textContent = "КРУТИТЬСЯ…";
+
+      setTimeout(() => {
+        // списуємо ставку
+        bal -= bet;
+        // виграш
+        const win = applyOutcome(bet, out);
+        bal += win;
+
+        setBalance(bal);
+
+        wheel.classList.remove('wheel__ring--spin');
+        wheelText.textContent = out.label;
+
+        const good = win > 0;
+        showResult(good ? `Виграш: +${win} ✅` : `Програш 😭`, good);
+
+        spinning = false;
+        spinBtn.disabled = false;
+      }, 1400);
+    });
+
+    resetBtn.addEventListener('click', () => setBalance(1000));
+    addBtn.addEventListener('click', () => setBalance(getBalance()+500));
+  </script>
 </body>
 </html>
