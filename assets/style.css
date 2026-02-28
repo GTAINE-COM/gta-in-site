@@ -164,3 +164,84 @@ a{color:inherit;text-decoration:none}
   .hero__left{padding:20px}
   .hero__right{padding:16px}
 }
+/* ===============================
+   ДЕРЖАВНІ ОРГАНІЗАЦІЇ
+================================ */
+
+.org-section {
+  padding: 100px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,15,25,0) 0%,
+    rgba(15,25,45,0.6) 50%,
+    rgba(10,15,25,0) 100%
+  );
+}
+
+.org-section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.org-card {
+  position: relative;
+  padding: 35px 30px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* ГЛОУ ЕФЕКТ */
+.org-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(43,108,255,0.25) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.org-card:hover::before {
+  opacity: 1;
+}
+
+.org-card:hover {
+  transform: translateY(-8px);
+  border-color: #2b6cff;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.org-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.org-card p {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  line-height: 1.6;
+}
