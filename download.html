@@ -5,62 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Завантажити — GTAINE</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
 </head>
 <body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="./">
+        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
+        <span class="brand__name">
+          <span class="brand__title">GTAINE</span>
+          <span class="brand__sub">Український RP-проект</span>
+        </span>
+      </a>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-    <a class="brand" href="./">
-      <span class="brand__badge">GI</span>
-      <span class="brand__name">
-        <span class="brand__title">GTAINE</span>
-        <span class="brand__sub">Український RP-проект</span>
-      </span>
-    </a>
+      <div class="navwrap">
+        <nav class="nav">
+          <a class="nav__link" href="./">Головна</a>
+          <a class="nav__link" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
+          <a class="nav__link" href="./wiki/">Wiki</a>
+          <a class="nav__link" href="./giveaway.html">Розіграш</a>
+          <a class="nav__link is-active" href="./download.html">Завантажити</a>
+        </nav>
 
-    <nav class="nav">
-      <a class="nav__link" href="./">Головна</a>
-      <a class="nav__link" href="./forum.html">Форум</a>
-      <a class="nav__link" href="./wiki/">Вікі</a>
-      <a class="nav__link" href="./giveaway.html">Розіграш</a>
-      <a class="nav__link is-active" href="./download.html">Завантажити</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero hero--home">
-  <div class="container hero__grid">
-    <div class="glass">
-      <div class="kicker">ЗАВАНТАЖЕННЯ</div>
-      <h1>Лаунчер GTAINE</h1>
-      <p class="lead">Натисни кнопку нижче та завантаж лаунчер.</p>
-
-      <div class="actions">
-        <a class="btn btn--primary" href="https://cdn.discordapp.com/attachments/1470775138197835911/1472608533781680373/gtaine-launcher.exe?ex=69a3abd2&is=69a25a52&hm=8bf2eafb012f485a8ff42927e32f3afed7b20f5ec46ac13804841cea294e2c3c&">
-          Завантажити .exe
-        </a>
-        <a class="btn btn--ghost" href="./wiki/">Інструкція у Вікі</a>
+        <a class="btn btn--ghost" href="./cabinet.html">Кабінет</a>
+        <div class="userpill">GI</div>
       </div>
     </div>
+  </header>
 
-    <aside class="side">
-      <div class="news">
-        <b>Порада</b>
-        <div class="n">• Запускай лаунчер від імені адміністратора (якщо треба).</div>
-        <div class="n">• Дозволь доступ у брандмауері Windows.</div>
-      </div>
-    </aside>
-  </div>
-</section>
+  <main class="hero">
+    <div class="container hero__grid">
+      <section class="card hero__card">
+        <div class="kicker">GTAINE • DOWNLOAD</div>
+        <h1 class="h1">Завантаження лаунчера</h1>
+        <p class="lead">Натисни кнопку нижче — файл почне завантаження.</p>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div>© 2026 GTAINE</div>
-    <div class="footer__links">
-      <a href="./">Головна</a><span>•</span><a href="./wiki/">Вікі</a>
+        <div class="btnrow">
+          <a class="btn btn--accent"
+             href="https://cdn.discordapp.com/attachments/1470775138197835911/1472608533781680373/gtaine-launcher.exe?ex=69a3abd2&is=69a25a52&hm=8bf2eafb012f485a8ff42927e32f3afed7b20f5ec46ac13804841cea294e2c3c&"
+             target="_blank" rel="noopener">
+            Завантажити gtaine-launcher.exe
+          </a>
+          <a class="btn" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Перейти на форум</a>
+        </div>
+
+        <div style="margin-top:14px; color:rgba(255,255,255,.70); font-size:13px;">
+          Якщо браузер блокує завантаження — підтверди “Keep / Зберегти”.  
+          Після встановлення: запускаєш лаунчер → заходиш на сервер.
+        </div>
+      </section>
+
+      <aside class="card announce">
+        <h3>Поради</h3>
+        <ul>
+          <li>Краще запускати від адміністратора (якщо треба).</li>
+          <li>Антивірус може питати підтвердження.</li>
+          <li>Проблеми? Пиши на форум.</li>
+        </ul>
+      </aside>
     </div>
-  </div>
-</footer>
-
+  </main>
 </body>
 </html>
