@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="./">
@@ -23,135 +24,132 @@
       <div class="navwrap">
         <nav class="nav">
           <a class="nav__link is-active" href="./">Головна</a>
-          <a class="nav__link" href="./forum.html">Форум</a>
+          <a class="nav__link" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
           <a class="nav__link" href="./wiki/">Wiki</a>
           <a class="nav__link" href="./giveaway.html">Розіграш</a>
           <a class="nav__link" href="./download.html">Завантажити</a>
         </nav>
-        <a class="nav__link" href="./cabinet.html">Кабінет</a>
-        <span class="pill"><span class="pill__dot"></span>GI</span>
+
+        <a class="btn btn--ghost" href="./cabinet.html">Кабінет</a>
+        <div class="userpill" title="Профіль">GI</div>
       </div>
     </div>
   </header>
 
-  <main class="main">
-    <div class="container">
+  <!-- HERO -->
+  <main class="hero">
+    <div class="container hero__grid">
+      <section class="card hero__card">
+        <div class="kicker">GTAINE • ОФІЦІЙНО</div>
+        <h1 class="h1">Український RP-світ</h1>
+        <p class="lead">
+          Завантажуй лаунчер — залітай у гру. Сайт, wiki та комунікація — тільки українською.
+        </p>
 
-      <section class="hero">
-        <div class="card hero__left">
-          <div class="small">GTAINE • ОФІЦІЙНО</div>
-          <h1 class="h1 hero__title">Український RP-світ</h1>
-          <p class="p hero__subtitle">
-            Завантажуй лаунчер — залітай у гру. Сайт, wiki та комунікація — тільки українською.
-          </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--accent" href="./download.html">Завантажити лаунчер</a>
-            <a class="btn" href="./wiki/">Перейти у Wiki</a>
-            <a class="btn" href="./forum.html">Форум</a>
-          </div>
+        <div class="btnrow">
+          <a class="btn btn--accent"
+             href="https://cdn.discordapp.com/attachments/1470775138197835911/1472608533781680373/gtaine-launcher.exe?ex=69a3abd2&is=69a25a52&hm=8bf2eafb012f485a8ff42927e32f3afed7b20f5ec46ac13804841cea294e2c3c&"
+             target="_blank" rel="noopener">
+            Завантажити лаунчер
+          </a>
+          <a class="btn" href="./wiki/">Перейти у Wiki</a>
+          <a class="btn" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
         </div>
 
-        <div class="card hero__right">
-          <div class="statsRow">
-            <div class="stat">
-              <div class="stat__left"><span class="stat__icon">🟢</span><span class="stat__label">Онлайн</span></div>
-              <div class="stat__value">0</div>
-            </div>
-            <div class="stat">
-              <div class="stat__left"><span class="stat__icon">🎁</span><span class="stat__label">Розіграш</span></div>
-              <div class="stat__value">Активний</div>
-            </div>
-            <div class="stat">
-              <div class="stat__left"><span class="stat__icon">🛠️</span><span class="stat__label">Роботи</span></div>
-              <div class="stat__value">12+</div>
-            </div>
-            <div class="stat">
-              <div class="stat__left"><span class="stat__icon">🏛️</span><span class="stat__label">Орг</span></div>
-              <div class="stat__value">4+</div>
-            </div>
-          </div>
-
-          <div class="card soft" style="padding:16px">
-            <div style="font-weight:1000;margin-bottom:10px">Оголошення</div>
-            <ul style="color:rgba(255,255,255,.78);line-height:1.55;padding-left:18px">
-              <li>Набір у державні організації</li>
-              <li>Оновлення сайту</li>
-              <li>Розіграш у Discord</li>
-            </ul>
-          </div>
+        <div class="stats">
+          <div class="stat"><b>1 248</b><span>Гравців онлайн (приклад)</span></div>
+          <div class="stat"><b>25 000+</b><span>Зареєстрованих</span></div>
+          <div class="stat"><b>12+</b><span>Робіт на сервері</span></div>
+          <div class="stat"><b>24/7</b><span>Працює сервер</span></div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section__title">Державні організації</div>
-        <div class="grid org">
-          <div class="tile">
-            <div class="tile__title">Національна поліція</div>
-            <div class="tile__desc">Патруль, розшук, порядок у місті.</div>
+      <aside class="rightcol">
+        <div class="card card--soft pills">
+          <div class="pill">
+            <div class="pill__left"><span class="dot"></span> Онлайн</div>
+            <div class="pill__val">0</div>
           </div>
-          <div class="tile">
-            <div class="tile__title">СБУ</div>
-            <div class="tile__desc">Контррозвідка та державна безпека.</div>
+          <div class="pill">
+            <div class="pill__left">🎁 Розіграш</div>
+            <div class="pill__val">Активний</div>
           </div>
-          <div class="tile">
-            <div class="tile__title">Медична служба</div>
-            <div class="tile__desc">Порятунок життя та екстрена допомога.</div>
+          <div class="pill">
+            <div class="pill__left">🛠️ Роботи</div>
+            <div class="pill__val">12+</div>
           </div>
-          <div class="tile">
-            <div class="tile__title">ЗСУ</div>
-            <div class="tile__desc">Захист держави та стратегічна служба.</div>
-          </div>
-          <div class="tile">
-            <div class="tile__title">ДСНС</div>
-            <div class="tile__desc">Рятувальні операції, виклики та пожежі.</div>
-          </div>
-          <div class="tile">
-            <div class="tile__title">ДКВС</div>
-            <div class="tile__desc">Утримання засуджених та виконання покарань.</div>
-          </div>
-          <div class="tile">
-            <div class="tile__title">НПУ (підрозділи)</div>
-            <div class="tile__desc">Спецпідрозділи та операції.</div>
-          </div>
-          <div class="tile">
-            <div class="tile__title">МОЗ</div>
-            <div class="tile__desc">Організація медичних процесів.</div>
+          <div class="pill">
+            <div class="pill__left">🏛️ Орг</div>
+            <div class="pill__val">4+</div>
           </div>
         </div>
-      </section>
 
-      <section class="section">
-        <div class="section__title">Роботи</div>
-        <div class="grid jobs">
+        <div class="card announce">
+          <h3>Оголошення</h3>
+          <ul>
+            <li>Набір у державні організації</li>
+            <li>Оновлення сайту</li>
+            <li>Розіграш у Discord</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ORG -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Державні організації</h2>
+        <div class="grid grid--org">
+          <div class="tile"><div class="tile__title">ЗМІ</div><div class="tile__desc">Новини, оголошення та інтерв’ю.</div></div>
+          <div class="tile"><div class="tile__title">СБУ</div><div class="tile__desc">Контррозвідка та держбезпека.</div></div>
+          <div class="tile"><div class="tile__title">ВРУ</div><div class="tile__desc">Закони та державні рішення.</div></div>
+          <div class="tile"><div class="tile__title">ЗСУ</div><div class="tile__desc">Оборона держави та військова служба.</div></div>
+
+          <div class="tile"><div class="tile__title">ДСНС</div><div class="tile__desc">Рятувальні операції та допомога.</div></div>
+          <div class="tile"><div class="tile__title">ДКВС</div><div class="tile__desc">Утримання засуджених та виконання покарань.</div></div>
+          <div class="tile"><div class="tile__title">Укрзалізниця</div><div class="tile__desc">Перевезення, маршрути та інфраструктура.</div></div>
+          <div class="tile"><div class="tile__title">НПУ</div><div class="tile__desc">Охорона порядку та боротьба зі злочинністю.</div></div>
+
+          <div class="tile"><div class="tile__title">МОЗ</div><div class="tile__desc">Служби здоров’я та медична допомога.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOBS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Роботи</h2>
+        <div class="grid grid--jobs">
           <div class="tile"><div class="tile__title">Кур’єр</div><div class="tile__desc">Доставка посилок по місту.</div></div>
-          <div class="tile"><div class="tile__title">Таксист</div><div class="tile__desc">Перевезення гравців по мапі.</div></div>
-          <div class="tile"><div class="tile__title">Далекобійник</div><div class="tile__desc">Рейси між містами, вантажі.</div></div>
+          <div class="tile"><div class="tile__title">Таксист</div><div class="tile__desc">Перевезення пасажирів.</div></div>
+          <div class="tile"><div class="tile__title">Далекобійник</div><div class="tile__desc">Великі маршрути та вантажі.</div></div>
           <div class="tile"><div class="tile__title">Шахтар</div><div class="tile__desc">Видобуток ресурсів.</div></div>
+
           <div class="tile"><div class="tile__title">Механік</div><div class="tile__desc">Ремонт транспорту.</div></div>
-          <div class="tile"><div class="tile__title">Фермер</div><div class="tile__desc">Вирощування продукції.</div></div>
-          <div class="tile"><div class="tile__title">Рибалка</div><div class="tile__desc">Лови рибу та продавай.</div></div>
+          <div class="tile"><div class="tile__title">Фермер</div><div class="tile__desc">Вирощування та продаж.</div></div>
+          <div class="tile"><div class="tile__title">Рибалка</div><div class="tile__desc">Ловля риби та продаж.</div></div>
           <div class="tile"><div class="tile__title">Будівельник</div><div class="tile__desc">Робота на будівництві.</div></div>
+
           <div class="tile"><div class="tile__title">Інкасатор</div><div class="tile__desc">Перевезення грошей.</div></div>
           <div class="tile"><div class="tile__title">Евакуатор</div><div class="tile__desc">Евакуація транспорту.</div></div>
-          <div class="tile"><div class="tile__title">Працівник аеропорту</div><div class="tile__desc">Обслуговування авіазони.</div></div>
-          <div class="tile"><div class="tile__title">Водій автобуса</div><div class="tile__desc">Міські маршрути пасажирів.</div></div>
-        </div>
-      </section>
+          <div class="tile"><div class="tile__title">Працівник аеропорту</div><div class="tile__desc">Обслуговування рейсів.</div></div>
+          <div class="tile"><div class="tile__title">Водій автобуса</div><div class="tile__desc">Міські маршрути.</div></div>
 
-      <footer class="footer">
-        <div class="container footer__inner">
-          <div>© 2026 GTAINE</div>
-          <div class="footer__links">
-            <a href="./forum.html">Форум</a>
-            <a href="./wiki/">Wiki</a>
-            <a href="./giveaway.html">Розіграш</a>
-            <a href="./download.html">Завантажити</a>
-          </div>
+          <div class="tile"><div class="tile__title">Автоугонщик</div><div class="tile__desc">Нелегальні завдання (як RP-роль).</div></div>
         </div>
-      </footer>
+      </div>
+    </section>
 
-    </div>
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>© 2026 GTAINE</div>
+        <div style="display:flex; gap:12px;">
+          <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
+          <a href="./wiki/">Wiki</a>
+          <a href="./giveaway.html">Розіграш</a>
+        </div>
+      </div>
+    </footer>
   </main>
 </body>
 </html>
