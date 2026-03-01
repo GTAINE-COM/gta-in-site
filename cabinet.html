@@ -1,72 +1,175 @@
-<!doctype html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Кабінет — GTAINE</title>
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
-</head>
+<!-- LOGIN VIEW -->
+<div id="loginView" style="max-width:420px;margin:30px auto;display:none;">
+  <h2 style="margin-bottom:10px;">Вхід у кабінет</h2>
 
-<body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="./">
-        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
-        <span class="brand__name">
-          <span class="brand__title">GTAINE</span>
-          <span class="brand__sub">Український RP-проект</span>
-        </span>
-      </a>
+  <label style="display:block;margin:10px 0 6px;">Email</label>
+  <input id="email" type="email" placeholder="email@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid #444;background:#0b1220;color:#fff;">
 
-      <div class="navwrap">
-        <nav class="nav">
-          <a class="nav__link" href="./">Головна</a>
-          <a class="nav__link" href="./forum.html">Форум</a>
-          <a class="nav__link" href="./wiki/">Wiki</a>
-          <a class="nav__link" href="./giveaway.html">Розіграш</a>
-          <a class="nav__link" href="./download.html">Завантажити</a>
-        </nav>
-        <a class="nav__link is-active" href="./cabinet.html">Кабінет</a>
-      </div>
+  <label style="display:block;margin:10px 0 6px;">Пароль</label>
+  <input id="password" type="password" placeholder="••••••••" style="width:100%;padding:10px;border-radius:10px;border:1px solid #444;background:#0b1220;color:#fff;">
+
+  <button id="loginBtn" style="margin-top:14px;width:100%;padding:10px;border-radius:12px;border:0;background:#ff8a00;color:#000;font-weight:700;cursor:pointer;">
+    Увійти
+  </button>
+
+  <div id="loginError" style="margin-top:10px;color:#ff6b6b;display:none;"></div>
+</div>
+
+<!-- APP VIEW -->
+<div id="appView" style="display:none;">
+  <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin:10px 0 20px;">
+    <div>
+      <div style="opacity:.8;font-size:14px;">Ви увійшли як</div>
+      <div id="userName" style="font-size:20px;font-weight:800;">—</div>
+      <div id="userEmail" style="opacity:.8;">—</div>
     </div>
-  </header>
 
-  <main class="main">
-    <div class="container">
-      <div class="card page">
-        <div class="page__head">
-          <div>
-            <div class="small">КАБІНЕТ</div>
-            <div class="page__title">Особистий кабінет</div>
-            <p class="p page__lead">Тут буде авторизація/профіль. Поки що заглушка.</p>
-            <div class="hero__actions" style="margin-top:16px">
-              <a class="btn btn--accent" href="./">На головну</a>
-              <a class="btn" href="./wiki/">До Wiki</a>
-            </div>
-          </div>
+    <button id="logoutBtn" style="padding:10px 14px;border-radius:12px;border:1px solid #444;background:transparent;color:#fff;cursor:pointer;">
+      Вийти
+    </button>
+  </div>
 
-          <div class="card soft" style="padding:16px;min-width:260px">
-            <div style="font-weight:1000;margin-bottom:10px">Що буде в кабінеті</div>
-            <ul style="color:rgba(255,255,255,.78);line-height:1.55;padding-left:18px">
-              <li>Профіль гравця</li>
-              <li>Статистика акаунта</li>
-              <li>Список Форбс</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.12);margin:20px 0;">
 
-      <footer class="footer">
-        <div class="container footer__inner">
-          <div>© 2026 GTAINE</div>
-          <div class="footer__links">
-            <a href="./">Головна</a>
-            <a href="./wiki/">Wiki</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </main>
-</body>
-</html>
+  <h3 style="margin:0 0 10px;">Форбс</h3>
+  <button id="loadForbesBtn" style="padding:10px 14px;border-radius:12px;border:0;background:#2dd4bf;color:#000;font-weight:700;cursor:pointer;">
+    Оновити список
+  </button>
+
+  <div id="forbesBox" style="margin-top:12px;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25);">
+    <div style="opacity:.8;">Натисни “Оновити список”.</div>
+  </div>
+
+  <hr style="border:0;border-top:1px solid rgba(255,255,255,.12);margin:20px 0;">
+
+  <h3 style="margin:0 0 10px;">Рулетка</h3>
+  <div style="opacity:.8;margin-bottom:8px;">(підключимо наступним кроком)</div>
+  <button disabled style="padding:10px 14px;border-radius:12px;border:1px solid #444;background:transparent;color:#888;">
+    Крутити рулетку (скоро)
+  </button>
+</div>
+
+<script>
+  const API_BASE = "https://gta-in-site.onrender.com";
+  const tokenKey = "gtaine_token";
+
+  const loginView = document.getElementById("loginView");
+  const appView = document.getElementById("appView");
+
+  const emailEl = document.getElementById("email");
+  const passEl = document.getElementById("password");
+  const loginBtn = document.getElementById("loginBtn");
+  const loginError = document.getElementById("loginError");
+
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+
+  const logoutBtn = document.getElementById("logoutBtn");
+  const loadForbesBtn = document.getElementById("loadForbesBtn");
+  const forbesBox = document.getElementById("forbesBox");
+
+  function showLogin() {
+    appView.style.display = "none";
+    loginView.style.display = "block";
+  }
+
+  function showApp() {
+    loginView.style.display = "none";
+    appView.style.display = "block";
+  }
+
+  function setError(msg) {
+    loginError.textContent = msg;
+    loginError.style.display = msg ? "block" : "none";
+  }
+
+  async function api(path, opts = {}) {
+    const token = localStorage.getItem(tokenKey);
+    const headers = Object.assign(
+      { "Content-Type": "application/json" },
+      opts.headers || {},
+      token ? { "Authorization": "Bearer " + token } : {}
+    );
+    const res = await fetch(API_BASE + path, { ...opts, headers });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const msg = data?.error || data?.message || ("HTTP " + res.status);
+      throw new Error(msg);
+    }
+    return data;
+  }
+
+  async function loadMe() {
+    const me = await api("/api/me");
+    userName.textContent = me?.name || me?.nickname || "Гравець";
+    userEmail.textContent = me?.email || "—";
+    showApp();
+  }
+
+  async function doLogin() {
+    setError("");
+    loginBtn.disabled = true;
+
+    try {
+      const email = emailEl.value.trim();
+      const password = passEl.value;
+
+      const r = await api("/api/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password })
+      });
+
+      // ожидаем { token: "..." }
+      localStorage.setItem(tokenKey, r.token);
+      await loadMe();
+    } catch (e) {
+      setError(e.message);
+      showLogin();
+    } finally {
+      loginBtn.disabled = false;
+    }
+  }
+
+  async function doLogout() {
+    localStorage.removeItem(tokenKey);
+    showLogin();
+  }
+
+  async function loadForbes() {
+    forbesBox.innerHTML = "<div style='opacity:.8;'>Завантаження...</div>";
+    try {
+      const data = await api("/api/forbes");
+      // ожидаем массив
+      const list = Array.isArray(data) ? data : (data.items || []);
+      if (!list.length) {
+        forbesBox.innerHTML = "<div style='opacity:.8;'>Поки пусто.</div>";
+        return;
+      }
+      forbesBox.innerHTML = list.map((p, i) => {
+        const name = p.name || p.nickname || ("Player " + (i+1));
+        const money = p.money ?? p.balance ?? p.cash ?? "-";
+        return `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);">
+          <div>${i+1}. ${name}</div><div style="font-weight:800;">${money}</div>
+        </div>`;
+      }).join("");
+    } catch (e) {
+      forbesBox.innerHTML = "<div style='color:#ff6b6b;'>Помилка: " + e.message + "</div>";
+    }
+  }
+
+  loginBtn.addEventListener("click", doLogin);
+  logoutBtn.addEventListener("click", doLogout);
+  loadForbesBtn.addEventListener("click", loadForbes);
+
+  // авто-логин если токен уже есть
+  (async () => {
+    const token = localStorage.getItem(tokenKey);
+    if (!token) return showLogin();
+    try {
+      await loadMe();
+    } catch {
+      localStorage.removeItem(tokenKey);
+      showLogin();
+    }
+  })();
+</script>
