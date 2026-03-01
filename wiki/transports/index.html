@@ -4,19 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Транспорт — GTAINE Wiki</title>
-  <meta name="description" content="Розділ Вікі GTAINE: транспорт, класи, ціни, вимоги та особливості." />
+  <meta name="description" content="Каталог транспорту GTAINE: усі авто з фото." />
 
+  <!-- Общие стили проекта -->
   <link rel="stylesheet" href="../../assets/style.css" />
   <link rel="stylesheet" href="../../assets/wiki.css" />
-  <link rel="icon" type="image/svg+xml" href="../../assets/gtaine-logo.svg" />
 </head>
 
 <body>
-
-  <!-- TOPBAR (как у тебя) -->
+  <!-- Верхняя панель (как везде на сайте) -->
   <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="../../">
+      <a class="brand" href="../">
         <span class="brand__badge">GI</span>
         <span class="brand__name">
           <span class="brand__title">GTAINE Wiki</span>
@@ -24,27 +23,21 @@
         </span>
       </a>
 
-      <div class="navwrap">
-        <nav class="nav">
-          <a class="nav__link" href="../../">Головна</a>
-          <a class="nav__link" href="../../forum.html" target="_blank" rel="noopener">Форум</a>
-          <a class="nav__link is-active" href="../">Вікі</a>
-          <a class="nav__link" href="../../giveaway.html">Розіграш</a>
+      <nav class="navwrap">
+        <a class="nav__link" href="../../index.html">Головна</a>
+        <a class="nav__link" href="../../forum.html" target="_blank" rel="noopener">Форум</a>
+        <a class="nav__link is-active" href="../">Вікі</a>
+        <a class="nav__link" href="../../giveaway.html">Розіграш</a>
+      </nav>
 
-          <!-- УБРАЛ "Завантажити" на этой странице (если хочешь убрать везде — надо убрать во всех html) -->
-          <!-- <a class="nav__link" href="../../download.html">Завантажити</a> -->
-        </nav>
-
-        <a class="btn" href="../../cabinet.html">Кабінет</a>
-      </div>
+      <a class="btn" href="../../cabinet.html">Кабінет</a>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main class="wiki">
     <div class="container">
 
-      <!-- crumbs -->
+      <!-- Крошки -->
       <div class="wiki__crumbs">
         <a href="../">Вікі</a>
         <span>›</span>
@@ -52,71 +45,71 @@
       </div>
 
       <div class="wiki__grid">
-
-        <!-- LEFT SIDEBAR (как у тебя) -->
+        <!-- Левое меню -->
         <aside class="wiki__side">
           <div class="wiki__side__title">Розділи</div>
 
-          <a class="wiki__side__link is-active" href="../transports/">🚗 Транспорт</a>
-          <a class="wiki__side__link" href="../jobs/">🧰 Роботи</a>
-          <a class="wiki__side__link" href="../orgs/">🏢 Організації</a>
-          <a class="wiki__side__link" href="../skins/">🎭 Скіни</a>
+          <a class="wiki__side__link is-active" href="./">🚗 Транспорт</a>
+          <a class="wiki__side__link" href="../jobs/">💼 Роботи</a>
+          <a class="wiki__side__link" href="../orgs/">🏛️ Організації</a>
+          <a class="wiki__side__link" href="../skins/">🧍 Скіни</a>
           <a class="wiki__side__link" href="../things/">🎒 Предмети</a>
-          <a class="wiki__side__link" href="../updates/">🧩 Оновлення</a>
+          <a class="wiki__side__link" href="../updates/">🛠️ Оновлення</a>
           <a class="wiki__side__link" href="../rules/">📌 Правила</a>
 
           <div class="wiki__side__hr"></div>
-          <div class="wiki__side__small">Порада: пошук по сторінці <b>Ctrl+F</b>.</div>
+          <div class="wiki__side__small">Порада: пошук по сторінці <b>Ctrl+F</b></div>
         </aside>
 
-        <!-- CONTENT -->
+        <!-- Контент -->
         <section class="wiki__main">
-
-          <!-- HEAD (как у тебя, но БЕЗ кнопки "Завантажити лаунчер") -->
           <div class="wiki__head">
             <div class="wiki__head__kicker">GTAINE • WIKI</div>
             <h1 class="wiki__head__title">Транспорт</h1>
-            <p class="wiki__head__desc">Список машин, класи, ціни, вимоги та особливості.</p>
+            <p class="wiki__head__desc">Усі авто сервера у вигляді фотокаталогу.</p>
 
             <div class="wiki__head__actions">
               <a class="btn btn--soft" href="../">← Назад у Вікі</a>
-              <!-- УДАЛЕНО: кнопка "Завантажити лаунчер" -->
             </div>
           </div>
 
-          <!-- NEW SOLID UI (динамика из cars.json) -->
-          <div class="wiki-wrap">
-            <div class="wiki-hero">
-              <div class="wiki-pagehead">
-                <h1>Транспорт</h1>
-                <div class="meta">Знайдено авто: <b id="carsCount">0</b></div>
-              </div>
-
-              <p>Використовуй пошук та фільтр, щоб швидко знайти авто.</p>
-
-              <div class="wiki-badges" style="margin-top:14px;">
-                <input id="carsSearch" class="wk-input" placeholder="Пошук авто (BMW, Audi...)">
-                <select id="carsClass" class="wk-input"></select>
-              </div>
+          <!-- Служебная панель (минимум) -->
+          <div class="carsbar">
+            <div class="carsbar__left">
+              <span class="pill">Фото-режим</span>
+              <span class="pill">Ліниве завантаження</span>
             </div>
-
-            <div id="carsGrid" class="cars-grid"></div>
+            <div class="carsbar__right">
+              <span class="muted">Всього авто:</span> <b id="carsCount">0</b>
+            </div>
           </div>
 
+          <!-- Сетка -->
+          <div id="carsGrid" class="cars-grid"></div>
+
+          <!-- Кнопка догрузки -->
+          <div class="cars-more">
+            <button id="loadMoreBtn" class="btn btn--accent">Завантажити ще</button>
+          </div>
         </section>
-
       </div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>© GTAINE • Wiki</div>
-      <div>Уся комунікація — українською.</div>
+      <div>© 2026 GTAINE • Wiki</div>
+      <div class="footer__links">
+        <a href="../../forum.html" target="_blank" rel="noopener">Форум</a>
+        <span>•</span>
+        <a href="../">Вікі</a>
+        <span>•</span>
+        <a href="../../cabinet.html">Кабінет</a>
+      </div>
     </div>
   </footer>
 
-  <!-- JS (ВАЖНО: перед </body>) -->
+  <!-- JS -->
   <script src="./cars.js"></script>
 </body>
 </html>
