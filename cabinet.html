@@ -337,23 +337,52 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="inner">
-      <div class="brand">
-        <div class="logo">G</div>
-        <div>
-          <b>GTAINE</b>
-          <div style="color:var(--muted); font-size:13px;">Особистий кабінет</div>
-        </div>
-      </div>
-
-      <div class="nav">
-        <div class="pill"><strong id="who">Гість</strong><span style="opacity:.65">•</span><span id="mail">—</span></div>
-        <div class="pill">🌍 <span>UA</span></div>
-        <button class="btnCab" onclick="goHome()">Головна</button>
+  <div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">G</div>
+      <div>
+        <div class="title">GTAINE</div>
+        <div class="subtitle">Особистий кабінет</div>
       </div>
     </div>
-  </div>
+
+    <nav class="menu">
+      <button class="item active" data-tab="main">Основна</button>
+      <button class="item" data-tab="property">Майно</button>
+      <button class="item" data-tab="rating">Рейтинг</button>
+      <button class="item" data-tab="roulette">Рулетка</button>
+      <button class="item danger" data-tab="logout">Вийти</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div class="hello">Привіт, Михайло 👋</div>
+      <div class="top-actions">
+        <span class="pill">player2@gtaine.ua</span>
+        <a class="btn" href="./index.html">Головна</a>
+      </div>
+    </header>
+
+    <!-- СТРАНИЦЫ -->
+    <section class="page active" id="page-main">
+      <!-- тут “Основна інформація” -->
+    </section>
+
+    <section class="page" id="page-property">
+      <!-- тут “Майно” -->
+    </section>
+
+    <section class="page" id="page-rating">
+      <!-- тут “Рейтинг/Форбс” -->
+    </section>
+
+    <section class="page" id="page-roulette">
+      <!-- тут “Рулетка” -->
+    </section>
+  </main>
+</div>
 
   <div class="wrap">
     <div class="grid">
