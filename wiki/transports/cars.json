@@ -1,0 +1,7 @@
+[
+  {"name":"Audi A4","class":"Економ","price":100,"where":"Автосалон","req":"—"},
+  {"name":"BMW 3 Series","class":"Економ","price":150,"where":"Автосалон","req":"—"},
+  {"name":"Toyota Camry","class":"Комфорт","price":250,"where":"Автосалон","req":"Рівень 2"},
+  {"name":"Mercedes E-Class","class":"Бізнес","price":450,"where":"Автосалон","req":"Рівень 5"},
+  {"name":"BMW 7 Series","class":"Преміум","price":700,"where":"VIP салон","req":"Донат/VIP"}
+]
