@@ -1,6 +1,0 @@
-# локально
-mkdir gtaine-api
-cd gtaine-api
-npm init -y
-npm i express cors jsonwebtoken bcrypt pg dotenv
-npm i -D nodemon
