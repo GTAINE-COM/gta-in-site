@@ -1,38 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Скіни — GTAINE Wiki</title>
-  <link rel="stylesheet" href="../../assets/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>GTAINE Wiki</title>
+
+<link rel="stylesheet" href="../../assets/style.css" />
+<link rel="stylesheet" href="../../assets/wiki.css" />
+<link rel="icon" type="image/png" href="../../assets/img/logo.png" />
 </head>
+
 <body>
 
 <header class="topbar">
   <div class="container topbar__inner">
-    <a class="brand" href="../../index.html">
-      <img class="brand__badge" src="../../assets/logo.png" alt="GTAINE">
-      <span class="brand__title">GTAINE Wiki</span>
+    <a class="brand" href="../../">
+      <span class="brand__badge">GI</span>
+      <span class="brand__name">
+        <span class="brand__title">GTAINE Wiki</span>
+        <span class="brand__sub">База знань сервера</span>
+      </span>
     </a>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Скіни</h1>
-    <p>Повний список доступних скінів на сервері.</p>
-  </div>
-</section>
+<main class="wiki">
+  <div class="container wiki__grid">
 
-<section class="container">
-  <div class="card">
-    <h2>Категорія: Цивільні</h2>
-    <ul>
-      <li>Скін №1</li>
-      <li>Скін №2</li>
-      <li>Скін №3</li>
-    </ul>
+    <!-- БОКОВОЕ МЕНЮ -->
+    <aside class="wiki__side">
+      <nav class="wiki__menu">
+        <a class="wiki__item" href="../">🏠 Головна Wiki</a>
+        <a class="wiki__item" href="../transports/">🚗 Транспорт</a>
+        <a class="wiki__item" href="../jobs/">💼 Роботи</a>
+        <a class="wiki__item" href="../orgs/">🏢 Організації</a>
+        <a class="wiki__item" href="../skins/">🧍 Скіни</a>
+        <a class="wiki__item" href="../things/">🎒 Предмети</a>
+        <a class="wiki__item" href="../rules/">📜 Правила</a>
+        <a class="wiki__item" href="../updates/">🛠 Оновлення</a>
+      </nav>
+    </aside>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <section class="wiki__content">
+
+      <h1 class="wiki__title">НАЗВА РОЗДІЛУ</h1>
+      <p class="wiki__desc">
+        Опис розділу. Тут буде інформація, списки, таблиці, транспорт, правила тощо.
+      </p>
+
+      <div class="wiki__card">
+        <p>
+          Тут буде контент цієї сторінки.
+        </p>
+      </div>
+
+    </section>
+
   </div>
-</section>
+</main>
 
 </body>
 </html>
