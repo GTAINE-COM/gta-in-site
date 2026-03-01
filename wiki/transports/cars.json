@@ -1,7 +1,5 @@
 [
-  {"name":"Audi A4","class":"Економ","price":100,"where":"Автосалон","req":"—"},
-  {"name":"BMW 3 Series","class":"Економ","price":150,"where":"Автосалон","req":"—"},
-  {"name":"Toyota Camry","class":"Комфорт","price":250,"where":"Автосалон","req":"Рівень 2"},
-  {"name":"Mercedes E-Class","class":"Бізнес","price":450,"where":"Автосалон","req":"Рівень 5"},
-  {"name":"BMW 7 Series","class":"Преміум","price":700,"where":"VIP салон","req":"Донат/VIP"}
+  { "name": "Audi 100", "img": "https://i.imgur.com/7bK0QGm.png" },
+  { "name": "BMW 7", "img": "https://i.imgur.com/6Zx2dJ3.png" },
+  { "name": "Lamborghini", "img": "https://i.imgur.com/4l6v5yS.png" }
 ]
