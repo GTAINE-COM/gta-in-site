@@ -4,784 +4,968 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Кабінет — GTAINE</title>
+
   <style>
     :root{
-      --bg:#070a12;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.045);
-      --stroke:rgba(255,255,255,.12);
-      --txt:#eaf0ff;
-      --muted:rgba(234,240,255,.65);
-      --accent:#ff6a00;
-      --accent2:#ff2e2e;
-      --blue:#00b3ff;
-      --vio:#9d00ff;
-      --radius:18px;
-      --shadow: 0 20px 80px rgba(0,0,0,.48);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; color:var(--txt);
-      background:
-        radial-gradient(900px 520px at 20% 10%, rgba(0,132,255,.20), transparent 55%),
-        radial-gradient(760px 460px at 82% 22%, rgba(255,106,0,.18), transparent 55%),
-        radial-gradient(900px 700px at 50% 100%, rgba(157,0,255,.14), transparent 60%),
-        var(--bg);
-    }
-    a{color:inherit; text-decoration:none}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(7,10,18,.78), rgba(7,10,18,.46));
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .topbar .inner{
-      max-width:1200px; margin:0 auto; padding:14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{display:flex; align-items:center; gap:12px;}
-    .logo{
-      width:46px;height:46px;border-radius:14px;
-      background:linear-gradient(135deg,#00b3ff,#0047ff);
-      box-shadow:0 0 22px rgba(0,179,255,.18);
-      display:grid; place-items:center; font-weight:900;
-    }
-    .brand b{letter-spacing:.6px}
-    .nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .pill{
-      padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-size:13px;
-      display:flex; gap:8px; align-items:center;
-    }
-    .pill strong{color:var(--txt); font-weight:800}
-    .btnCab{
-      padding:10px 14px; border-radius:14px; border:0; cursor:pointer;
-      color:#0b0d12; font-weight:900;
-      background:linear-gradient(90deg,var(--accent),var(--accent2));
-      box-shadow:0 14px 35px rgba(255,106,0,.22);
+      --bg0:#070A12;
+      --bg1:#0A0E1B;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.10);
+      --txt:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.62);
+      --muted2:rgba(255,255,255,.45);
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --r16:16px;
+      --r20:20px;
+      --r24:24px;
+
+      --blue:#2b7bff;
+      --yellow:#ffd45a;
+      --orange:#ff6a1a;
+      --red:#ff3b3b;
+
+      --gap:14px;
     }
 
-    .wrap{max-width:1200px; margin:18px auto; padding:0 18px;}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      color:var(--txt);
+      background:
+        radial-gradient(1100px 600px at 75% 10%, rgba(255,106,26,.20), transparent 55%),
+        radial-gradient(900px 500px at 15% 70%, rgba(43,123,255,.18), transparent 60%),
+        radial-gradient(800px 500px at 60% 80%, rgba(140,70,255,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    /* subtle dots */
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity:.25;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    button{ font:inherit; }
+
+    .app{
+      max-width: 1240px;
+      margin: 24px auto;
+      padding: 0 14px;
+    }
+
+    .shell{
+      display:grid;
+      grid-template-columns: 310px 1fr;
+      gap: var(--gap);
+      align-items:start;
+    }
+
+    /* ====== Sidebar ====== */
+    .sidebar{
+      position:sticky;
+      top: 18px;
+      border-radius: var(--r24);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border:1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .sideTop{
+      padding: 18px 18px 14px 18px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+    }
+    .logo{
+      width:44px; height:44px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(180deg, rgba(43,123,255,.35), rgba(255,212,90,.18));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      font-weight: 900;
+      letter-spacing:.4px;
+    }
+    .brandTitle{
+      font-weight: 900;
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .brandSub{
+      color: var(--muted);
+      font-size: 12.5px;
+      margin-top: 2px;
+    }
+
+    .serverCard{
+      margin: 0 18px 14px 18px;
+      padding: 14px;
+      border-radius: var(--r20);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+    .badgeNum{
+      width:42px; height:42px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(43,123,255,.16);
+      border:1px solid rgba(43,123,255,.35);
+      font-weight: 900;
+    }
+    .serverMeta small{
+      display:block;
+      color:var(--muted);
+      margin-top: 2px;
+      font-size: 12.5px;
+    }
+
+    .menu{
+      padding: 0 10px 14px 10px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .mItem{
+      width:100%;
+      text-align:left;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color:var(--txt);
+      border-radius: 18px;
+      padding: 12px 12px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .mItem:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+    }
+    .mItem.active{
+      background: linear-gradient(180deg, rgba(255,106,26,.18), rgba(255,255,255,.06));
+      border-color: rgba(255,106,26,.35);
+    }
+    .mIcon{
+      width:42px; height:42px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      flex: 0 0 auto;
+      font-size: 18px;
+    }
+    .mText b{ display:block; font-weight:900; }
+    .mText span{ display:block; color:var(--muted); font-size: 12.5px; margin-top: 2px; }
+    .mChevron{ margin-left:auto; color: var(--muted2); }
+
+    .mDanger{
+      background: rgba(255,59,59,.08);
+      border-color: rgba(255,59,59,.22);
+    }
+    .mDanger:hover{
+      background: rgba(255,59,59,.11);
+      border-color: rgba(255,59,59,.30);
+    }
+
+    /* ====== Main ====== */
+    .main{
+      border-radius: var(--r24);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border:1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .topbar{
+      padding: 14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+      gap: 10px;
+    }
+
+    .hello{
+      font-weight: 900;
+      letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 200px;
+    }
+    .hello small{
+      display:block;
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 2px;
+      font-size: 12.5px;
+    }
+
+    .actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .pillDot{
+      width:8px;height:8px;border-radius:999px;
+      background: rgba(35, 220, 120, .9);
+      box-shadow: 0 0 0 4px rgba(35,220,120,.12);
+    }
+
+    .btn{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--txt);
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight: 800;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(255,106,26,.85), rgba(255,106,26,.55));
+      border-color: rgba(255,106,26,.35);
+    }
+
+    .content{
+      padding: 16px;
+    }
+
     .grid{
-      display:grid; gap:16px;
-      grid-template-columns: 280px 1fr;
+      display:grid;
+      grid-template-columns: 1.35fr .9fr;
+      gap: var(--gap);
       align-items:start;
     }
 
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: var(--r24);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+      overflow:hidden;
     }
-
-    /* Sidebar */
-    .side{position:sticky; top:88px;}
-    .side .head{padding:16px 16px 12px;}
-    .serverBadge{
-      display:flex; gap:12px; align-items:center;
-      padding:12px; border-radius:16px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+    .cardHead{
+      padding: 14px 14px 10px 14px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
     }
-    .shield{
-      width:42px;height:42px;border-radius:14px;
-      background:linear-gradient(135deg, rgba(0,179,255,.25), rgba(0,71,255,.18));
-      border:1px solid rgba(0,179,255,.25);
-      display:grid; place-items:center; font-weight:900;
-    }
-    .serverBadge .t{line-height:1.2}
-    .serverBadge .t small{color:var(--muted)}
-    .menu{padding:10px 10px 14px; display:flex; flex-direction:column; gap:8px;}
-    .item{
-      padding:12px 12px; border-radius:14px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      color:var(--muted);
-      cursor:pointer;
-      user-select:none;
-    }
-    .item:hover{border-color: rgba(255,255,255,.16)}
-    .item.active{
-      color:var(--txt);
-      border-color: rgba(255,106,0,.50);
-      box-shadow: 0 0 0 4px rgba(255,106,0,.10);
-      background:linear-gradient(90deg, rgba(255,106,0,.18), rgba(255,46,46,.10));
-    }
-    .item .left{display:flex; gap:10px; align-items:center}
-    .ic{
-      width:34px;height:34px;border-radius:12px;
-      display:grid; place-items:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--txt);
-      font-weight:900;
-      flex:0 0 auto;
-    }
-    .logout{
-      margin-top:10px;
-      background:rgba(255,46,46,.10);
-      border:1px solid rgba(255,46,46,.25);
-      color:var(--txt);
-    }
-
-    /* Main */
-    .main .head{
-      padding:18px 18px 14px;
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-    }
-    .hello h1{
-      margin:0; font-size:22px; font-weight:900;
+    .cardTitle{
+      font-weight: 900;
       letter-spacing:.2px;
     }
-    .hello p{margin:6px 0 0; color:var(--muted)}
-    .chipRow{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .cardSub{
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 13px;
+      line-height:1.3;
+    }
+
+    .chipRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
     .chip{
-      padding:10px 12px; border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--muted);
-      font-size:13px;
-      display:flex; gap:8px; align-items:center;
-    }
-
-    .content{padding:0 18px 18px;}
-
-    .tiles{
-      display:grid; gap:14px;
-      grid-template-columns: 1.2fr 1fr 1fr;
-    }
-    @media (max-width: 1020px){
-      .grid{grid-template-columns:1fr}
-      .side{position:relative; top:auto}
-      .tiles{grid-template-columns:1fr}
-    }
-
-    .profile{
-      padding:16px;
-      display:flex; gap:14px; align-items:center;
-      background:rgba(255,255,255,.045);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-    }
-    .ava{
-      width:64px;height:64px;border-radius:18px;
-      background:linear-gradient(135deg, rgba(0,179,255,.22), rgba(157,0,255,.18));
       border:1px solid rgba(255,255,255,.12);
-      display:grid; place-items:center; font-weight:900;
-      box-shadow:0 0 20px rgba(157,0,255,.14);
-    }
-    .profile .meta{line-height:1.25}
-    .profile .meta b{font-size:16px}
-    .profile .meta small{color:var(--muted)}
-    .profile .right{
-      margin-left:auto; text-align:right; color:var(--muted); font-size:12px;
-    }
-
-    .statGrid{
-      display:grid; gap:14px;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top:14px;
-    }
-    @media (max-width: 920px){
-      .statGrid{grid-template-columns:1fr}
-    }
-
-    .stat{
-      padding:14px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.045);
-      position:relative;
-      overflow:hidden;
-      min-height:92px;
-    }
-    .stat:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(420px 220px at 20% 10%, rgba(0,179,255,.18), transparent 55%),
-                  radial-gradient(420px 220px at 80% 20%, rgba(255,106,0,.16), transparent 55%);
-      opacity:.8;
-      pointer-events:none;
-    }
-    .stat > *{position:relative}
-    .stat .k{color:var(--muted); font-size:13px}
-    .stat .v{margin-top:10px; font-size:22px; font-weight:900; letter-spacing:.2px}
-    .stat .badge{
-      position:absolute; right:12px; top:12px;
-      padding:8px 10px; border-radius:999px;
-      background:rgba(0,0,0,.25);
-      border:1px solid rgba(255,255,255,.12);
-      font-size:12px; color:var(--muted);
-      display:flex; gap:8px; align-items:center;
-    }
-
-    .sectionTitle{
-      margin:18px 0 10px;
-      font-size:16px; font-weight:900;
-      letter-spacing:.2px;
-    }
-
-    .table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      overflow:hidden;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-    }
-    .table th, .table td{
-      padding:12px 12px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      color:var(--muted);
-      font-size:13px;
-      text-align:left;
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
       white-space:nowrap;
     }
-    .table th{color:rgba(234,240,255,.85); font-weight:800; background:rgba(255,255,255,.04)}
-    .table tr:last-child td{border-bottom:none}
-    .table td strong{color:var(--txt)}
-    .rank{
-      display:inline-grid; place-items:center;
-      width:26px;height:26px;border-radius:10px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:var(--txt);
-      font-weight:900;
+    .chip b{ color: var(--txt); }
+
+    .profile{
+      padding: 0 14px 14px 14px;
+      display:flex;
+      gap: 12px;
+      align-items:center;
+    }
+    .avatar{
+      width:54px; height:54px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(43,123,255,.30), rgba(255,212,90,.18));
+      border:1px solid rgba(255,255,255,.14);
+      display:grid; place-items:center;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .pMeta b{ display:block; font-weight: 900; }
+    .pMeta span{ display:block; color:var(--muted); font-size: 12.5px; margin-top: 2px; }
+    .pRight{
+      margin-left:auto;
+      text-align:right;
+      color:var(--muted);
+      font-size: 12.5px;
+    }
+    .pRight b{ color: var(--txt); }
+
+    .stats{
+      padding: 0 14px 14px 14px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .stat{
+      border-radius: 20px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 12px;
+      min-height: 86px;
+    }
+    .statTop{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+    .statVal{
+      margin-top: 8px;
+      font-size: 24px;
+      font-weight: 1000;
+      letter-spacing:.2px;
+    }
+    .mono{ font-variant-numeric: tabular-nums; }
+
+    .panel{
+      padding: 14px;
+      display:grid;
+      gap: 10px;
+    }
+    .panel .btn{ width:100%; text-align:center; }
+
+    .note{
+      padding: 0 14px 14px 14px;
+      color: var(--muted2);
+      font-size: 12.5px;
+      line-height:1.35;
     }
 
-    /* Roulette demo */
-    .rouletteBox{
-      padding:16px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.045);
+    /* tabs */
+    .tab{ display:none; }
+    .tab.show{ display:block; }
+
+    .sectionTitle{
+      font-weight: 1000;
+      margin: 10px 0 12px 0;
+      letter-spacing:.2px;
     }
-    .rouletteHeader{
-      display:flex; justify-content:space-between; align-items:center; gap:12px;
-      margin-bottom:12px;
+
+    .list{
+      display:grid;
+      gap: 10px;
     }
-    .rouletteHeader .ttl{font-weight:900; letter-spacing:.2px}
-    .balance{
-      padding:10px 12px; border-radius:14px;
-      background:rgba(0,0,0,.25);
+    .row{
+      border-radius: 18px;
       border:1px solid rgba(255,255,255,.12);
-      color:rgba(234,240,255,.85);
-      font-size:13px;
-      display:flex; gap:10px; align-items:center;
+      background: rgba(255,255,255,.05);
+      padding: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
     }
-    .wheel{
-      position:relative;
-      height:88px;
-      border-radius:18px;
+    .row b{ font-weight: 1000; }
+    .row span{ color: var(--muted); font-size: 12.5px; }
+
+    /* small screen */
+    .mobileBar{
+      display:none;
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      margin-bottom: 12px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.28);
+      box-shadow: var(--shadow);
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(10,14,26,.55);
     }
-    .track{
-      display:flex; gap:10px;
-      position:absolute; left:12px; top:14px;
-      will-change:transform;
+    .mobileBarInner{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      padding: 10px;
     }
-    .prize{
-      width:140px; height:60px;
-      border-radius:16px;
+    .burger{
+      width: 44px; height: 44px;
+      border-radius: 14px;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      display:flex; align-items:center; justify-content:center;
-      color:rgba(234,240,255,.9);
-      font-weight:900;
-      flex:0 0 auto;
+      background: rgba(255,255,255,.06);
+      display:grid; place-items:center;
+      cursor:pointer;
+      font-size: 18px;
+      font-weight: 900;
     }
-    .pointer{
-      position:absolute; left:50%; transform:translateX(-50%);
-      top:6px;
-      width:0;height:0;
-      border-left:10px solid transparent;
-      border-right:10px solid transparent;
-      border-top:14px solid var(--accent);
-      filter: drop-shadow(0 6px 12px rgba(255,106,0,.35));
+    .mTitle{
+      min-width:0;
     }
-    .rouletteActions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:12px;
-    }
-    .btn{
-      padding:11px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06); color:var(--txt);
-      cursor:pointer; font-weight:900;
-    }
-    .btn.primary{
-      border:0;
-      color:#0b0d12;
-      background:linear-gradient(90deg,var(--accent),var(--accent2));
-      box-shadow: 0 14px 35px rgba(255,106,0,.22);
-    }
-    .note{margin-top:10px; color:var(--muted); font-size:12px; line-height:1.4}
+    .mTitle b{ display:block; font-weight:1000; }
+    .mTitle span{ display:block; color:var(--muted); font-size: 12.5px; margin-top:2px; }
 
-    /* Sections */
-    .section{display:none;}
-    .section.show{display:block;}
+    .overlay{
+      display:none;
+      position:fixed; inset:0;
+      background: rgba(0,0,0,.6);
+      z-index: 20;
+    }
+
+    .sidebar.drawer{
+      position:fixed;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      z-index: 30;
+      max-height: calc(100vh - 24px);
+      overflow:auto;
+      transform: translateY(-10px);
+      animation: pop .12s ease forwards;
+    }
+    @keyframes pop{ to{ transform: translateY(0); } }
+
+    @media (max-width: 1120px){
+      .grid{ grid-template-columns: 1fr; }
+      .stats{ grid-template-columns: repeat(2, minmax(160px, 1fr)); }
+    }
+    @media (max-width: 920px){
+      .shell{ grid-template-columns: 1fr; }
+      .sidebar{ display:none; }
+      .mobileBar{ display:block; }
+    }
+    @media (max-width: 520px){
+      .stats{ grid-template-columns: 1fr; }
+      .hello{ min-width:unset; }
+      .actions{ justify-content:flex-start; }
+    }
+
     footer{
-      margin:16px 0 0; padding:16px;
-      color:rgba(234,240,255,.55); font-size:12px;
+      padding: 14px;
       text-align:center;
+      color: rgba(255,255,255,.45);
+      font-size: 12.5px;
+      border-top:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="app">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="logo">G</div>
-      <div>
-        <div class="title">GTAINE</div>
-        <div class="subtitle">Особистий кабінет</div>
+
+    <!-- Mobile header -->
+    <div class="mobileBar" id="mobileBar">
+      <div class="mobileBarInner">
+        <div class="burger" id="burgerBtn">≡</div>
+        <div class="mTitle">
+          <b>GTAINE</b>
+          <span id="mUser">Кабінет</span>
+        </div>
+        <div style="margin-left:auto"></div>
+        <button class="btn primary" onclick="goHome()">Головна</button>
       </div>
     </div>
 
-    <nav class="menu">
-      <button class="item active" data-tab="main">Основна</button>
-      <button class="item" data-tab="property">Майно</button>
-      <button class="item" data-tab="rating">Рейтинг</button>
-      <button class="item" data-tab="roulette">Рулетка</button>
-      <button class="item danger" data-tab="logout">Вийти</button>
-    </nav>
-  </aside>
+    <div class="overlay" id="overlay"></div>
 
-  <main class="content">
-    <header class="topbar">
-      <div class="hello">Привіт, Михайло 👋</div>
-      <div class="top-actions">
-        <span class="pill">player2@gtaine.ua</span>
-        <a class="btn" href="./index.html">Головна</a>
-      </div>
-    </header>
-
-    <!-- СТРАНИЦЫ -->
-    <section class="page active" id="page-main">
-      <!-- тут “Основна інформація” -->
-    </section>
-
-    <section class="page" id="page-property">
-      <!-- тут “Майно” -->
-    </section>
-
-    <section class="page" id="page-rating">
-      <!-- тут “Рейтинг/Форбс” -->
-    </section>
-
-    <section class="page" id="page-roulette">
-      <!-- тут “Рулетка” -->
-    </section>
-  </main>
-</div>
-
-  <div class="wrap">
-    <div class="grid">
-
+    <div class="shell">
       <!-- Sidebar -->
-      <div class="card side">
-        <div class="head">
-          <div class="serverBadge">
-            <div class="shield">06</div>
-            <div class="t">
-              <div style="font-weight:900;">GTAINE • Server</div>
-              <small>Онлайн кабінет (DEMO)</small>
-            </div>
+      <aside class="sidebar" id="sidebar">
+        <div class="sideTop">
+          <div class="logo">G</div>
+          <div>
+            <div class="brandTitle">GTAINE</div>
+            <div class="brandSub">Особистий кабінет (DEMO)</div>
+          </div>
+        </div>
+
+        <div class="serverCard">
+          <div class="badgeNum" id="srvNum">01</div>
+          <div class="serverMeta">
+            <div style="font-weight:900" id="srvName">GTAINE • Server</div>
+            <small id="srvStatus">Онлайн кабінет (демо-дані)</small>
           </div>
         </div>
 
         <div class="menu">
-          <div class="item active" data-tab="main">
-            <div class="left"><div class="ic">i</div><div><div style="font-weight:900; color:var(--txt)">Основна</div><div style="font-size:12px">Статистика</div></div></div>
-            <div style="opacity:.65">›</div>
-          </div>
+          <button class="mItem active" data-tab="main">
+            <div class="mIcon">🏠</div>
+            <div class="mText"><b>Основна</b><span>Профіль / статистика</span></div>
+            <div class="mChevron">›</div>
+          </button>
 
-          <div class="item" data-tab="property">
-            <div class="left"><div class="ic">🏠</div><div><div style="font-weight:900; color:var(--txt)">Майно</div><div style="font-size:12px">Транспорт / бізнес</div></div></div>
-            <div style="opacity:.65">›</div>
-          </div>
+          <button class="mItem" data-tab="property">
+            <div class="mIcon">🚗</div>
+            <div class="mText"><b>Майно</b><span>Транспорт / бізнес</span></div>
+            <div class="mChevron">›</div>
+          </button>
 
-          <div class="item" data-tab="forbes">
-            <div class="left"><div class="ic">🏆</div><div><div style="font-weight:900; color:var(--txt)">Рейтинг</div><div style="font-size:12px">Форбс</div></div></div>
-            <div style="opacity:.65">›</div>
-          </div>
+          <button class="mItem" data-tab="rating">
+            <div class="mIcon">🏆</div>
+            <div class="mText"><b>Рейтинг</b><span>Форбс / топи</span></div>
+            <div class="mChevron">›</div>
+          </button>
 
-          <div class="item" data-tab="roulette">
-            <div class="left"><div class="ic">🎰</div><div><div style="font-weight:900; color:var(--txt)">Рулетка</div><div style="font-size:12px">Демо прокрутка</div></div></div>
-            <div style="opacity:.65">›</div>
-          </div>
+          <button class="mItem" data-tab="roulette">
+            <div class="mIcon">🎰</div>
+            <div class="mText"><b>Рулетка</b><span>Демо прокрутка</span></div>
+            <div class="mChevron">›</div>
+          </button>
 
-          <div class="item logout" id="logoutBtn">
-            <div class="left"><div class="ic">⎋</div><div><div style="font-weight:900; color:var(--txt)">Вийти</div><div style="font-size:12px">Завершити сесію</div></div></div>
-            <div style="opacity:.65">›</div>
-          </div>
+          <button class="mItem mDanger" id="logoutBtn">
+            <div class="mIcon">⎋</div>
+            <div class="mText"><b>Вийти</b><span>Завершити сесію</span></div>
+            <div class="mChevron">›</div>
+          </button>
         </div>
-      </div>
+      </aside>
 
       <!-- Main -->
-      <div class="card main">
-        <div class="head">
+      <main class="main">
+        <div class="topbar">
           <div class="hello">
-            <h1>Привіт, <span id="playerName">Гравець</span> 👋</h1>
-            <p>Це демо-кабінет GTAINE. Тут можна показати дизайн, меню, статистику, форбс і рулетку.</p>
+            <div>
+              Привіт, <span id="playerName">Гравець</span> 👋
+              <small>Ласкаво просимо до кабінету GTAINE</small>
+            </div>
           </div>
-          <div class="chipRow">
-            <div class="chip">🕒 Останній вхід: <strong id="lastLogin">—</strong></div>
-            <div class="chip">🆔 ID: <strong id="pid">—</strong></div>
+
+          <div class="actions">
+            <div class="pill" title="Онлайн статус">
+              <span class="pillDot"></span>
+              <span>Онлайн</span>
+            </div>
+            <div class="pill" title="Email">
+              ✉️ <span id="playerEmail">player@gtaine.ua</span>
+            </div>
+            <button class="btn primary" onclick="goHome()">Головна</button>
           </div>
         </div>
 
         <div class="content">
 
-          <!-- SECTION: MAIN -->
-          <div class="section show" id="tab-main">
-            <div class="tiles">
-              <div>
+          <!-- TAB: MAIN -->
+          <section class="tab show" id="tab-main">
+            <div class="grid">
+
+              <div class="card">
+                <div class="cardHead">
+                  <div>
+                    <div class="cardTitle">Профіль</div>
+                    <div class="cardSub">Це демо-кабінет. Пізніше підключимо реальні дані з API.</div>
+
+                    <div class="chipRow">
+                      <div class="chip">🕒 Останній вхід: <b id="lastLogin">—</b></div>
+                      <div class="chip">🆔 ID: <b id="playerId">—</b></div>
+                      <div class="chip">🏷️ Тег: <b id="playerTag">—</b></div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="profile">
-                  <div class="ava" id="ava">GP</div>
-                  <div class="meta">
-                    <b id="fullName">Гравець GTAINE</b><br/>
-                    <small>Статус: <span style="color:rgba(234,240,255,.9); font-weight:800">Без PREMIUM</span></small>
+                  <div class="avatar" id="avatar">GR</div>
+                  <div class="pMeta">
+                    <b id="fullName">Гравець GTAINE</b>
+                    <span>Статус: <b style="color:rgba(234,240,255,.92)">Без PREMIUM</b></span>
                   </div>
-                  <div class="right">
-                    <div>Рівень: <b id="lvl" style="color:var(--txt)">21</b></div>
-                    <div style="margin-top:4px;">Відіграно: <b id="played" style="color:var(--txt)">7 днів</b></div>
+                  <div class="pRight">
+                    Рівень: <b id="level">1</b><br/>
+                    Відіграно: <b id="played">0 год</b>
                   </div>
                 </div>
 
-                <div class="statGrid">
+                <div class="stats">
                   <div class="stat">
-                    <div class="badge">💰 Готівка</div>
-                    <div class="k">Моя готівка</div>
-                    <div class="v" id="cash">₴208,572</div>
+                    <div class="statTop"><span>💵 Готівка</span><span>UAH</span></div>
+                    <div class="statVal mono" id="cash">0</div>
                   </div>
                   <div class="stat">
-                    <div class="badge">🏦 Рахунки</div>
-                    <div class="k">Грошей на рахунках</div>
-                    <div class="v" id="bank">₴23,535</div>
+                    <div class="statTop"><span>🏦 Рахунок</span><span>UAH</span></div>
+                    <div class="statVal mono" id="bank">0</div>
                   </div>
                   <div class="stat">
-                    <div class="badge">🪙 К</div>
-                    <div class="k">Карбованці</div>
-                    <div class="v" id="coins">8</div>
+                    <div class="statTop"><span>🪙 Карбованці</span><span>Coins</span></div>
+                    <div class="statVal mono" id="coins">0</div>
                   </div>
+                </div>
+
+                <div class="note">
+                  Порада: коли підключиш API — ми просто замінимо демо-значення на реальні.
                 </div>
               </div>
 
-              <div class="rouletteBox">
-                <div class="rouletteHeader">
-                  <div class="ttl">Швидка панель</div>
-                  <div class="balance">Ваш баланс: <b id="coins2">8</b> 🪙</div>
+              <div class="card">
+                <div class="cardHead">
+                  <div>
+                    <div class="cardTitle">Швидкі дії</div>
+                    <div class="cardSub">Кнопки як у великому кабінеті. Можна додати ще.</div>
+                  </div>
                 </div>
 
-                <div style="display:grid; gap:10px;">
-                  <div class="stat" style="min-height:auto;">
-                    <div class="k">Організація</div>
-                    <div class="v" id="org">Відсутня</div>
-                  </div>
-                  <div class="stat" style="min-height:auto;">
-                    <div class="k">EXP</div>
-                    <div class="v"><span id="expNow">83,200</span> / <span id="expMax">105,000</span></div>
-                  </div>
+                <div class="panel">
+                  <button class="btn" onclick="toast('DEMO: Налаштування')">Налаштування</button>
+                  <button class="btn" onclick="toast('DEMO: Історія транзакцій')">Історія</button>
+                  <button class="btn" onclick="toast('DEMO: Промокоди')">Промокоди</button>
+                  <button class="btn" onclick="toast('DEMO: Підтримка')">Підтримка</button>
                   <button class="btn primary" onclick="openTab('roulette')">Перейти до рулетки</button>
-                  <button class="btn" onclick="openTab('forbes')">Перейти до Форбс</button>
                 </div>
 
-                <div class="note">* Тут усе демо. Пізніше підключимо реальні дані з API.</div>
+                <div class="note">
+                  Це демо. Реальні сторінки можна підключити окремими файлами або вкладками.
+                </div>
               </div>
 
-              <div class="rouletteBox">
-                <div class="rouletteHeader">
-                  <div class="ttl">Швидкі дії</div>
-                  <div class="balance">Профіль: <b id="tag">—</b></div>
-                </div>
-                <div style="display:grid; gap:10px;">
-                  <button class="btn" onclick="alert('DEMO: сторінка налаштувань')">Налаштування</button>
-                  <button class="btn" onclick="alert('DEMO: історія транзакцій')">Історія</button>
-                  <button class="btn" onclick="alert('DEMO: промокоди')">Промокоди</button>
-                  <button class="btn" onclick="alert('DEMO: підтримка')">Підтримка</button>
-                </div>
-                <div class="note">Можна додати ще кнопок/розділів як на великому кабінеті.</div>
-              </div>
             </div>
-          </div>
+          </section>
 
-          <!-- SECTION: PROPERTY -->
-          <div class="section" id="tab-property">
+          <!-- TAB: PROPERTY -->
+          <section class="tab" id="tab-property">
             <div class="sectionTitle">Ваше майно</div>
-            <div class="rouletteBox">
-              <div style="display:grid; gap:12px; grid-template-columns: 1.2fr .8fr; align-items:start;">
-                <div class="stat" style="min-height:auto;">
-                  <div class="k">Житло</div>
-                  <div class="v" style="font-size:18px;">Наразі у вас немає житла</div>
-                </div>
-                <div class="stat" style="min-height:auto;">
-                  <div class="k">Бізнеси</div>
-                  <div class="v" style="font-size:18px;">Наразі у вас немає бізнесів</div>
+
+            <div class="card">
+              <div class="cardHead">
+                <div>
+                  <div class="cardTitle">Житло / Бізнес</div>
+                  <div class="cardSub">Поки що демо.</div>
                 </div>
               </div>
 
-              <div class="sectionTitle" style="margin-top:14px;">Твій транспорт</div>
-              <div style="display:grid; gap:12px; grid-template-columns: repeat(3, 1fr);">
-                <div class="stat" style="min-height:auto;">
-                  <div class="k">Авто #1</div>
-                  <div class="v" style="font-size:18px;">Porsche Cayenne</div>
+              <div style="padding: 0 14px 14px 14px;">
+                <div class="list">
+                  <div class="row">
+                    <div><b>Житло</b><br><span>Зараз у вас немає житла</span></div>
+                    <div class="pill">—</div>
+                  </div>
+                  <div class="row">
+                    <div><b>Бізнес</b><br><span>Зараз у вас немає бізнесів</span></div>
+                    <div class="pill">—</div>
+                  </div>
                 </div>
-                <div class="stat" style="min-height:auto;">
-                  <div class="k">Авто #2</div>
-                  <div class="v" style="font-size:18px;">BMW 7 Series</div>
-                </div>
-                <div class="stat" style="min-height:auto;">
-                  <div class="k">Мото</div>
-                  <div class="v" style="font-size:18px;">—</div>
+
+                <div class="sectionTitle" style="margin-top:16px;">Транспорт</div>
+                <div class="list" id="carsList"></div>
+
+                <div class="note" style="padding: 12px 0 0 0;">
+                  Хочеш — зроблю карточки авто з картинками (як на скрінах), тільки скажи стиль.
                 </div>
               </div>
-
-              <div class="note">Хочеш — зроблю красиві карточки з картинками авто (як у скрінах).</div>
             </div>
-          </div>
+          </section>
 
-          <!-- SECTION: FORBES -->
-          <div class="section" id="tab-forbes">
+          <!-- TAB: RATING -->
+          <section class="tab" id="tab-rating">
             <div class="sectionTitle">Форбс / Рейтинг</div>
 
-            <div class="rouletteBox">
-              <div style="display:grid; gap:14px; grid-template-columns: repeat(3, 1fr);">
-                <div class="stat" style="min-height:auto;">
-                  <div class="k"><span class="rank">1</span> Топ-1</div>
-                  <div class="v" style="font-size:18px;">Джон Уік</div>
-                  <div class="k" style="margin-top:6px;">₴ 4,575,707,725</div>
-                </div>
-                <div class="stat" style="min-height:auto;">
-                  <div class="k"><span class="rank">2</span> Топ-2</div>
-                  <div class="v" style="font-size:18px;">Ната Уік</div>
-                  <div class="k" style="margin-top:6px;">₴ 4,222,207,036</div>
-                </div>
-                <div class="stat" style="min-height:auto;">
-                  <div class="k"><span class="rank">3</span> Топ-3</div>
-                  <div class="v" style="font-size:18px;">Міша Азамов</div>
-                  <div class="k" style="margin-top:6px;">₴ 2,412,438,501</div>
+            <div class="card">
+              <div class="cardHead">
+                <div>
+                  <div class="cardTitle">Топ гравців (демо)</div>
+                  <div class="cardSub">Пізніше підтягнемо з API.</div>
                 </div>
               </div>
 
-              <div class="sectionTitle" style="margin-top:16px;">Таблиця</div>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width:90px;">Місце</th>
-                    <th>Ім’я</th>
-                    <th>Грошей</th>
-                    <th>Рівень</th>
-                  </tr>
-                </thead>
-                <tbody id="forbesBody"></tbody>
-              </table>
-
-              <div class="note">Пізніше замінимо демо-таблицю на дані з API.</div>
+              <div style="padding: 0 14px 14px 14px;">
+                <div class="list" id="forbesList"></div>
+                <div class="note" style="padding:12px 0 0 0;">
+                  Тут можна зробити таблицю або красиві карточки.
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <!-- SECTION: ROULETTE -->
-          <div class="section" id="tab-roulette">
+          <!-- TAB: ROULETTE -->
+          <section class="tab" id="tab-roulette">
             <div class="sectionTitle">Ігрова рулетка (DEMO)</div>
 
-            <div class="rouletteBox">
-              <div class="rouletteHeader">
-                <div class="ttl">РУЛЕТКА</div>
-                <div class="balance">Ваш баланс: <b id="coins3">8</b> 🪙</div>
+            <div class="card">
+              <div class="cardHead">
+                <div>
+                  <div class="cardTitle">Прокрутка</div>
+                  <div class="cardSub">Це просто демо-анімація (без списань).</div>
+                </div>
+                <div class="pill">Баланс: <b id="coins2">0</b> 🪙</div>
               </div>
 
-              <div class="wheel">
-                <div class="pointer"></div>
-                <div class="track" id="track"></div>
-              </div>
+              <div style="padding: 0 14px 14px 14px;">
+                <div class="row" style="justify-content:flex-start; gap:12px; flex-wrap:wrap;">
+                  <button class="btn primary" id="spinBtn">Крутити</button>
+                  <button class="btn" onclick="openTab('main')">Назад</button>
+                  <div class="pill" id="spinResult">Натисни “Крутити”</div>
+                </div>
 
-              <div class="rouletteActions">
-                <button class="btn primary" id="spinBtn">Крутити</button>
-                <button class="btn" id="fastBtn">Швидко: <span id="fastState">Вимк</span></button>
-                <button class="btn" onclick="openTab('main')">Назад</button>
+                <div class="note" style="padding:12px 0 0 0;">
+                  Пізніше можна зробити справжню рулетку зі списанням через API.
+                </div>
               </div>
-
-              <div class="note" id="spinNote">Натисни “Крутити” — це демо-анімація (без донату/без списання).</div>
             </div>
-          </div>
+          </section>
 
-          <footer>© 2026 GTAINE • Демо-кабінет (без підключення до бази)</footer>
         </div>
-      </div>
 
+        <footer>© 2026 GTAINE • Демо-кабінет (без підключення до бази)</footer>
+      </main>
     </div>
   </div>
 
   <script>
-    // ===== Guard: must be logged in (demo session) =====
-    const s = localStorage.getItem("gtaine_session");
-    if(!s){
-      location.href = "login.html";
-    }
-    const session = JSON.parse(s || "{}");
-
-    // ===== Demo data generator (stable per email) =====
-    function hash(str){
-      let h=0; for(let i=0;i<str.length;i++){ h=((h<<5)-h)+str.charCodeAt(i); h|=0; }
-      return Math.abs(h);
-    }
-    const seed = hash(session.email || "guest");
-    function rnd(min,max){ return min + (seed % (max-min+1)); }
-
-    const names = ["Владислав", "Максим", "Артем", "Денис", "Іван", "Олег", "Назар", "Михайло"];
-    const lastnames = ["Попов", "Шевченко", "Коваль", "Мельник", "Бондар", "Лисенко", "Ткаченко", "Савчук"];
-    const n = names[seed % names.length];
-    const ln = lastnames[(seed>>3) % lastnames.length];
-
-    const pid = 10000 + (seed % 89999);
-    const lvl = 10 + (seed % 35);
-    const coins = 3 + (seed % 25);
-    const cash = 50000 + (seed % 500000);
-    const bank = 5000 + (seed % 200000);
-
-    function fmtUAH(x){
-      return "₴" + x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // ========== DEMO SESSION ==========
+    // Если у тебя уже есть login.html — он пусть записывает localStorage.gtaine_session
+    // Пример: localStorage.setItem("gtaine_session", JSON.stringify({email:"a@b.com", name:"..." }))
+    function ensureSession(){
+      let raw = localStorage.getItem("gtaine_session");
+      if(!raw){
+        // создаём демо, чтобы кабинет открывался даже без логина
+        const demo = {
+          email: "player@gtaine.ua",
+          name: "Михайло",
+          tag: "UA",
+          id: 77935
+        };
+        localStorage.setItem("gtaine_session", JSON.stringify(demo));
+        raw = JSON.stringify(demo);
+      }
+      try { return JSON.parse(raw); } catch { return {}; }
     }
 
-    // Fill header
-    document.getElementById("mail").textContent = session.email || "—";
-    document.getElementById("who").textContent = n;
-    document.getElementById("playerName").textContent = n;
-    document.getElementById("fullName").textContent = n + " " + ln;
-    document.getElementById("ava").textContent = (n[0]||"G") + (ln[0]||"P");
-    document.getElementById("pid").textContent = pid;
-    document.getElementById("tag").textContent = `${n}.${ln}`.toLowerCase();
+    const session = ensureSession();
 
-    // Stats
-    document.getElementById("lvl").textContent = lvl;
-    document.getElementById("coins").textContent = coins;
-    document.getElementById("coins2").textContent = coins;
-    document.getElementById("coins3").textContent = coins;
-    document.getElementById("cash").textContent = fmtUAH(cash);
-    document.getElementById("bank").textContent = fmtUAH(bank);
+    // ========== HELPERS ==========
+    const $ = (id) => document.getElementById(id);
 
-    // Last login (demo)
-    const d = new Date(session.ts || Date.now());
-    document.getElementById("lastLogin").textContent =
-      d.toLocaleDateString("uk-UA") + " " + d.toLocaleTimeString("uk-UA",{hour:"2-digit",minute:"2-digit"});
+    function formatMoney(n){
+      const num = Number(n || 0);
+      return num.toLocaleString("uk-UA");
+    }
 
-    // Played + exp (demo)
-    const playedDays = 2 + (seed % 12);
-    const playedH = seed % 24;
-    document.getElementById("played").textContent = `${playedDays} днів, ${playedH} годин`;
-    const expMax = 100000 + (seed % 90000);
-    const expNow = Math.floor(expMax * (0.45 + ((seed % 40)/100)));
-    document.getElementById("expNow").textContent = expNow.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById("expMax").textContent = expMax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    function initialsFromName(name){
+      const parts = String(name || "Гравець").trim().split(/\s+/).slice(0,2);
+      return parts.map(p => p[0]?.toUpperCase() || "").join("") || "G";
+    }
 
-    // ===== Tabs =====
-    const items = Array.from(document.querySelectorAll(".item[data-tab]"));
+    function toast(text){
+      // супер простой “тост” через alert, можно заменить на красивый
+      alert(text);
+    }
+
+    // ========== TABS ==========
     function openTab(tab){
-      items.forEach(i => i.classList.toggle("active", i.dataset.tab === tab));
-      document.querySelectorAll(".section").forEach(s => s.classList.remove("show"));
-      const el = document.getElementById("tab-"+tab);
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("show"));
+      const el = $("tab-" + tab);
       if(el) el.classList.add("show");
-      window.scrollTo({top:0, behavior:"smooth"});
+
+      document.querySelectorAll(".mItem").forEach(b => b.classList.remove("active"));
+      const btn = document.querySelector(`.mItem[data-tab="${tab}"]`);
+      if(btn) btn.classList.add("active");
+
+      closeDrawer();
     }
-    items.forEach(i => i.addEventListener("click", () => openTab(i.dataset.tab)));
     window.openTab = openTab;
 
-    // ===== Logout =====
-    document.getElementById("logoutBtn").addEventListener("click", () => {
+    // ========== MOBILE DRAWER ==========
+    const overlay = $("overlay");
+    const sidebar = $("sidebar");
+    const burgerBtn = $("burgerBtn");
+
+    function openDrawer(){
+      overlay.style.display = "block";
+      sidebar.style.display = "block";
+      sidebar.classList.add("drawer");
+    }
+    function closeDrawer(){
+      overlay.style.display = "none";
+      sidebar.classList.remove("drawer");
+      // на мобилке скрываем назад
+      if(window.matchMedia("(max-width: 920px)").matches){
+        sidebar.style.display = "none";
+      }
+    }
+
+    if(burgerBtn){
+      burgerBtn.addEventListener("click", openDrawer);
+    }
+    overlay.addEventListener("click", closeDrawer);
+
+    // ========== MENU EVENTS ==========
+    document.querySelectorAll(".mItem[data-tab]").forEach(btn => {
+      btn.addEventListener("click", () => openTab(btn.dataset.tab));
+    });
+
+    $("logoutBtn").addEventListener("click", () => {
       localStorage.removeItem("gtaine_session");
+      // если есть login.html — перекинет туда
+      // если нет — просто обновит и создаст демо снова
       location.href = "login.html";
     });
 
-    // ===== Forbes demo table =====
-    const forbes = [
-      {name:"Джон Уік", money:4575707725, lvl:28},
-      {name:"Ната Уік", money:4222207036, lvl:30},
-      {name:"Міша Азамов", money:2412438501, lvl:22},
-      {name:"Олег Савчук", money:1312423000, lvl:18},
-      {name:"Іван Коваль", money:1105221000, lvl:17},
-      {name: n+" "+ln, money: cash+bank+seed*1000, lvl: lvl},
-      {name:"Денис Ткаченко", money:650220000, lvl:14},
-      {name:"Максим Мельник", money:502110000, lvl:13},
-    ];
-    forbes.sort((a,b)=>b.money-a.money);
-
-    const tbody = document.getElementById("forbesBody");
-    tbody.innerHTML = forbes.map((x,idx)=>`
-      <tr>
-        <td><span class="rank">${idx+1}</span></td>
-        <td><strong>${x.name}</strong></td>
-        <td>${fmtUAH(x.money)}</td>
-        <td><strong>${x.lvl}</strong> LVL</td>
-      </tr>
-    `).join("");
-
-    // ===== Roulette demo =====
-    const prizes = [
-      "Гроші +500,000", "Скін", "Авто слот +1", "Каністра", "Двигун",
-      "Покращ. метал x1", "Порожньо", "Карбованці +5", "Гроші +50,000"
-    ];
-    const track = document.getElementById("track");
-    function buildTrack(){
-      const list = [];
-      for(let i=0;i<40;i++){
-        const p = prizes[(seed+i) % prizes.length];
-        list.push(`<div class="prize">${p}</div>`);
-      }
-      track.innerHTML = list.join("");
-      track.style.transform = "translateX(0px)";
-    }
-    buildTrack();
-
-    let fast = false;
-    document.getElementById("fastBtn").addEventListener("click", () => {
-      fast = !fast;
-      document.getElementById("fastState").textContent = fast ? "Увімк" : "Вимк";
-    });
-
-    let spinning = false;
-    document.getElementById("spinBtn").addEventListener("click", () => {
-      if(spinning) return;
-      spinning = true;
-
-      const duration = fast ? 900 : 1800;
-      const extra = (seed % 8) + 18; // how many prizes to pass
-      const prizeW = 150; // ~140 + gap
-      const centerOffset = 420; // depends on layout, ok for demo
-      const target = (extra * prizeW) + centerOffset;
-
-      track.style.transition = `transform ${duration}ms cubic-bezier(.1,.9,.2,1)`;
-      track.style.transform = `translateX(-${target}px)`;
-
-      const landed = prizes[(seed + extra) % prizes.length];
-      const note = document.getElementById("spinNote");
-
-      setTimeout(() => {
-        note.textContent = `🎉 Виграш (DEMO): ${landed}`;
-        // reset (small snap) to keep spinning possible
-        setTimeout(() => {
-          track.style.transition = "none";
-          buildTrack();
-          spinning = false;
-        }, 250);
-      }, duration + 40);
-    });
-
-    // Home button (optional)
+    // ========== HOME ==========
     function goHome(){
-      // если у тебя главная страница другая — поменяй на нужную
       location.href = "index.html";
     }
     window.goHome = goHome;
+
+    // ========== DEMO DATA GENERATOR (stable per email) ==========
+    function hash(str){
+      str = String(str || "");
+      let h = 0;
+      for(let i=0;i<str.length;i++){
+        h = (h<<5) - h + str.charCodeAt(i);
+        h |= 0;
+      }
+      return Math.abs(h);
+    }
+    const seed = hash(session.email || "guest");
+
+    function rnd(min, max){
+      const x = (seed % 100000) / 100000;
+      return Math.floor(min + x*(max - min + 1));
+    }
+
+    // ========== FILL UI ==========
+    const name = session.name || "Гравець";
+    const email = session.email || "player@gtaine.ua";
+    const tag = session.tag || "UA";
+    const id = session.id || (10000 + (seed % 90000));
+
+    const lastLogin = new Date();
+    lastLogin.setMinutes(lastLogin.getMinutes() - (seed % 7200));
+
+    const level = 1 + (seed % 40);
+    const playedH = 5 + (seed % 260);
+
+    const cash = 500 + (seed % 250000);
+    const bank = 1200 + (seed % 600000);
+    const coins = 1 + (seed % 120);
+
+    $("playerName").textContent = name;
+    $("playerEmail").textContent = email;
+    $("mUser").textContent = name + " • " + email;
+
+    $("fullName").textContent = name + " GTAINE";
+    $("playerTag").textContent = tag;
+    $("playerId").textContent = id;
+
+    $("level").textContent = level;
+    $("played").textContent = playedH + " год";
+
+    $("cash").textContent = formatMoney(cash);
+    $("bank").textContent = formatMoney(bank);
+    $("coins").textContent = coins;
+    $("coins2").textContent = coins;
+
+    $("lastLogin").textContent = lastLogin.toLocaleString("uk-UA");
+
+    const ini = initialsFromName(name);
+    $("avatar").textContent = ini;
+    $("logo")?.textContent = ini;
+
+    // cars demo
+    const cars = [
+      "BMW 7 Series",
+      "Porsche Cayenne",
+      "Mercedes-Benz G-Class",
+      "Audi RS7",
+      "BMW M5 F90",
+      "Toyota Land Cruiser"
+    ];
+    const carCount = 1 + (seed % 4);
+    const carsList = $("carsList");
+    carsList.innerHTML = "";
+    for(let i=0;i<carCount;i++){
+      const model = cars[(seed + i) % cars.length];
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `
+        <div>
+          <b>Авто #${i+1}</b><br/>
+          <span>${model}</span>
+        </div>
+        <div class="pill">В наявності</div>
+      `;
+      carsList.appendChild(row);
+    }
+
+    // forbes demo
+    const forbesNames = ["Джон Уік", "Ната Уік", "Міша Азамов", "Коваль", "Бондар", "Лисенко", "Савчук"];
+    const forbesList = $("forbesList");
+    forbesList.innerHTML = "";
+    for(let i=0;i<5;i++){
+      const money = 500000 + ((seed + i*1337) % 9000000);
+      const row = document.createElement("div");
+      row.className = "row";
+      row.innerHTML = `
+        <div>
+          <b>#${i+1} • ${forbesNames[(seed+i) % forbesNames.length]}</b><br/>
+          <span>Рівень: ${10 + ((seed+i) % 35)}</span>
+        </div>
+        <div class="pill">₴ ${formatMoney(money)}</div>
+      `;
+      forbesList.appendChild(row);
+    }
+
+    // roulette demo
+    const prizes = ["50,000₴", "Авто", "Скін", "5 Coins", "10 Coins", "100,000₴", "Нічого 😅"];
+    let spinning = false;
+    $("spinBtn").addEventListener("click", () => {
+      if(spinning) return;
+      spinning = true;
+      $("spinResult").textContent = "Крутиться...";
+      const t = 900 + (seed % 800);
+      setTimeout(() => {
+        const landed = prizes[(seed + Math.floor(Math.random()*999)) % prizes.length];
+        $("spinResult").textContent = "Виграв (DEMO): " + landed;
+        spinning = false;
+      }, t);
+    });
+
+    // start tab
+    openTab("main");
   </script>
 </body>
 </html>
