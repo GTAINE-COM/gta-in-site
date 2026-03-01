@@ -257,3 +257,77 @@
   transition: transform .18s ease, background .18s ease;
 }
 .wiki-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.10); }
+.carsbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin:14px 0 18px;
+  padding:12px 14px;
+  border-radius:14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.08);
+  font-weight:600;
+  font-size:13px;
+  opacity:.95;
+}
+
+.muted{ opacity:.75; }
+
+.cars-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:16px;
+}
+
+.car-card{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  overflow:hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.car-img{
+  aspect-ratio: 16/9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(0,0,0,.18);
+}
+
+.car-img img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  padding:12px;
+}
+
+.car-name{
+  padding:10px 12px;
+  font-weight:700;
+  opacity:.92;
+}
+
+.cars-more{
+  display:flex;
+  justify-content:center;
+  margin:18px 0 4px;
+}
+
+.errorbox{
+  padding:14px;
+  border-radius:14px;
+  background: rgba(255, 80, 80, .10);
+  border: 1px solid rgba(255, 80, 80, .35);
+}
