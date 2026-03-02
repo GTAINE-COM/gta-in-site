@@ -4,63 +4,97 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GTAINE — Офіційний сайт</title>
-  <meta name="description" content="GTAINE — український RP-проєкт. Завантаження, wiki, розіграші." />
+  <meta name="description" content="GTAINE — український RP-проєкт. Держорганізації, роботи та Wiki." />
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar__inner">
+    <div class="container topbar_inner">
       <a class="brand" href="index.html">
-        <img class="brand__logo" src="assets/logo.png" alt="GTAINE" onerror="this.style.display='none'">
-        <div>
-          <div class="brand__title">GTAINE</div>
-          <div class="brand__sub">Український RP-проєкт</div>
+        <div class="badge">GI</div>
+        <div class="brand_txt">
+          <div class="brand_title">GTAINE</div>
+          <div class="brand_sub">Український RP-проєкт</div>
         </div>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Навігація">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
+        <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
         <a href="wiki/index.html">Wiki</a>
-        <a href="giveaway.html">Розіграш</a>
         <a href="download.html">Завантажити</a>
+        <a href="cabinet.html">Кабінет</a>
       </nav>
-
-      <div class="row">
-        <a id="authLink" class="btn" href="login.html">Увійти</a>
-        <a id="cabLink" class="btn" href="cabinet.html">Кабінет</a>
-      </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="card">
-      <div class="muted">GTAINE • офіційно</div>
-      <div class="h1 mt">Український RP-світ</div>
-      <div class="p muted">Завантажуй лаунчер — залітай у гру. Сайт, wiki та комунікація — українською.</div>
-
-      <div class="row mt2">
-        <a class="btn btn--primary" href="download.html">Завантажити лаунчер</a>
+    <section class="hero">
+      <div class="hero_kicker">GTAINE • офіційно</div>
+      <h1>Український RP-світ</h1>
+      <p>Держорганізації, роботи та база знань (Wiki). Тільки українською.</p>
+      <div class="hero_actions">
+        <a class="btn btn_primary" href="download.html">Завантажити лаунчер</a>
         <a class="btn" href="wiki/index.html">Перейти у Wiki</a>
-        <a class="btn" href="forum.html">Форум</a>
+        <a class="btn" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
       </div>
-    </div>
+    </section>
 
-    <div class="grid mt2">
-      <div class="card span-4">
-        <div class="h2">Онлайн</div>
-        <div class="muted mt">Поки демо. Пізніше підключимо реальний API.</div>
+    <!-- ДЕРЖАВНІ ОРГАНІЗАЦІЇ -->
+    <section class="section" id="orgs">
+      <h2 class="section_title">Державні організації</h2>
+      <div class="grid">
+        <a class="card" href="wiki/index.html#org-sbu"><h3>СБУ</h3><p>Контррозвідка та держбезпека</p></a>
+        <a class="card" href="wiki/index.html#org-zmi"><h3>ЗМІ</h3><p>Новини, оголошення, інтервʼю</p></a>
+        <a class="card" href="wiki/index.html#org-zsu"><h3>ЗСУ</h3><p>Оборона держави та операції</p></a>
+        <a class="card" href="wiki/index.html#org-dkvs"><h3>ДКВС</h3><p>Утримання засуджених</p></a>
+        <a class="card" href="wiki/index.html#org-dsns"><h3>ДСНС</h3><p>Рятувальні операції</p></a>
+        <a class="card" href="wiki/index.html#org-npu"><h3>НПУ</h3><p>Порядок і розслідування</p></a>
+        <a class="card" href="wiki/index.html#org-moz"><h3>МОЗ</h3><p>Медицина та допомога</p></a>
+        <a class="card" href="wiki/index.html#org-vru"><h3>ВРУ</h3><p>Закони та рішення</p></a>
+        <a class="card" href="wiki/index.html#org-uz"><h3>УЗ</h3><p>Перевезення та інфраструктура</p></a>
       </div>
-      <div class="card span-4">
-        <div class="h2">Розіграш</div>
-        <div class="muted mt">Анонси та правила — на сторінці розіграшу.</div>
+    </section>
+
+    <!-- РОБОТИ -->
+    <section class="section" id="jobs">
+      <h2 class="section_title">Роботи</h2>
+      <div class="grid">
+        <a class="card" href="wiki/index.html#job-shahtar"><h3>Шахтар</h3><p>Видобуток ресурсів</p></a>
+        <a class="card" href="wiki/index.html#job-autougon"><h3>Автоугонщик</h3><p>Нелегальні завдання (RP)</p></a>
+        <a class="card" href="wiki/index.html#job-mech-evac"><h3>Автомеханік / Евакуаторник</h3><p>Ремонт та евакуація</p></a>
+        <a class="card" href="wiki/index.html#job-np"><h3>Нова пошта</h3><p>Доставка посилок</p></a>
+        <a class="card" href="wiki/index.html#job-dalekob"><h3>Далекобійник</h3><p>Великі маршрути</p></a>
+        <a class="card" href="wiki/index.html#job-bud"><h3>Будівельник</h3><p>Робота на стройці</p></a>
+        <a class="card" href="wiki/index.html#job-kurer"><h3>Курʼєр Glovo</h3><p>Доставка по місту</p></a>
+        <a class="card" href="wiki/index.html#job-ferma"><h3>Фермер</h3><p>Вирощування та продаж</p></a>
+        <a class="card" href="wiki/index.html#job-taxi"><h3>Таксист</h3><p>Перевезення пасажирів</p></a>
+        <a class="card" href="wiki/index.html#job-gas"><h3>Газова служба</h3><p>Технічні виклики</p></a>
+        <a class="card" href="wiki/index.html#job-diver"><h3>Водолаз</h3><p>Підводні роботи</p></a>
+        <a class="card" href="wiki/index.html#job-lis"><h3>Лісоруб</h3><p>Заготівля деревини</p></a>
+        <a class="card" href="wiki/index.html#job-kla"><h3>Кладошукач</h3><p>Пошук схованок (RP)</p></a>
+        <a class="card" href="wiki/index.html#job-inc"><h3>Інкасатор</h3><p>Перевезення грошей</p></a>
+        <a class="card" href="wiki/index.html#job-pilot"><h3>Пілот</h3><p>Авіаперевезення</p></a>
+        <a class="card" href="wiki/index.html#job-hunt"><h3>Полювання</h3><p>Здобич і продаж</p></a>
+        <a class="card" href="wiki/index.html#job-fish"><h3>Риболовля</h3><p>Ловля риби</p></a>
       </div>
-      <div class="card span-4">
-        <div class="h2">Wiki</div>
-        <div class="muted mt">База знань сервера: роботи, транспорт, правила.</div>
+    </section>
+
+    <!-- ДЛЯ НОВАЧКІВ -->
+    <section class="section" id="newbie">
+      <h2 class="section_title">Роботи для новачків</h2>
+      <div class="grid">
+        <a class="card big" href="wiki/index.html#job-kurer"><h3>Курʼєр</h3><p>Швидкий старт та прості маршрути.</p></a>
+        <a class="card big" href="wiki/index.html#job-np"><h3>Нова пошта</h3><p>Зрозуміла доставка та стабільний дохід.</p></a>
+        <a class="card big" href="wiki/index.html#job-taxi"><h3>Таксі</h3><p>Постійні замовлення й прокачка навичок водіння.</p></a>
+        <a class="card big" href="wiki/index.html#job-ferma"><h3>Ферма</h3><p>Спокійний фарм ресурсів і продаж.</p></a>
       </div>
-    </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 GTAINE</div>
+      <div class="muted">Сайт • Wiki • Форум</div>
+    </footer>
   </main>
 </body>
 </html>
