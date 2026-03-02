@@ -1,1 +1,53 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вхід — GTAINE</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html">
+        <div>
+          <div class="brand__title">GTAINE</div>
+          <div class="brand__sub">Вхід</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="forum.html">Форум</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="giveaway.html">Розіграш</a>
+        <a href="download.html">Завантажити</a>
+      </nav>
+      <div class="row">
+        <a class="btn" href="cabinet.html">Кабінет</a>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <div class="card" style="max-width:520px;margin:0 auto;">
+      <div class="h1">Вхід</div>
+      <div class="p muted">Поки демо-авторизація: <b>admin</b> / <b>1234</b>.</div>
+
+      <form id="loginForm" class="mt2">
+        <label class="muted">Логін</label>
+        <input id="login" class="input mt" autocomplete="username" />
+
+        <div class="mt"></div>
+        <label class="muted">Пароль</label>
+        <input id="password" type="password" class="input mt" autocomplete="current-password" />
+
+        <div class="row mt2">
+          <button id="loginBtn" class="btn btn--primary" type="submit">Увійти</button>
+          <a class="btn" href="index.html">Назад</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
