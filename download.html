@@ -5,69 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Завантажити — GTAINE</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/gtaine-logo.svg">
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="./">
-        <img class="brand__badge" src="assets/logo.png.png" alt="GTAINE">
-        <span class="brand__name">
-          <span class="brand__title">GTAINE</span>
-          <span class="brand__sub">Український RP-проект</span>
-        </span>
+    <div class="topbar__inner">
+      <a class="brand" href="index.html">
+        <div>
+          <div class="brand__title">GTAINE</div>
+          <div class="brand__sub">Український RP-проєкт</div>
+        </div>
       </a>
-
-      <div class="navwrap">
-        <nav class="nav">
-          <a class="nav__link" href="./">Головна</a>
-          <a class="nav__link" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
-          <a class="nav__link" href="./wiki/">Wiki</a>
-          <a class="nav__link" href="./giveaway.html">Розіграш</a>
-          <a class="nav__link is-active" href="./download.html">Завантажити</a>
-        </nav>
-
-        <a class="btn btn--ghost" href="./cabinet.html">Кабінет</a>
-        <div class="userpill">GI</div>
+      <nav class="nav">
+        <a href="index.html">Головна</a>
+        <a href="forum.html">Форум</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="giveaway.html">Розіграш</a>
+        <a href="download.html">Завантажити</a>
+      </nav>
+      <div class="row">
+        <a id="authLink" class="btn" href="login.html">Увійти</a>
+        <a id="cabLink" class="btn" href="cabinet.html">Кабінет</a>
       </div>
     </div>
   </header>
 
-  <main class="hero">
-    <div class="container hero__grid">
-      <section class="card hero__card">
-        <div class="kicker">GTAINE • DOWNLOAD</div>
-        <a href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe" class="download-btn">
-Завантажити лаунчер
-</a>
-        <p class="lead">Натисни кнопку нижче — файл почне завантаження.</p>
-<div class="btnrow">
-  <a class="btn btn--accent"
-     href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe"
-     target="_blank" rel="noopener">
-     Завантажити gtaine-launcher.exe
-  </a>
+  <main class="container">
+    <div class="card">
+      <div class="h1">Завантаження лаунчера</div>
+      <div class="p muted">Натисни кнопку нижче, щоб скачати GTAINE Launcher.</div>
 
-  <a class="btn"
-     href="https://gtaine-forum.qniks.me/index.php"
-     target="_blank" rel="noopener">
-     Перейти на форум
-  </a>
-</div>
-        <div style="margin-top:14px; color:rgba(255,255,255,.70); font-size:13px;">
-          Якщо браузер блокує завантаження — підтверди “Keep / Зберегти”.  
-          Після встановлення: запускаєш лаунчер → заходиш на сервер.
-        </div>
-      </section>
+      <div class="row mt2">
+        <a class="btn btn--primary"
+           href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe">
+          Завантажити (.exe)
+        </a>
+        <a class="btn" href="index.html">Назад</a>
+      </div>
 
-      <aside class="card announce">
-        <h3>Поради</h3>
-        <ul>
-          <li>Краще запускати від адміністратора (якщо треба).</li>
-          <li>Антивірус може питати підтвердження.</li>
-          <li>Проблеми? Пиши на форум.</li>
-        </ul>
-      </aside>
+      <div class="hr"></div>
+      <div class="muted">Якщо файл блокується Windows — натисни “More info” → “Run anyway”.</div>
     </div>
   </main>
 </body>
