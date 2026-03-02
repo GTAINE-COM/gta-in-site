@@ -5,55 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Кабінет — GTAINE</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/app.js" defer></script>
 </head>
-<body data-page="cabinet">
+<body>
   <header class="topbar">
-    <div class="topbar__inner">
+    <div class="container topbar_inner">
       <a class="brand" href="index.html">
-        <div>
-          <div class="brand__title">GTAINE</div>
-          <div class="brand__sub">Кабінет</div>
+        <div class="badge">GI</div>
+        <div class="brand_txt">
+          <div class="brand_title">GTAINE</div>
+          <div class="brand_sub">Кабінет</div>
         </div>
       </a>
 
       <nav class="nav">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
+        <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
         <a href="wiki/index.html">Wiki</a>
-        <a href="giveaway.html">Розіграш</a>
         <a href="download.html">Завантажити</a>
+        <a href="cabinet.html">Кабінет</a>
       </nav>
-
-      <div class="row">
-        <span class="muted" id="userInfo">User</span>
-        <button id="logoutBtn" class="btn" type="button">Вийти</button>
-      </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="card">
-      <div class="h1">Особистий кабінет</div>
-      <div class="p muted">Тут буде покупка авто/скінів, баланс, історія.</div>
+    <section class="hero">
+      <div class="hero_kicker">Особистий кабінет</div>
+      <h1 style="margin-top:6px;">Кабінет GTAINE</h1>
+      <p>Тут буде покупка авто/скінів, баланс, історія. Поки демо-версія (без API).</p>
+      <div class="hero_actions">
+        <a class="btn btn_primary" href="#choose">Вибір</a>
+        <a class="btn" href="#forbes">Форбс</a>
+        <a class="btn" href="#my">Ваше майно</a>
+      </div>
+    </section>
 
-      <div class="row mt2">
-        <button id="buyCarBtn" class="btn btn--primary" type="button">Купити авто</button>
-        <button id="buySkinBtn" class="btn" type="button">Купити скін</button>
-        <button id="topupBtn" class="btn" type="button">Поповнити баланс</button>
+    <div class="cab_layout">
+      <aside class="side">
+        <h3>Меню</h3>
+        <a href="#choose">Вибір</a>
+        <a href="#list">Список</a>
+        <a href="#forbes">Форбс</a>
+        <a href="#roulette">Рулетка</a>
+        <a href="#my">Ваше майно</a>
+      </aside>
+
+      <div class="maincol">
+        <section class="panel" id="choose">
+          <h2>Вибір</h2>
+          <p class="muted">Тут буде вибір покупки авто/скінів (пізніше підключимо API).</p>
+        </section>
+
+        <section class="panel" id="list">
+          <h2>Список</h2>
+          <p class="muted">Список доступних авто/скінів/послуг — у розробці.</p>
+        </section>
+
+        <section class="panel" id="forbes">
+          <h2>Форбс</h2>
+          <p class="muted">Топ гравців за балансом/статусом — зʼявиться після підключення API.</p>
+        </section>
+
+        <section class="panel" id="roulette">
+          <h2>Рулетка</h2>
+          <p class="muted">Поки демо. Зʼявиться пізніше.</p>
+        </section>
+
+        <section class="panel" id="my">
+          <h2>Ваше майно</h2>
+          <p class="muted">Тут буде історія покупок, ваші авто/скіни, баланс — після API.</p>
+        </section>
       </div>
     </div>
 
-    <div class="grid mt2">
-      <div class="card span-6">
-        <div class="h2">Баланс</div>
-        <div class="muted mt">Поки демо. Потім підключимо API.</div>
-      </div>
-      <div class="card span-6">
-        <div class="h2">Історія покупок</div>
-        <div class="muted mt">Поки демо.</div>
-      </div>
-    </div>
+    <footer class="footer">
+      <div>© 2026 GTAINE</div>
+      <div class="muted">Кабінет (демо)</div>
+    </footer>
   </main>
 </body>
 </html>
