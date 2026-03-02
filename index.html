@@ -4,162 +4,542 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GTAINE — Офіційний сайт</title>
-  <meta name="description" content="GTAINE — український RP-проєкт. Держорганізації, роботи та Wiki." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar_inner">
-      <a class="brand" href="index.html">
-        <div class="badge">GI</div>
-        <div class="brand_txt">
-          <div class="brand_title">GTAINE</div>
-          <div class="brand_sub">Український RP-проєкт</div>
+<header class="topbar">
+  <div class="container topbar_inner">
+    <a class="brand" href="index.html">
+      <div class="badge">GI</div>
+      <div>
+        <div class="brand_title">GTAINE</div>
+        <div class="brand_sub">Український RP-проєкт</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#orgs">Держ.організації</a>
+      <a href="#jobs">Роботи</a>
+      <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
+      <a href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe" target="_blank" rel="noopener">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero_kicker">GTAINE • офіційно</div>
+    <h1>Український RP-світ</h1>
+    <p>Натискай на будь-яку роботу або держорганізацію — відкриється окреме вікно з повною інформацією.</p>
+    <div class="actions">
+      <a class="btn btn_primary" href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe" target="_blank" rel="noopener">Завантажити лаунчер</a>
+      <a class="btn" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
+    </div>
+  </section>
+
+  <!-- ДЕРЖ.ОРГ -->
+  <section class="section" id="orgs">
+    <h2 class="section_title">Державні організації</h2>
+    <div class="grid">
+      <a class="card" href="#" data-open="sbu"><h3>СБУ</h3><p>Безпека, контррозвідка, спецоперації</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="zmi"><h3>ЗМІ</h3><p>Новини, інтервʼю, оголошення</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="zsu"><h3>ЗСУ</h3><p>Оборона держави, дисципліна</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="dkvs"><h3>ДКВС</h3><p>Конвоювання та режим (RP)</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="dsns"><h3>ДСНС</h3><p>Рятувальні операції</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="npu"><h3>НПУ</h3><p>Патруль, розслідування</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="moz"><h3>МОЗ</h3><p>Медицина, швидка допомога</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="vru"><h3>ВРУ</h3><p>Закони та рішення (RP)</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="uz"><h3>УЗ</h3><p>Перевезення, логістика</p><small>Натисни — деталі</small></a>
+    </div>
+  </section>
+
+  <!-- РОБОТИ -->
+  <section class="section" id="jobs">
+    <h2 class="section_title">Роботи</h2>
+    <div class="grid">
+      <a class="card" href="#" data-open="shahtar"><h3>Шахтар</h3><p>Видобуток ресурсів</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="autougon"><h3>Автоугонщик</h3><p>Нелегальні завдання (RP)</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="mech"><h3>Автомеханік</h3><p>Ремонт та сервіс</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="evac"><h3>Евакуатор</h3><p>Евакуація транспорту</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="np"><h3>Нова пошта</h3><p>Доставка посилок</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="trucker"><h3>Далекобійник</h3><p>Вантажі та маршрути</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="build"><h3>Будівельник</h3><p>Робота на будівництві</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="glovo"><h3>Курʼєр Glovo</h3><p>Швидка доставка</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="farm"><h3>Фермер</h3><p>Вирощування та продаж</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="taxi"><h3>Таксист</h3><p>Перевезення пасажирів</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="gas"><h3>Газова служба</h3><p>Технічні виклики</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="diver"><h3>Водолаз</h3><p>Підводні роботи</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="lumber"><h3>Лісоруб</h3><p>Заготівля деревини</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="stash"><h3>Кладошукач</h3><p>Пошук схованок (RP)</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="cash"><h3>Інкасатор</h3><p>Перевезення грошей</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="pilot"><h3>Пілот</h3><p>Рейси та перевезення</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="hunt"><h3>Полювання</h3><p>Здобич та продаж</p><small>Натисни — деталі</small></a>
+      <a class="card" href="#" data-open="fish"><h3>Риболовля</h3><p>Ловля риби</p><small>Натисни — деталі</small></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>© 2026 GTAINE</div>
+    <div class="muted">Натискай картки — відкривається вікно</div>
+  </footer>
+</main>
+
+<!-- ===== ONE MODAL (перезаполняется) ===== -->
+<div class="modal" id="modal">
+  <div class="modal__backdrop" data-close="1"></div>
+  <div class="modal__box" role="dialog" aria-modal="true">
+    <button class="modal__close" data-close="1" aria-label="Закрити">✕</button>
+    <div class="modal__header">
+      <div class="modal__title" id="mTitle">Title</div>
+      <div class="modal__subtitle" id="mSub">Subtitle</div>
+    </div>
+    <div class="modal__content">
+      <div class="modal__grid">
+        <div class="modal__card">
+          <h4>Що це</h4>
+          <ul id="mWhat"></ul>
         </div>
-      </a>
-
-      <nav class="nav" aria-label="Навігація">
-        <a href="index.html">Головна</a>
-        <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
-        <a href="wiki/index.html">Wiki</a>
-        <a href="download.html">Завантажити</a>
-        <a href="cabinet.html">Кабінет</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="hero_kicker">GTAINE • офіційно</div>
-      <h1>Український RP-світ</h1>
-      <p>Держорганізації, роботи та база знань (Wiki). Тільки українською.</p>
-      <div class="hero_actions">
-        <a class="btn btn_primary" href="download.html">Завантажити лаунчер</a>
-        <a class="btn" href="wiki/index.html">Перейти у Wiki</a>
-        <a class="btn" href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
+        <div class="modal__card">
+          <h4>Як почати / Вимоги</h4>
+          <ul id="mHow"></ul>
+        </div>
       </div>
-    </section>
-
-    <!-- ДЕРЖАВНІ ОРГАНІЗАЦІЇ -->
-<section class="section" id="orgs">
-  <h2 class="section_title">Державні організації</h2>
-  <p class="section_sub">Натисни на картку — відкриється опис нижче.</p>
-
-  <div class="cards_grid">
-    <a class="card_link" href="#org-sbu"><div class="card"><h3>СБУ</h3><p>Безпека, контррозвідка</p></div></a>
-    <a class="card_link" href="#org-zmi"><div class="card"><h3>ЗМІ</h3><p>Новини, інтервʼю</p></div></a>
-    <a class="card_link" href="#org-zsu"><div class="card"><h3>ЗСУ</h3><p>Оборона держави</p></div></a>
-    <a class="card_link" href="#org-dkvs"><div class="card"><h3>ДКВС</h3><p>Система покарань</p></div></a>
-    <a class="card_link" href="#org-dsns"><div class="card"><h3>ДСНС</h3><p>Рятувальні операції</p></div></a>
-    <a class="card_link" href="#org-npu"><div class="card"><h3>НПУ</h3><p>Патруль, розслідування</p></div></a>
-    <a class="card_link" href="#org-moz"><div class="card"><h3>МОЗ</h3><p>Медицина, допомога</p></div></a>
-    <a class="card_link" href="#org-vru"><div class="card"><h3>ВРУ</h3><p>Закони та рішення</p></div></a>
-    <a class="card_link" href="#org-uz"><div class="card"><h3>УЗ</h3><p>Перевезення, маршрути</p></div></a>
-  </div>
-
-  <div class="details_wrap">
-    <div class="detail" id="org-sbu">
-      <h3>СБУ</h3>
-      <p>Служба безпеки України: контррозвідка, захист держави, спецоперації (в RP — тільки через ролеплей).</p>
-      <ul>
-        <li><b>Чим займається:</b> спецоперації, розвідка, перевірки.</li>
-        <li><b>Новачкам:</b> краще зайти через набір/співбесіду.</li>
-      </ul>
-      <a class="back" href="#orgs">⬅ Назад до держ.організацій</a>
-    </div>
-
-    <div class="detail" id="org-zmi">
-      <h3>ЗМІ</h3>
-      <p>Новини серверу, інтервʼю, оголошення, репортажі з подій.</p>
-      <ul>
-        <li><b>Роль:</b> інформування та актив.</li>
-        <li><b>RP:</b> журналіст/ведучий/репортер.</li>
-      </ul>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-zsu">
-      <h3>ЗСУ</h3>
-      <p>Оборона держави та військові RP-сценарії: навчання, охорона, операції.</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-dkvs">
-      <h3>ДКВС</h3>
-      <p>Система утримання та виконання покарань. Дисципліна та порядок.</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-dsns">
-      <h3>ДСНС</h3>
-      <p>Рятувальні операції: ДТП, пожежі, допомога цивільним (RP).</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-npu">
-      <h3>НПУ</h3>
-      <p>Патруль, розслідування, оформлення ДТП, охорона порядку (RP).</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-moz">
-      <h3>МОЗ</h3>
-      <p>Лікарня, допомога пораненим, медичні виклики (RP).</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-vru">
-      <h3>ВРУ</h3>
-      <p>Законотворчість, державні рішення, політичні RP-сюжети.</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
-    </div>
-
-    <div class="detail" id="org-uz">
-      <h3>Укрзалізниця</h3>
-      <p>Перевезення, логістика, маршрути та інфраструктура.</p>
-      <a class="back" href="#orgs">⬅ Назад</a>
     </div>
   </div>
-</section>
-    <!-- РОБОТИ -->
-    <section class="section" id="jobs">
-      <h2 class="section_title">Роботи</h2>
-      <div class="grid">
-        <a class="card" href="wiki/index.html#job-shahtar"><h3>Шахтар</h3><p>Видобуток ресурсів</p></a>
-        <a class="card" href="wiki/index.html#job-autougon"><h3>Автоугонщик</h3><p>Нелегальні завдання (RP)</p></a>
-        <a class="card" href="wiki/index.html#job-mech-evac"><h3>Автомеханік / Евакуаторник</h3><p>Ремонт та евакуація</p></a>
-        <a class="card" href="wiki/index.html#job-np"><h3>Нова пошта</h3><p>Доставка посилок</p></a>
-        <a class="card" href="wiki/index.html#job-dalekob"><h3>Далекобійник</h3><p>Великі маршрути</p></a>
-        <a class="card" href="wiki/index.html#job-bud"><h3>Будівельник</h3><p>Робота на стройці</p></a>
-        <a class="card" href="wiki/index.html#job-kurer"><h3>Курʼєр Glovo</h3><p>Доставка по місту</p></a>
-        <a class="card" href="wiki/index.html#job-ferma"><h3>Фермер</h3><p>Вирощування та продаж</p></a>
-        <a class="card" href="wiki/index.html#job-taxi"><h3>Таксист</h3><p>Перевезення пасажирів</p></a>
-        <a class="card" href="wiki/index.html#job-gas"><h3>Газова служба</h3><p>Технічні виклики</p></a>
-        <a class="card" href="wiki/index.html#job-diver"><h3>Водолаз</h3><p>Підводні роботи</p></a>
-        <a class="card" href="wiki/index.html#job-lis"><h3>Лісоруб</h3><p>Заготівля деревини</p></a>
-        <a class="card" href="wiki/index.html#job-kla"><h3>Кладошукач</h3><p>Пошук схованок (RP)</p></a>
-        <a class="card" href="wiki/index.html#job-inc"><h3>Інкасатор</h3><p>Перевезення грошей</p></a>
-        <a class="card" href="wiki/index.html#job-pilot"><h3>Пілот</h3><p>Авіаперевезення</p></a>
-        <a class="card" href="wiki/index.html#job-hunt"><h3>Полювання</h3><p>Здобич і продаж</p></a>
-        <a class="card" href="wiki/index.html#job-fish"><h3>Риболовля</h3><p>Ловля риби</p></a>
-      </div>
-    </section>
+</div>
 
-    <!-- ДЛЯ НОВАЧКІВ -->
-    <section class="section" id="newbie">
-      <h2 class="section_title">Роботи для новачків</h2>
-      <div class="grid">
-        <a class="card big" href="wiki/index.html#job-kurer"><h3>Курʼєр</h3><p>Швидкий старт та прості маршрути.</p></a>
-        <a class="card big" href="wiki/index.html#job-np"><h3>Нова пошта</h3><p>Зрозуміла доставка та стабільний дохід.</p></a>
-        <a class="card big" href="wiki/index.html#job-taxi"><h3>Таксі</h3><p>Постійні замовлення й прокачка навичок водіння.</p></a>
-        <a class="card big" href="wiki/index.html#job-ferma"><h3>Ферма</h3><p>Спокійний фарм ресурсів і продаж.</p></a>
-      </div>
-    </section>
+<script>
+  const DATA = {
+    // ORGS
+    sbu: {
+      title:"СБУ",
+      sub:"Служба безпеки України — держбезпека та спецоперації (все тільки через RP).",
+      what:[
+        "Контррозвідка та захист держави",
+        "Спецоперації та перевірки по RP",
+        "Охорона важливих подій/осіб"
+      ],
+      how:[
+        "Вступ через набір/співбесіду",
+        "Дисципліна та командна робота",
+        "Заборонено DM/PG — тільки RP"
+      ]
+    },
+    zmi:{
+      title:"ЗМІ",
+      sub:"Медіа-сфера: новини сервера, оголошення, інтервʼю та репортажі.",
+      what:[
+        "Новини, анонси івентів",
+        "Інтервʼю та репортажі",
+        "Оголошення для гравців"
+      ],
+      how:[
+        "Домовлятися про інтервʼю по RP",
+        "Писати/говорити грамотно",
+        "Працювати культурно, без токсичності"
+      ]
+    },
+    zsu:{
+      title:"ЗСУ",
+      sub:"Оборона держави: навчання, охорона, операції (реалістичний RP).",
+      what:[
+        "Патрулювання/охорона обʼєктів",
+        "Тренування та дисципліна",
+        "Операції тільки по RP"
+      ],
+      how:[
+        "Вступ через набір",
+        "Дотримуватися ієрархії",
+        "Грати обережно, без “геройства”"
+      ]
+    },
+    dkvs:{
+      title:"ДКВС",
+      sub:"Служба виконання покарань: режим, охорона, конвоювання (RP).",
+      what:[
+        "Охорона установ",
+        "Конвоювання по RP",
+        "Порядок і дисципліна"
+      ],
+      how:[
+        "Знати процедури",
+        "Працювати спокійно та чітко",
+        "Не провокувати конфлікти"
+      ]
+    },
+    dsns:{
+      title:"ДСНС",
+      sub:"Рятувальна служба: пожежі, ДТП, евакуації, допомога місту (RP).",
+      what:[
+        "Виїзди на виклики",
+        "Рятування та евакуація",
+        "Взаємодія з НПУ/МОЗ"
+      ],
+      how:[
+        "Працювати процедурно",
+        "Не робити хаос на викликах",
+        "Командна робота"
+      ]
+    },
+    npu:{
+      title:"НПУ",
+      sub:"Поліція: патруль, виклики, розслідування, порядок (RP).",
+      what:[
+        "Патрулювання міста",
+        "Реагування на виклики",
+        "Оформлення інцидентів по RP"
+      ],
+      how:[
+        "Вступ через набір",
+        "Говорити чітко і спокійно",
+        "Без DM/PG, тільки RP"
+      ]
+    },
+    moz:{
+      title:"МОЗ",
+      sub:"Медицина: лікарня, швидка допомога, медичні виклики (RP).",
+      what:[
+        "Прийом пацієнтів",
+        "Виїзди швидкої",
+        "Допомога на подіях"
+      ],
+      how:[
+        "Працювати акуратно",
+        "Не робити “магію лікування” — тільки RP",
+        "Повага до всіх гравців"
+      ]
+    },
+    vru:{
+      title:"ВРУ",
+      sub:"Політичний RP: рішення, закони, засідання, публічні події.",
+      what:[
+        "Засідання та обговорення",
+        "Закони/постанови (RP)",
+        "Співпраця з держструктурами"
+      ],
+      how:[
+        "Грати дипломатично",
+        "Залучати ЗМІ",
+        "Без токсичності — тільки RP"
+      ]
+    },
+    uz:{
+      title:"УЗ",
+      sub:"Логістика та перевезення: маршрути, доставка, інфраструктура (RP).",
+      what:[
+        "Логістика та перевезення",
+        "Маршрути/станції (RP події)",
+        "Підтримка економіки"
+      ],
+      how:[
+        "Діяти організовано",
+        "Планувати маршрути",
+        "Командна робота"
+      ]
+    },
 
-    <footer class="footer">
-      <div>© 2026 GTAINE</div>
-      <div class="muted">Сайт • Wiki • Форум</div>
-    </footer>
-  </main>
+    // JOBS
+    shahtar:{
+      title:"Шахтар",
+      sub:"Стабільна робота для старту: видобуток → здача → оплата.",
+      what:[
+        "Видобуток ресурсів",
+        "Здача у пункт прийому",
+        "Стабільний заробіток"
+      ],
+      how:[
+        "Приїхати на точку роботи",
+        "Працювати серіями 10–15 хв",
+        "Здавати ресурси і поповнювати баланс"
+      ]
+    },
+    autougon:{
+      title:"Автоугонщик",
+      sub:"Нелегальна робота. Потрібен нормальний RP без трешу.",
+      what:[
+        "Виконання “замовлень” (RP)",
+        "Втеча/маскування",
+        "Ризик і адреналін"
+      ],
+      how:[
+        "Тільки через RP-ситуації",
+        "Без DM/PG",
+        "Продумуй маршрут відходу"
+      ]
+    },
+    mech:{
+      title:"Автомеханік",
+      sub:"Ремонт і сервіс. Можна працювати по виклику.",
+      what:[
+        "Ремонт транспорту",
+        "Допомога на трасі",
+        "Сервісні послуги (RP)"
+      ],
+      how:[
+        "Зроби прайс/оголошення",
+        "Працюй культурно та швидко",
+        "Можна в парі з евакуатором"
+      ]
+    },
+    evac:{
+      title:"Евакуатор",
+      sub:"Евакуація авто: ДТП/поломка/порушення (по RP).",
+      what:[
+        "Евакуація транспорту",
+        "Доставка на стоянку/СТО",
+        "Допомога місту"
+      ],
+      how:[
+        "Виїзд на виклик",
+        "Акуратне завантаження",
+        "Комунікація з власником/НПУ"
+      ]
+    },
+    np:{
+      title:"Нова пошта",
+      sub:"Доставка посилок. Дуже підходить новачкам.",
+      what:[
+        "Брати посилки",
+        "Доставляти по маршруту",
+        "Отримувати оплату"
+      ],
+      how:[
+        "Не ганяй — без ДТП швидше",
+        "Плануй маршрут",
+        "Стабільний фарм"
+      ]
+    },
+    trucker:{
+      title:"Далекобійник",
+      sub:"Великі маршрути та вантажі. Довше по часу, але вигідніше.",
+      what:[
+        "Перевезення вантажів",
+        "Довгі маршрути",
+        "Стабільний заробіток"
+      ],
+      how:[
+        "Слідкуй за паливом",
+        "Їдь обережно",
+        "Плануй зупинки"
+      ]
+    },
+    build:{
+      title:"Будівельник",
+      sub:"Робота на будівництві — спокійний геймплей і стабільні гроші.",
+      what:[
+        "Задачі на майданчику",
+        "Стабільний дохід",
+        "Підходить для старту"
+      ],
+      how:[
+        "Візьми форму/каску (RP)",
+        "Роби задачі послідовно",
+        "Не заважай іншим"
+      ]
+    },
+    glovo:{
+      title:"Курʼєр Glovo",
+      sub:"Швидка доставка. Один з найкращих стартів для новачків.",
+      what:[
+        "Доставка замовлень",
+        "Швидкий старт",
+        "Постійні завдання"
+      ],
+      how:[
+        "Краще мопед/малий транспорт",
+        "Не порушуй грубо",
+        "Ввічливий RP з клієнтом"
+      ]
+    },
+    farm:{
+      title:"Фермер",
+      sub:"Спокійний фарм: збір → перевезення → продаж.",
+      what:[
+        "Збір продукції",
+        "Перевезення",
+        "Продаж і прибуток"
+      ],
+      how:[
+        "Працюй серіями",
+        "Краще з транспортом",
+        "Стабільний заробіток"
+      ]
+    },
+    taxi:{
+      title:"Таксист",
+      sub:"Перевезення пасажирів. Дуже живий RP, якщо робити красиво.",
+      what:[
+        "Перевезення гравців",
+        "Замовлення по місту",
+        "Комунікація та RP"
+      ],
+      how:[
+        "Уточнюй точку/оплату",
+        "Їдь без аварій",
+        "Працюй культурно"
+      ]
+    },
+    gas:{
+      title:"Газова служба",
+      sub:"Технічні виклики та обслуговування — RP-професія.",
+      what:[
+        "Виїзди на заявки",
+        "“Ремонт” по RP",
+        "Технічні перевірки"
+      ],
+      how:[
+        "Працюй процедурно",
+        "Не роби хаос",
+        "Комунікуй спокійно"
+      ]
+    },
+    diver:{
+      title:"Водолаз",
+      sub:"Підводні роботи: пошук/збір (атмосферно).",
+      what:[
+        "Пошук під водою",
+        "Збір ресурсів",
+        "Незвичний геймплей"
+      ],
+      how:[
+        "Працюй обережно",
+        "Плануй маршрут",
+        "Не ризикуй без потреби"
+      ]
+    },
+    lumber:{
+      title:"Лісоруб",
+      sub:"Заготівля деревини: рубаєш → здаєш → оплата.",
+      what:[
+        "Заготівля деревини",
+        "Перевезення",
+        "Стабільний фарм"
+      ],
+      how:[
+        "Роби циклом",
+        "Краще з транспортом",
+        "Не заважай іншим"
+      ]
+    },
+    stash:{
+      title:"Кладошукач",
+      sub:"Пошук схованок (RP). Без метагейму — граємо чесно по RP.",
+      what:[
+        "Пошук точок/схованок",
+        "RP-активність",
+        "Ризик і цікавість"
+      ],
+      how:[
+        "Без метагейму",
+        "Дій обережно",
+        "Плануй маршрут"
+      ]
+    },
+    cash:{
+      title:"Інкасатор",
+      sub:"Перевезення грошей. Більш ризиковано, але цікаво по RP.",
+      what:[
+        "Перевезення коштів",
+        "Охорона/процедури",
+        "Ризик по RP"
+      ],
+      how:[
+        "Краще працювати вдвох",
+        "Не світи маршрут",
+        "Дотримуйся процедур"
+      ]
+    },
+    pilot:{
+      title:"Пілот",
+      sub:"Авіарейси та перевезення. Для тих, хто любить техніку.",
+      what:[
+        "Рейси/доставка",
+        "Навігація",
+        "Технічний геймплей"
+      ],
+      how:[
+        "Навчись посадкам/зльотам",
+        "Літай акуратно",
+        "Дотримуйся правил"
+      ]
+    },
+    hunt:{
+      title:"Полювання",
+      sub:"Атмосферна робота на природі: здобич → продаж.",
+      what:[
+        "Полювання (RP)",
+        "Збір/продаж",
+        "Спокійний темп"
+      ],
+      how:[
+        "Грай без жорстких сцен",
+        "Плануй маршрут",
+        "Не заважай іншим"
+      ]
+    },
+    fish:{
+      title:"Риболовля",
+      sub:"Ловля риби та продаж. Спокійний фарм для новачків і не тільки.",
+      what:[
+        "Ловля риби",
+        "Продаж улову",
+        "Стабільний заробіток"
+      ],
+      how:[
+        "Краще в компанії",
+        "Працюй серіями",
+        "Не порушуй правила"
+      ]
+    }
+  };
+
+  const modal = document.getElementById("modal");
+  const mTitle = document.getElementById("mTitle");
+  const mSub = document.getElementById("mSub");
+  const mWhat = document.getElementById("mWhat");
+  const mHow = document.getElementById("mHow");
+
+  function fillList(ul, items){
+    ul.innerHTML = "";
+    for(const t of items){
+      const li = document.createElement("li");
+      li.textContent = t;
+      ul.appendChild(li);
+    }
+  }
+
+  function openModal(key){
+    const d = DATA[key];
+    if(!d) return;
+    mTitle.textContent = d.title;
+    mSub.textContent = d.sub;
+    fillList(mWhat, d.what);
+    fillList(mHow, d.how);
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal(){
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("click", (e) => {
+    const open = e.target.closest("[data-open]");
+    if(open){
+      e.preventDefault();
+      openModal(open.getAttribute("data-open"));
+      return;
+    }
+    if(e.target.closest("[data-close]")){
+      e.preventDefault();
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeModal();
+  });
+</script>
 </body>
 </html>
