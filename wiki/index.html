@@ -159,31 +159,208 @@
             <div class="card" id="org-uz"><h3>УЗ</h3><p>Перевезення, логістика, інфраструктура.</p></div>
           </div>
         </section>
+       <section class="panel" id="jobs">
+  <h2>Роботи</h2>
+  <p class="muted">Натисни на картку — відкриється детальна інформація нижче.</p>
 
-        <section class="panel" id="jobs">
-          <h2>Роботи</h2>
-          <p class="muted">Під кожну роботу додамо: де взяти, як працює, скільки платять.</p>
-          <div class="grid" style="margin-top:14px;">
-            <div class="card" id="job-shahtar"><h3>Шахтар</h3><p>Видобуток ресурсів.</p></div>
-            <div class="card" id="job-autougon"><h3>Автоугонщик</h3><p>Нелегальні завдання (RP).</p></div>
-            <div class="card" id="job-mech-evac"><h3>Автомеханік / Евакуаторник</h3><p>Ремонт і евакуація транспорту.</p></div>
-            <div class="card" id="job-np"><h3>Нова пошта</h3><p>Доставка посилок.</p></div>
-            <div class="card" id="job-dalekob"><h3>Далекобійник</h3><p>Маршрути та вантажі.</p></div>
-            <div class="card" id="job-bud"><h3>Будівельник</h3><p>Робота на стройці.</p></div>
-            <div class="card" id="job-kurer"><h3>Курʼєр Glovo</h3><p>Доставка по місту.</p></div>
-            <div class="card" id="job-ferma"><h3>Фермер</h3><p>Вирощування та продаж.</p></div>
-            <div class="card" id="job-taxi"><h3>Таксист</h3><p>Перевезення пасажирів.</p></div>
-            <div class="card" id="job-gas"><h3>Газова служба</h3><p>Технічні виїзди.</p></div>
-            <div class="card" id="job-diver"><h3>Водолаз</h3><p>Підводні роботи.</p></div>
-            <div class="card" id="job-lis"><h3>Лісоруб</h3><p>Заготівля деревини.</p></div>
-            <div class="card" id="job-kla"><h3>Кладошукач</h3><p>Пошук схованок (RP).</p></div>
-            <div class="card" id="job-inc"><h3>Інкасатор</h3><p>Перевезення грошей.</p></div>
-            <div class="card" id="job-pilot"><h3>Пілот</h3><p>Авіаперевезення.</p></div>
-            <div class="card" id="job-hunt"><h3>Полювання</h3><p>Здобич і продаж.</p></div>
-            <div class="card" id="job-fish"><h3>Риболовля</h3><p>Ловля риби.</p></div>
-          </div>
-        </section>
+  <div class="grid" style="margin-top:14px;">
+    <a class="card" href="#job-miner"><h3>Шахтар</h3><p>Видобуток ресурсів</p></a>
+    <a class="card" href="#job-carjacker"><h3>Автоугонщик</h3><p>Нелегальні завдання (RP)</p></a>
+    <a class="card" href="#job-mechanic"><h3>Автомеханік</h3><p>Ремонт і сервіс</p></a>
+    <a class="card" href="#job-tow"><h3>Евакуатор</h3><p>Евакуація транспорту</p></a>
+    <a class="card" href="#job-np"><h3>Нова пошта</h3><p>Доставка посилок</p></a>
+    <a class="card" href="#job-trucker"><h3>Далекобійник</h3><p>Вантажі та маршрути</p></a>
+    <a class="card" href="#job-construction"><h3>Будівельник</h3><p>Робота на будівництві</p></a>
+    <a class="card" href="#job-courier"><h3>Курʼєр Glovo</h3><p>Швидка доставка</p></a>
+    <a class="card" href="#job-farm"><h3>Фермер</h3><p>Вирощування та продаж</p></a>
+    <a class="card" href="#job-taxi"><h3>Таксист</h3><p>Перевезення пасажирів</p></a>
+    <a class="card" href="#job-gas"><h3>Газова служба</h3><p>Обслуговування мереж</p></a>
+    <a class="card" href="#job-diver"><h3>Водолаз</h3><p>Пошук під водою</p></a>
+    <a class="card" href="#job-lumber"><h3>Лісоруб</h3><p>Заготівля деревини</p></a>
+    <a class="card" href="#job-stash"><h3>Кладошукач</h3><p>Пошук схованок (RP)</p></a>
+    <a class="card" href="#job-cash"><h3>Інкасатор</h3><p>Перевезення грошей</p></a>
+    <a class="card" href="#job-pilot"><h3>Пілот</h3><p>Перевезення/рейси</p></a>
+    <a class="card" href="#job-hunt"><h3>Полювання</h3><p>Добыча та продаж</p></a>
+    <a class="card" href="#job-fishing"><h3>Риболовля</h3><p>Ловля риби та продаж</p></a>
+  </div>
 
+  <!-- ДЕТАЛІ РОБІТ -->
+  <div class="detail" id="job-miner">
+    <h3>Шахтар</h3>
+    <p class="muted">Стабільна робота для старту. Видобуваєш ресурси, здаєш — отримуєш оплату.</p>
+    <ul>
+      <li><b>Мета:</b> заробіток на старті + ресурси для економіки.</li>
+      <li><b>Порада:</b> працюй серіями “10–15 хв”, потім здавай здобич.</li>
+      <li><b>RP:</b> каска/форма, не бігати “як в CS”, без трешу.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-carjacker">
+    <h3>Автоугонщик</h3>
+    <p class="muted">Нелегальна робота. Підходить тим, хто любить ризик і RP-сценарії.</p>
+    <ul>
+      <li><b>Важливо:</b> без DM/PG — усе через RP.</li>
+      <li><b>Мета:</b> виконання “замовлень” + втеча/маскування.</li>
+      <li><b>Порада:</b> продумуй маршрут відходу.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-mechanic">
+    <h3>Автомеханік</h3>
+    <p class="muted">Сервіс і ремонт транспорту. Можна працювати “по виклику”.</p>
+    <ul>
+      <li><b>Що робиш:</b> ремонтуєш, заправляєш, перевіряєш авто.</li>
+      <li><b>Порада:</b> зроби “прайс” і працюй через чат/оголошення.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-tow">
+    <h3>Евакуатор</h3>
+    <p class="muted">Евакуація транспорту з місця ДТП/порушення або за викликом.</p>
+    <ul>
+      <li><b>Що робиш:</b> забираєш авто і доставляєш у точку.</li>
+      <li><b>Порада:</b> працює круто разом з НПУ/ДСНС по RP.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-np">
+    <h3>Нова пошта</h3>
+    <p class="muted">Доставка посилок містом. Спокійна робота для новачків.</p>
+    <ul>
+      <li><b>Що робиш:</b> береш посилку → везеш → здаєш.</li>
+      <li><b>Порада:</b> не ганяй, без ДТП — так швидше по факту.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-trucker">
+    <h3>Далекобійник</h3>
+    <p class="muted">Великі маршрути та вантажі. Заробіток вище, але довше по часу.</p>
+    <ul>
+      <li><b>Що робиш:</b> береш вантаж → їдеш по маршруту → здаєш.</li>
+      <li><b>Порада:</b> слідкуй за паливом і не ламай фуру :)</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-construction">
+    <h3>Будівельник</h3>
+    <p class="muted">Робота на будівництві: виконання задач на майданчику.</p>
+    <ul>
+      <li><b>Мета:</b> стабільний заробіток і “ламповий” геймплей.</li>
+      <li><b>RP:</b> каска/форма, працюй акуратно.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-courier">
+    <h3>Курʼєр Glovo</h3>
+    <p class="muted">Швидка доставка їжі/замовлень. Ідеально для новачків.</p>
+    <ul>
+      <li><b>Порада:</b> бери мопед/маленьке авто — дешевше і маневреніше.</li>
+      <li><b>RP:</b> доставив → привітався → отримав оплату.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-farm">
+    <h3>Фермер</h3>
+    <p class="muted">Вирощування та продаж продукції. Спокійний темп.</p>
+    <ul>
+      <li><b>Що робиш:</b> збір → перевезення → продаж.</li>
+      <li><b>Порада:</b> найкраще заходить у парі з “Далекобійником”.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-taxi">
+    <h3>Таксист</h3>
+    <p class="muted">Перевезення пасажирів. Можна грати як сервіс “по виклику”.</p>
+    <ul>
+      <li><b>Порада:</b> зроби правила: “оплата до/після”, “без трешу”.</li>
+      <li><b>RP:</b> вітаєшся, уточнюєш точку, везеш.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-gas">
+    <h3>Газова служба</h3>
+    <p class="muted">Технічна служба: обслуговування та перевірки (RP-робота).</p>
+    <ul>
+      <li><b>Що робиш:</b> виїзди, перевірки, “ремонт” по RP.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-diver">
+    <h3>Водолаз</h3>
+    <p class="muted">Пошук предметів/ресурсів під водою. Виглядає атмосферно.</p>
+    <ul>
+      <li><b>Порада:</b> бери з собою транспорт і не пірнай “в бій”.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-lumber">
+    <h3>Лісоруб</h3>
+    <p class="muted">Заготівля деревини. Хороша робота для стабільного фарму.</p>
+    <ul>
+      <li><b>Що робиш:</b> рубаєш → вантажиш → здаєш.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-stash">
+    <h3>Кладошукач</h3>
+    <p class="muted">Пошук “схованок” і предметів (RP-активність).</p>
+    <ul>
+      <li><b>Важливо:</b> без метагейму — все по RP/підказкам.</li>
+      <li><b>Порада:</b> ходи обережно, продумуй маршрут.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-cash">
+    <h3>Інкасатор</h3>
+    <p class="muted">Перевезення грошей. Ризикована, але цікава робота.</p>
+    <ul>
+      <li><b>Порада:</b> їзди вдвох, не світи маршрут.</li>
+      <li><b>RP:</b> охорона, процедури, дисципліна.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-pilot">
+    <h3>Пілот</h3>
+    <p class="muted">Перевезення і рейси. Підходить, якщо любиш техніку і маршрутність.</p>
+    <ul>
+      <li><b>Порада:</b> спочатку навчися посадкам/зльотам акуратно.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-hunt">
+    <h3>Полювання</h3>
+    <p class="muted">Здобич та продаж. Атмосферна робота “на природі”.</p>
+    <ul>
+      <li><b>RP:</b> без жорстких сцен, просто роль мисливця.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+
+  <div class="detail" id="job-fishing">
+    <h3>Риболовля</h3>
+    <p class="muted">Ловиш рибу, здаєш — отримуєш оплату. Спокійний заробіток.</p>
+    <ul>
+      <li><b>Порада:</b> ідеально “під музику” або з друзями в діскорді.</li>
+    </ul>
+    <a class="backlink" href="#jobs">⬅ Назад до списку робіт</a>
+  </div>
+</section>
         <section class="panel" id="transport">
           <h2>Транспорт</h2>
           <p class="muted">
