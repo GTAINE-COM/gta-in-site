@@ -5,47 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Завантажити — GTAINE</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar__inner">
+    <div class="container topbar_inner">
       <a class="brand" href="index.html">
-        <div>
-          <div class="brand__title">GTAINE</div>
-          <div class="brand__sub">Український RP-проєкт</div>
+        <div class="badge">GI</div>
+        <div class="brand_txt">
+          <div class="brand_title">GTAINE</div>
+          <div class="brand_sub">Український RP-проєкт</div>
         </div>
       </a>
+
       <nav class="nav">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
+        <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
         <a href="wiki/index.html">Wiki</a>
-        <a href="giveaway.html">Розіграш</a>
         <a href="download.html">Завантажити</a>
+        <a href="cabinet.html">Кабінет</a>
       </nav>
-      <div class="row">
-        <a id="authLink" class="btn" href="login.html">Увійти</a>
-        <a id="cabLink" class="btn" href="cabinet.html">Кабінет</a>
-      </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="card">
-      <div class="h1">Завантаження лаунчера</div>
-      <div class="p muted">Натисни кнопку нижче, щоб скачати GTAINE Launcher.</div>
+    <section class="hero" style="text-align:center;">
+      <h1>Завантажити GTAINE</h1>
+      <p>Натисни кнопку нижче, щоб завантажити лаунчер. Потрібно підтвердити завантаження двічі.</p>
 
-      <div class="row mt2">
-        <a class="btn btn--primary"
-           href="https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe">
-          Завантажити (.exe)
-        </a>
-        <a class="btn" href="index.html">Назад</a>
+      <div style="margin-top:16px;">
+        <button id="dlBtn" class="btn btn_primary" type="button">ЗАВАНТАЖИТИ ЛАУНЧЕР</button>
+        <p id="dlHint" class="muted" style="margin-top:12px; display:none;">
+          Натисни ще раз — і файл почне завантаження.
+        </p>
       </div>
+    </section>
 
-      <div class="hr"></div>
-      <div class="muted">Якщо файл блокується Windows — натисни “More info” → “Run anyway”.</div>
-    </div>
+    <section class="section">
+      <div class="grid">
+        <div class="card wide">
+          <h3>Як встановити</h3>
+          <p class="muted" style="margin-top:10px;">
+            1) Завантаж файл .exe<br>
+            2) Запусти від імені адміністратора<br>
+            3) Пройди встановлення<br>
+            4) Запусти лаунчер та зайди в гру
+          </p>
+        </div>
+        <div class="card wide">
+          <h3>Системні вимоги</h3>
+          <p class="muted" style="margin-top:10px;">
+            • Windows 10 / 11 (64-bit)<br>
+            • 8 GB RAM (рекомендовано 16)<br>
+            • 25 GB вільного місця<br>
+            • Стабільний інтернет
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© 2026 GTAINE</div>
+      <div class="muted">Завантаження лаунчера</div>
+    </footer>
   </main>
+
+  <script>
+    const url = "https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe";
+    const btn = document.getElementById("dlBtn");
+    const hint = document.getElementById("dlHint");
+    let armed = false;
+
+    btn.addEventListener("click", () => {
+      if (!armed) {
+        armed = true;
+        hint.style.display = "block";
+        btn.textContent = "ПІДТВЕРДИТИ ЗАВАНТАЖЕННЯ";
+        return;
+      }
+      window.location.href = url;
+    });
+  </script>
 </body>
 </html>
