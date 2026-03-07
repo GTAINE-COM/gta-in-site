@@ -1,272 +1,342 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GTAINE — Український RP сервер</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0b0f18;
-color:white;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-background:#0f1624;
-}
-
-.logo{
-font-size:26px;
-font-weight:bold;
-color:#4ea6ff;
-}
-
-nav a{
-margin-left:20px;
-color:white;
-text-decoration:none;
-}
-
-.hero{
-text-align:center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:60px;
-margin-bottom:10px;
-}
-
-.btn{
-padding:14px 30px;
-background:#ff5a2c;
-border:none;
-border-radius:6px;
-color:white;
-font-size:16px;
-cursor:pointer;
-margin:10px;
-}
-
-.section{
-padding:80px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:#121a2a;
-padding:30px;
-border-radius:10px;
-cursor:pointer;
-text-align:center;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-background:#1b2438;
-}
-
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:none;
-align-items:center;
-justify-content:center;
-}
-
-.modal-content{
-background:#121a2a;
-padding:40px;
-border-radius:10px;
-max-width:500px;
-text-align:center;
-}
-
-.close{
-margin-top:20px;
-background:red;
-border:none;
-color:white;
-padding:10px 20px;
-cursor:pointer;
-}
-
-footer{
-padding:40px;
-text-align:center;
-background:#0f1624;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTAINE — Український RP сервер</title>
+  <meta name="description" content="GTAINE — український RP-проєкт з роботами, держорганізаціями, форумом, wiki та демо-кабінетом." />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-
 <body>
+  <div class="site-bg"></div>
 
-<header>
+  <header class="header">
+    <div class="container header__wrap">
+      <a class="brand" href="index.html" aria-label="GTAINE">
+        <div class="brand__logo">GT</div>
+        <div class="brand__text">
+          <strong>GTAINE</strong>
+          <span>Український RP-проєкт</span>
+        </div>
+      </a>
 
-<div class="logo">GTAINE</div>
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
 
-<nav>
-<a href="#">Головна</a>
-<a href="#">Роботи</a>
-<a href="#">Організації</a>
-</nav>
+      <nav class="nav" id="mainNav">
+        <a href="#about">Про проєкт</a>
+        <a href="#server">Сервер</a>
+        <a href="#jobs-preview">Роботи</a>
+        <a href="#orgs-preview">Організації</a>
+        <a href="download.html">Завантажити</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="forum.html">Форум</a>
+        <a href="cabinet.html" class="nav__cabinet">Кабінет</a>
+      </nav>
+    </div>
+  </header>
 
-</header>
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="eyebrow">GTAINE • офіційно</div>
+          <h1>Український RP-світ<br />з атмосферою, роботами і своїм стилем</h1>
+          <p class="hero__text">
+            Один сервер, зрозумілий старт, окрема Wiki з усіма роботами та держорганізаціями,
+            форум, демо-кабінет і рулетка. Без копії інших проєктів — усе під GTAINE.
+          </p>
 
-<section class="hero">
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="download.html">Завантажити гру</a>
+            <a class="btn btn--ghost" href="wiki/index.html">Відкрити Wiki</a>
+          </div>
 
-<h1>Український RP сервер</h1>
+          <div class="hero__stats">
+            <div class="stat">
+              <strong>1</strong>
+              <span>сервер</span>
+            </div>
+            <div class="stat">
+              <strong>20+</strong>
+              <span>робіт</span>
+            </div>
+            <div class="stat">
+              <strong>9</strong>
+              <span>держ. орг.</span>
+            </div>
+          </div>
+        </div>
 
-<p>Ласкаво просимо на GTAINE</p>
+        <div class="hero__panel">
+          <div class="hero-card glass">
+            <div class="hero-card__top">
+              <span class="badge">Сервер №1</span>
+              <span class="online-dot"></span>
+            </div>
 
-<button class="btn">Завантажити гру</button>
+            <h3>Центральна Україна</h3>
+            <p>Основний сервер проєкту GTAINE</p>
 
-</section>
+            <div class="server-mini">
+              <div class="server-mini__row">
+                <span>Онлайн</span>
+                <strong>742 / 1000</strong>
+              </div>
+              <div class="progress">
+                <div class="progress__bar" style="width:74.2%"></div>
+              </div>
+            </div>
 
-<!-- РАБОТЫ -->
+            <div class="hero-card__actions">
+              <a class="btn btn--primary btn--small" href="download.html">Почати гру</a>
+              <a class="btn btn--ghost btn--small" href="forum.html">Форум</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="section">
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Чому варто грати</div>
+            <h2>Сайт, форум, Wiki і демо-кабінет в одному стилі</h2>
+          </div>
+          <p class="section-head__text">
+            Головна сторінка веде до старту гри, Wiki тримає всі роботи й держорганізації,
+            а окремі сторінки під кабінет і рулетку вже готові під майбутнє наповнення.
+          </p>
+        </div>
 
-<h2>Роботи</h2>
+        <div class="feature-grid">
+          <article class="feature-card glass">
+            <div class="feature-card__icon">UA</div>
+            <h3>Українська подача</h3>
+            <p>Темний стиль, акцентні кольори та окремий візуал саме під GTAINE.</p>
+          </article>
 
-<div class="cards">
+          <article class="feature-card glass">
+            <div class="feature-card__icon">RP</div>
+            <h3>Role Play атмосфера</h3>
+            <p>Роботи, організації, форумні теми та Wiki — все побудовано навколо RP.</p>
+          </article>
 
-<div class="card" onclick="openModal('miner')">
-<h3>Шахтар</h3>
-<p>Добуває ресурси</p>
-</div>
+          <article class="feature-card glass">
+            <div class="feature-card__icon">WK</div>
+            <h3>Повна Wiki</h3>
+            <p>Твоя вже готова система карток та модальних вікон залишається окремо і без поломок.</p>
+          </article>
 
-<div class="card" onclick="openModal('taxi')">
-<h3>Таксист</h3>
-<p>Перевозить гравців</p>
-</div>
+          <article class="feature-card glass">
+            <div class="feature-card__icon">DM</div>
+            <h3>Демо-кабінет</h3>
+            <p>Окрема сторінка під майно, Forbes, рулетку і базову статистику гравця.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<div class="card" onclick="openModal('truck')">
-<h3>Дальнобійник</h3>
-<p>Доставка вантажів</p>
-</div>
+    <section class="section" id="server">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Сервер</div>
+            <h2>Один сервер — без зайвого сміття</h2>
+          </div>
+          <p class="section-head__text">
+            Не шість різних блоків, а один нормальний серверний блок з кнопками старту, форумом і переходом у Wiki.
+          </p>
+        </div>
 
-</div>
+        <div class="server-box glass">
+          <div class="server-box__left">
+            <span class="badge">Основний сервер</span>
+            <h3>GTAINE • Центральна Україна</h3>
+            <p>
+              Стартовий сервер проєкту. Саме сюди веде головна кнопка запуску.
+              Усі правила, роботи та організації винесені в окрему Wiki.
+            </p>
 
-</section>
+            <div class="server-box__actions">
+              <a class="btn btn--primary" href="download.html">Завантажити лаунчер</a>
+              <a class="btn btn--ghost" href="wiki/index.html">Відкрити Wiki</a>
+            </div>
+          </div>
 
-<!-- ДЕРЖ ОРГ -->
+          <div class="server-box__right">
+            <div class="server-side-card">
+              <div class="server-side-card__row">
+                <span>Онлайн</span>
+                <strong>742 / 1000</strong>
+              </div>
+              <div class="progress">
+                <div class="progress__bar" style="width:74.2%"></div>
+              </div>
 
-<section class="section">
+              <div class="server-side-card__meta">
+                <div>
+                  <span>Роботи</span>
+                  <strong>20+</strong>
+                </div>
+                <div>
+                  <span>Організації</span>
+                  <strong>9</strong>
+                </div>
+                <div>
+                  <span>Стан</span>
+                  <strong>Online</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h2>Державні організації</h2>
+    <section class="section" id="jobs-preview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Роботи</div>
+            <h2>На сайті — лише прев’ю, повний список у Wiki</h2>
+          </div>
+          <p class="section-head__text">
+            Тут красивий короткий блок. Повне відкриття всіх робіт і описів залишається у твоїй окремій Wiki.
+          </p>
+        </div>
 
-<div class="cards">
+        <div class="preview-grid">
+          <article class="preview-card glass">
+            <h3>Шахтар</h3>
+            <p>Видобуток ресурсів і стабільний стартовий фарм.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>Таксист</h3>
+            <p>Перевезення гравців і живий RP по місту.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>Далекобійник</h3>
+            <p>Маршрути, вантажі, довгі рейси й прибуток.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>Нова пошта</h3>
+            <p>Доставка посилок для тих, хто хоче спокійний старт.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>Фермер</h3>
+            <p>Збір, перевезення і продаж продукції.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>Автомеханік</h3>
+            <p>Ремонт, сервіс і робота по викликах.</p>
+          </article>
+        </div>
 
-<div class="card" onclick="openModal('sbu')">
-<h3>СБУ</h3>
-<p>Служба безпеки</p>
-</div>
+        <div class="section-cta">
+          <a class="btn btn--primary" href="wiki/index.html#jobs">Усі роботи у Wiki</a>
+        </div>
+      </div>
+    </section>
 
-<div class="card" onclick="openModal('police')">
-<h3>Поліція</h3>
-<p>Охорона порядку</p>
-</div>
+    <section class="section" id="orgs-preview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Державні організації</div>
+            <h2>Окремий блок для фракцій</h2>
+          </div>
+          <p class="section-head__text">
+            Уся логіка з відкриттям описів СБУ, НПУ, ЗСУ й інших організацій уже лишається у Wiki.
+          </p>
+        </div>
 
-<div class="card" onclick="openModal('army')">
-<h3>ЗСУ</h3>
-<p>Захист держави</p>
-</div>
+        <div class="preview-grid">
+          <article class="preview-card glass">
+            <h3>СБУ</h3>
+            <p>Безпека, спецоперації, контррозвідка.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>НПУ</h3>
+            <p>Патруль, порядок, розслідування й виклики.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>ЗСУ</h3>
+            <p>Оборона держави, дисципліна, військовий RP.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>ДСНС</h3>
+            <p>Рятувальні операції та допомога місту.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>МОЗ</h3>
+            <p>Медицина, швидка допомога і лікарня.</p>
+          </article>
+          <article class="preview-card glass">
+            <h3>ЗМІ</h3>
+            <p>Оголошення, новини, інтерв’ю й медіа-RP.</p>
+          </article>
+        </div>
 
-</div>
+        <div class="section-cta">
+          <a class="btn btn--primary" href="wiki/index.html#orgs">Усі організації у Wiki</a>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <section class="section" id="start">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Як почати гру</div>
+            <h2>Коротко і без сміття</h2>
+          </div>
+        </div>
 
-<footer>
+        <div class="steps-grid">
+          <article class="step-card glass">
+            <span>1</span>
+            <h3>Завантаж</h3>
+            <p>Перейди на сторінку завантаження і встав свою реальну кнопку/посилання.</p>
+          </article>
+          <article class="step-card glass">
+            <span>2</span>
+            <h3>Встанови</h3>
+            <p>Запусти лаунчер і дочекайся завершення встановлення.</p>
+          </article>
+          <article class="step-card glass">
+            <span>3</span>
+            <h3>Обери сервер</h3>
+            <p>Підключайся до Центральної України і заходь у гру.</p>
+          </article>
+        </div>
 
-© 2026 GTAINE
+        <div class="section-cta">
+          <a class="btn btn--primary" href="download.html">Сторінка завантаження</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</footer>
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div>
+        <strong>GTAINE</strong>
+        <p>© 2026 GTAINE. Усі права захищено.</p>
+      </div>
 
-<!-- MODALS -->
+      <div class="footer__links">
+        <a href="download.html">Завантажити</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="forum.html">Форум</a>
+        <a href="cabinet.html">Кабінет</a>
+        <a href="roulette.html">Рулетка</a>
+      </div>
+    </div>
+  </footer>
 
-<div id="miner" class="modal">
-<div class="modal-content">
-<h2>Шахтар</h2>
-<p>Видобуває ресурси в шахті.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<div id="taxi" class="modal">
-<div class="modal-content">
-<h2>Таксист</h2>
-<p>Перевозить гравців по карті.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<div id="truck" class="modal">
-<div class="modal-content">
-<h2>Дальнобійник</h2>
-<p>Доставляє вантажі між містами.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<div id="sbu" class="modal">
-<div class="modal-content">
-<h2>СБУ</h2>
-<p>Боротьба зі злочинністю.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<div id="police" class="modal">
-<div class="modal-content">
-<h2>Поліція</h2>
-<p>Слідкує за порядком у містах.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<div id="army" class="modal">
-<div class="modal-content">
-<h2>ЗСУ</h2>
-<p>Захист країни.</p>
-<button class="close" onclick="closeModal()">Закрити</button>
-</div>
-</div>
-
-<script>
-
-function openModal(id){
-document.getElementById(id).style.display="flex"
-}
-
-function closeModal(){
-document.querySelectorAll(".modal").forEach(m=>{
-m.style.display="none"
-})
-}
-
-</script>
-
+  <script src="assets/script.js"></script>
 </body>
 </html>
