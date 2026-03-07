@@ -1,86 +1,179 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Кабінет — GTAINE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTAINE — Демо-кабінет</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar_inner">
+  <div class="site-bg"></div>
+
+  <header class="header">
+    <div class="container header__wrap">
       <a class="brand" href="index.html">
-        <div class="badge">GI</div>
-        <div class="brand_txt">
-          <div class="brand_title">GTAINE</div>
-          <div class="brand_sub">Кабінет</div>
+        <div class="brand__logo">GT</div>
+        <div class="brand__text">
+          <strong>GTAINE</strong>
+          <span>Демо-кабінет</span>
         </div>
       </a>
 
-      <nav class="nav">
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
-        <a href="https://gtaine-forum.qniks.me/index.php" target="_blank" rel="noopener">Форум</a>
-        <a href="wiki/index.html">Wiki</a>
         <a href="download.html">Завантажити</a>
-        <a href="cabinet.html">Кабінет</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="roulette.html">Рулетка</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero_kicker">Особистий кабінет</div>
-      <h1 style="margin-top:6px;">Кабінет GTAINE</h1>
-      <p>Тут буде покупка авто/скінів, баланс, історія. Поки демо-версія (без API).</p>
-      <div class="hero_actions">
-        <a class="btn btn_primary" href="#choose">Вибір</a>
-        <a class="btn" href="#forbes">Форбс</a>
-        <a class="btn" href="#my">Ваше майно</a>
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h1>Кабінет гравця</h1>
+          </div>
+          <p class="section-head__text">
+            Це демо-версія без реальної авторизації. Виглядає як повноцінний кабінет, але поки що без бекенду.
+          </p>
+        </div>
+
+        <div class="cabinet-layout">
+          <aside class="cabinet-sidebar glass">
+            <div class="cabinet-user">
+              <div class="cabinet-avatar">VP</div>
+              <div>
+                <strong>Vlad Popov</strong>
+                <span>Гравець GTAINE</span>
+              </div>
+            </div>
+
+            <nav class="cabinet-menu">
+              <button class="cabinet-tab is-active" data-cabinet-tab="overview">Головне</button>
+              <button class="cabinet-tab" data-cabinet-tab="property">Ваше майно</button>
+              <button class="cabinet-tab" data-cabinet-tab="forbes">Forbes</button>
+              <button class="cabinet-tab" data-cabinet-tab="roulette">Рулетка</button>
+              <button class="cabinet-tab" data-cabinet-tab="wiki">Wiki</button>
+            </nav>
+          </aside>
+
+          <section class="cabinet-main">
+            <div class="cabinet-panel glass cabinet-panel--active" data-cabinet-content="overview">
+              <div class="cabinet-top">
+                <div>
+                  <div class="eyebrow">Профіль</div>
+                  <h2>Загальна інформація</h2>
+                </div>
+                <div class="money-box">
+                  <span>Баланс</span>
+                  <strong>1 250 000 ₴</strong>
+                </div>
+              </div>
+
+              <div class="cabinet-cards">
+                <article class="mini-card glass">
+                  <span>Рівень</span>
+                  <strong>12</strong>
+                </article>
+                <article class="mini-card glass">
+                  <span>Фракція</span>
+                  <strong>Цивільний</strong>
+                </article>
+                <article class="mini-card glass">
+                  <span>Донат-баланс</span>
+                  <strong>420 DC</strong>
+                </article>
+                <article class="mini-card glass">
+                  <span>VIP статус</span>
+                  <strong>Silver</strong>
+                </article>
+              </div>
+
+              <div class="cabinet-biggrid">
+                <article class="big-card glass">
+                  <h3>Статистика</h3>
+                  <div class="stats-list">
+                    <div><span>Відіграно</span><strong>148 год</strong></div>
+                    <div><span>Виконано робіт</span><strong>362</strong></div>
+                    <div><span>Транспорт</span><strong>4 од.</strong></div>
+                    <div><span>Будинки</span><strong>1</strong></div>
+                  </div>
+                </article>
+
+                <article class="big-card glass">
+                  <h3>Останні дії</h3>
+                  <div class="activity-list">
+                    <div>Куплено авто — Sultan RS</div>
+                    <div>Поповнення балансу — 50 000 ₴</div>
+                    <div>Відкрито кейс рулетки</div>
+                    <div>Переглянуто Forbes</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="cabinet-panel glass" data-cabinet-content="property">
+              <div class="eyebrow">Майно</div>
+              <h2>Ваше майно</h2>
+
+              <div class="property-grid">
+                <article class="property-card glass">
+                  <h3>Sultan RS</h3>
+                  <p>Клас: Спортивний</p>
+                  <span>Стан: Ідеальний</span>
+                </article>
+                <article class="property-card glass">
+                  <h3>BMW M5 F90</h3>
+                  <p>Клас: Преміум</p>
+                  <span>Стан: Добрий</span>
+                </article>
+                <article class="property-card glass">
+                  <h3>Будинок №24</h3>
+                  <p>Район: Центральна Україна</p>
+                  <span>Клас: Середній</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="cabinet-panel glass" data-cabinet-content="forbes">
+              <div class="eyebrow">Рейтинг</div>
+              <h2>Forbes GTAINE</h2>
+
+              <div class="forbes-list">
+                <div><span>1. MasterChief</span><strong>95 000 000 ₴</strong></div>
+                <div><span>2. Vlad Popov</span><strong>61 500 000 ₴</strong></div>
+                <div><span>3. GhostRider</span><strong>42 200 000 ₴</strong></div>
+                <div><span>4. Falcon</span><strong>31 000 000 ₴</strong></div>
+                <div><span>5. Hades</span><strong>27 450 000 ₴</strong></div>
+              </div>
+            </div>
+
+            <div class="cabinet-panel glass" data-cabinet-content="roulette">
+              <div class="eyebrow">Швидкий перехід</div>
+              <h2>Рулетка</h2>
+              <p>Окрема сторінка рулетки вже готова. Кнопка нижче веде на неї.</p>
+              <a class="btn btn--primary" href="roulette.html">Відкрити рулетку</a>
+            </div>
+
+            <div class="cabinet-panel glass" data-cabinet-content="wiki">
+              <div class="eyebrow">Довідник</div>
+              <h2>Wiki</h2>
+              <p>Усі роботи, держорганізації та правила винесені в окрему Wiki без поломки твого коду.</p>
+              <a class="btn btn--primary" href="wiki/index.html">Відкрити Wiki</a>
+            </div>
+          </section>
+        </div>
       </div>
     </section>
-
-    <div class="cab_layout">
-      <aside class="side">
-        <h3>Меню</h3>
-        <a href="#choose">Вибір</a>
-        <a href="#list">Список</a>
-        <a href="#forbes">Форбс</a>
-        <a href="#roulette">Рулетка</a>
-        <a href="#my">Ваше майно</a>
-      </aside>
-
-      <div class="maincol">
-        <section class="panel" id="choose">
-          <h2>Вибір</h2>
-          <p class="muted">Тут буде вибір покупки авто/скінів (пізніше підключимо API).</p>
-        </section>
-
-        <section class="panel" id="list">
-          <h2>Список</h2>
-          <p class="muted">Список доступних авто/скінів/послуг — у розробці.</p>
-        </section>
-
-        <section class="panel" id="forbes">
-          <h2>Форбс</h2>
-          <p class="muted">Топ гравців за балансом/статусом — зʼявиться після підключення API.</p>
-        </section>
-
-        <section class="panel" id="roulette">
-          <h2>Рулетка</h2>
-          <p class="muted">Поки демо. Зʼявиться пізніше.</p>
-        </section>
-
-        <section class="panel" id="my">
-          <h2>Ваше майно</h2>
-          <p class="muted">Тут буде історія покупок, ваші авто/скіни, баланс — після API.</p>
-        </section>
-      </div>
-    </div>
-
-    <footer class="footer">
-      <div>© 2026 GTAINE</div>
-      <div class="muted">Кабінет (демо)</div>
-    </footer>
   </main>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>
