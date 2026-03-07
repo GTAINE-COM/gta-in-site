@@ -1,37 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Рулетка — GTAINE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTAINE — Рулетка</title>
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar__inner">
+  <div class="site-bg"></div>
+
+  <header class="header">
+    <div class="container header__wrap">
       <a class="brand" href="index.html">
-        <div><div class="brand__title">GTAINE</div><div class="brand__sub">Рулетка</div></div>
+        <div class="brand__logo">GT</div>
+        <div class="brand__text">
+          <strong>GTAINE</strong>
+          <span>Демо-рулетка</span>
+        </div>
       </a>
-      <nav class="nav">
+
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
-        <a href="wiki/index.html">Wiki</a>
-        <a href="giveaway.html">Розіграш</a>
         <a href="download.html">Завантажити</a>
+        <a href="wiki/index.html">Wiki</a>
+        <a href="cabinet.html">Кабінет</a>
       </nav>
-      <div class="row">
-        <a id="authLink" class="btn" href="login.html">Увійти</a>
-        <a id="cabLink" class="btn" href="cabinet.html">Кабінет</a>
-      </div>
     </div>
   </header>
 
-  <main class="container">
-    <div class="card">
-      <div class="h1">Рулетка</div>
-      <div class="p muted">Поки заглушка. Потім зробимо повну механіку.</div>
-    </div>
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Demo</div>
+            <h1>Рулетка GTAINE</h1>
+          </div>
+          <p class="section-head__text">
+            Не просто кнопка, а нормальний демо-екран: стрічка нагород, кнопка прокрутки і блок останнього виграшу.
+          </p>
+        </div>
+
+        <div class="roulette-layout">
+          <div class="roulette-machine glass">
+            <div class="roulette-pointer"></div>
+
+            <div class="roulette-track-wrap">
+              <div class="roulette-track" id="rouletteTrack">
+                <div class="roulette-item rarity-common">50 000 ₴</div>
+                <div class="roulette-item rarity-rare">100 DC</div>
+                <div class="roulette-item rarity-epic">BMW M5</div>
+                <div class="roulette-item rarity-common">20 000 ₴</div>
+                <div class="roulette-item rarity-rare">VIP Silver</div>
+                <div class="roulette-item rarity-common">10 000 ₴</div>
+                <div class="roulette-item rarity-epic">Sultan RS</div>
+                <div class="roulette-item rarity-rare">250 DC</div>
+                <div class="roulette-item rarity-common">75 000 ₴</div>
+                <div class="roulette-item rarity-epic">Будинок</div>
+                <div class="roulette-item rarity-common">30 000 ₴</div>
+                <div class="roulette-item rarity-rare">Кейс</div>
+              </div>
+            </div>
+
+            <div class="roulette-controls">
+              <button class="btn btn--primary" id="spinBtn">Крутити</button>
+              <span class="roulette-price">Вартість: 99 DC</span>
+            </div>
+          </div>
+
+          <aside class="roulette-side glass">
+            <div class="eyebrow">Останній виграш</div>
+            <h2 id="rouletteResult">Натисни “Крутити”</h2>
+            <p id="rouletteResultText">
+              Тут з’явиться демо-результат прокрутки. Без бекенду, але з живою анімацією.
+            </p>
+
+            <div class="roulette-prizes">
+              <div><span>Common</span><strong>Гроші</strong></div>
+              <div><span>Rare</span><strong>DC / VIP</strong></div>
+              <div><span>Epic</span><strong>Авто / Будинок</strong></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>
