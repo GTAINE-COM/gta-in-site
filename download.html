@@ -1,87 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Завантажити — GTAINE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTAINE — Завантажити гру</title>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar_inner">
+  <div class="site-bg"></div>
+
+  <header class="header">
+    <div class="container header__wrap">
       <a class="brand" href="index.html">
-        <div class="badge">GI</div>
-        <div class="brand_txt">
-          <div class="brand_title">GTAINE</div>
-          <div class="brand_sub">Український RP-проєкт</div>
+        <div class="brand__logo">GT</div>
+        <div class="brand__text">
+          <strong>GTAINE</strong>
+          <span>Український RP-проєкт</span>
         </div>
       </a>
 
-      <nav class="nav">
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
-        <a href="http://gtaine.xyz:20384/index.php" target="_blank" rel="noopener">Форум</a>
         <a href="wiki/index.html">Wiki</a>
+        <a href="forum.html">Форум</a>
+        <a href="cabinet.html">Кабінет</a>
+        <a href="roulette.html">Рулетка</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" style="text-align:center;">
-      <h1>Завантажити GTAINE</h1>
-      <p>Натисни кнопку нижче, щоб завантажити лаунчер. Потрібно підтвердити завантаження двічі.</p>
-
-      <div style="margin-top:16px;">
-        <button id="dlBtn" class="btn btn_primary" type="button">ЗАВАНТАЖИТИ ЛАУНЧЕР</button>
-        <p id="dlHint" class="muted" style="margin-top:12px; display:none;">
-          Натисни ще раз — і файл почне завантаження.
-        </p>
-      </div>
-    </section>
-
+  <main class="page-top">
     <section class="section">
-      <div class="grid">
-        <div class="card wide">
-          <h3>Як встановити</h3>
-          <p class="muted" style="margin-top:10px;">
-            1) Завантаж файл .exe<br>
-            2) Запусти від імені адміністратора<br>
-            3) Пройди встановлення<br>
-            4) Запусти лаунчер та зайди в гру
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Початок гри</div>
+            <h1>Завантажити GTAINE</h1>
+          </div>
+          <p class="section-head__text">
+            Тут буде твоя реальна кнопка завантаження. Зараз я лишив готове місце,
+            куди ти просто вставиш своє посилання.
           </p>
         </div>
-        <div class="card wide">
-          <h3>Системні вимоги</h3>
-          <p class="muted" style="margin-top:10px;">
-            • Windows 10 / 11 (64-bit)<br>
-            • 8 GB RAM (рекомендовано 16)<br>
-            • 25 GB вільного місця<br>
-            • Стабільний інтернет
-          </p>
+
+        <div class="download-layout">
+          <div class="download-box glass">
+            <span class="badge">Launcher</span>
+            <h2>Швидкий старт</h2>
+            <p>
+              Натисни на кнопку нижче і встав сюди свою реальну URL-адресу на лаунчер.
+              Сам блок уже готовий, міняти дизайн не треба.
+            </p>
+
+            <div class="download-actions">
+              <a class="btn btn--primary" href="YOUR_DOWNLOAD_LINK_HERE">Завантажити лаунчер</a>
+              <a class="btn btn--ghost" href="forum.html">Форум</a>
+            </div>
+
+            <div class="download-note">
+              Заміни <code>YOUR_DOWNLOAD_LINK_HERE</code> на свою справжню кнопку.
+            </div>
+          </div>
+
+          <div class="download-steps">
+            <article class="step-card glass">
+              <span>1</span>
+              <h3>Завантаж .exe</h3>
+              <p>Клік по кнопці завантаження запускає скачування лаунчера.</p>
+            </article>
+
+            <article class="step-card glass">
+              <span>2</span>
+              <h3>Встанови лаунчер</h3>
+              <p>Запусти файл і пройди звичайне встановлення на ПК.</p>
+            </article>
+
+            <article class="step-card glass">
+              <span>3</span>
+              <h3>Запусти гру</h3>
+              <p>Після завантаження файлів обери сервер і заходь у гру.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="requirements-grid">
+          <article class="req-card glass">
+            <div class="eyebrow">Мінімальні</div>
+            <h3>Щоб запустити</h3>
+            <ul class="clean-list">
+              <li>Windows 10 / 11</li>
+              <li>8 GB RAM</li>
+              <li>Відеокарта з 2 GB VRAM</li>
+              <li>15 GB вільного місця</li>
+            </ul>
+          </article>
+
+          <article class="req-card glass">
+            <div class="eyebrow">Рекомендовані</div>
+            <h3>Щоб грати комфортно</h3>
+            <ul class="clean-list">
+              <li>Windows 10 / 11</li>
+              <li>16 GB RAM</li>
+              <li>SSD</li>
+              <li>Стабільний інтернет</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
-
-    <footer class="footer">
-      <div>© 2026 GTAINE</div>
-      <div class="muted">Завантаження лаунчера</div>
-    </footer>
   </main>
 
-  <script>
-    const url = "https://github.com/GTAINE-COM/gta-in-site/releases/download/v1.0/gtaine-launcher.2.exe";
-    const btn = document.getElementById("dlBtn");
-    const hint = document.getElementById("dlHint");
-    let armed = false;
-
-    btn.addEventListener("click", () => {
-      if (!armed) {
-        armed = true;
-        hint.style.display = "block";
-        btn.textContent = "ПІДТВЕРДИТИ ЗАВАНТАЖЕННЯ";
-        return;
-      }
-      window.location.href = url;
-    });
-  </script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
