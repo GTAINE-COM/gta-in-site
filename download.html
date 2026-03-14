@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GTAINE — Завантажити гру</title>
+  <meta name="description" content="Сторінка завантаження лаунчера GTAINE з короткою інструкцією та системними вимогами." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -11,7 +12,7 @@
 
   <header class="header">
     <div class="container header__wrap">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="GTAINE">
         <div class="brand__logo">GTI</div>
         <div class="brand__text">
           <strong>GTAINE</strong>
@@ -19,14 +20,14 @@
         </div>
       </a>
 
-      <button class="burger" id="burgerBtn" aria-label="Меню">
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
         <span></span><span></span><span></span>
       </button>
 
       <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
-        <a href="cabinet.html">Кабінет</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+        <a href="cabinet.html" class="nav__cabinet">Кабінет</a>
       </nav>
     </div>
   </header>
@@ -40,7 +41,7 @@
             <h1>Завантажити GTAINE</h1>
           </div>
           <p class="section-head__text">
-         
+            Швидкий старт без зайвої метушні: завантажив лаунчер, встановив файли, обрав сервер і зайшов у гру.
           </p>
         </div>
 
@@ -49,7 +50,8 @@
             <span class="badge">Launcher</span>
             <h2>Швидкий старт</h2>
             <p>
-          
+              Основна кнопка нижче веде на пряме завантаження лаунчера. Якщо потрібні правила або допомога —
+              поруч є швидкий перехід на форум.
             </p>
 
             <div class="download-actions">
@@ -58,7 +60,7 @@
             </div>
 
             <div class="download-note">
-              
+              Після завантаження просто відкрий файл <code>.exe</code> і пройди стандартне встановлення.
             </div>
           </div>
 
@@ -66,19 +68,19 @@
             <article class="step-card glass">
               <span>1</span>
               <h3>Завантаж .exe</h3>
-              <p>Клік по кнопці завантаження запускає скачування лаунчера.</p>
+              <p>Натисни на кнопку завантаження і дочекайся скачування лаунчера.</p>
             </article>
 
             <article class="step-card glass">
               <span>2</span>
               <h3>Встанови лаунчер</h3>
-              <p>Запусти файл і пройди звичайне встановлення на ПК.</p>
+              <p>Запусти файл і пройди звичайне встановлення на своєму ПК.</p>
             </article>
 
             <article class="step-card glass">
               <span>3</span>
               <h3>Запусти гру</h3>
-              <p>Після завантаження файлів обери сервер і заходь у гру.</p>
+              <p>Після завантаження файлів обери сервер і заходь у GTAINE.</p>
             </article>
           </div>
         </div>
@@ -88,7 +90,7 @@
             <div class="eyebrow">Мінімальні</div>
             <h3>Щоб запустити</h3>
             <ul class="clean-list">
-              <li>Windows 10 / 11 / 8.1 / 8 / 7 / Vista</li>
+              <li>Windows 7 / 8 / 8.1 / 10 / 11</li>
               <li>8 GB RAM</li>
               <li>Відеокарта з 2 GB VRAM</li>
               <li>15 GB вільного місця</li>
@@ -109,6 +111,21 @@
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div>
+        <strong>GTAINE</strong>
+        <p>Сторінка швидкого старту для нових гравців.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="index.html">Головна</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+        <a href="cabinet.html">Кабінет</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/script.js"></script>
 </body>
