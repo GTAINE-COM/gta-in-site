@@ -5,6 +5,15 @@ if (burgerBtn && mainNav) {
   burgerBtn.addEventListener("click", () => {
     mainNav.classList.toggle("is-open");
   });
+
+  document.addEventListener("click", (event) => {
+    const insideNav = mainNav.contains(event.target);
+    const insideBurger = burgerBtn.contains(event.target);
+
+    if (!insideNav && !insideBurger) {
+      mainNav.classList.remove("is-open");
+    }
+  });
 }
 
 document.querySelectorAll(".cabinet-tab").forEach((btn) => {
@@ -47,6 +56,11 @@ if (spinBtn && rouletteTrack) {
   ];
 
   let spinning = false;
+  const baseItems = Array.from(rouletteTrack.children).map((item) => item.outerHTML);
+
+  if (rouletteTrack.children.length < rewards.length * 3) {
+    rouletteTrack.innerHTML = baseItems.concat(baseItems, baseItems, baseItems).join("");
+  }
 
   spinBtn.addEventListener("click", () => {
     if (spinning) return;
@@ -55,13 +69,16 @@ if (spinBtn && rouletteTrack) {
     spinBtn.disabled = true;
     spinBtn.textContent = "Крутимо...";
 
+    const itemWidth = 194;
+    const total = rewards.length;
+    const randomIndex = Math.floor(Math.random() * total);
+    const loops = 2;
+    const centerOffset = 220;
+    const targetIndex = total * loops + randomIndex;
+    const offset = targetIndex * itemWidth - centerOffset;
+
     rouletteTrack.style.transition = "none";
     rouletteTrack.style.transform = "translateX(0px)";
-
-    const itemWidth = 194;
-    const randomIndex = Math.floor(Math.random() * rewards.length);
-    const loops = 3;
-    const offset = (loops * rewards.length + randomIndex) * itemWidth;
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -79,5 +96,22 @@ if (spinBtn && rouletteTrack) {
       spinBtn.textContent = "Крутити";
       spinning = false;
     }, 4300);
+  });
+}
+
+const loginForm = document.getElementById("loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const login = document.getElementById("login")?.value.trim();
+    const password = document.getElementById("password")?.value.trim();
+
+    if (login === "admin" && password === "1234") {
+      window.location.href = "cabinet.html";
+      return;
+    }
+
+    alert("Невірний логін або пароль. Для демо використай: admin / 1234");
   });
 }
