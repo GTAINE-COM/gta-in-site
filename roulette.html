@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GTAINE — Рулетка</title>
+  <meta name="description" content="Демо-рулетка GTAINE: візуальна стрічка нагород, анімація прокрутки та демо-результат." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -11,22 +12,23 @@
 
   <header class="header">
     <div class="container header__wrap">
-      <a class="brand" href="index.html">
-        <div class="brand__logo">GT</div>
+      <a class="brand" href="index.html" aria-label="GTAINE">
+        <div class="brand__logo">GTI</div>
         <div class="brand__text">
           <strong>GTAINE</strong>
           <span>Демо-рулетка</span>
         </div>
       </a>
 
-      <button class="burger" id="burgerBtn" aria-label="Меню">
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
         <span></span><span></span><span></span>
       </button>
 
       <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
         <a href="download.html">Завантажити</a>
-        <a href="cabinet.html">Кабінет</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+        <a href="cabinet.html" class="nav__cabinet">Кабінет</a>
       </nav>
     </div>
   </header>
@@ -36,16 +38,25 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Demo</div>
+            <div class="eyebrow">Demo • Lucky Spin</div>
             <h1>Рулетка GTAINE</h1>
           </div>
           <p class="section-head__text">
-            Не просто кнопка, а нормальний демо-екран: стрічка нагород, кнопка прокрутки і блок останнього виграшу.
+            Демо-екран під майбутню систему кейсів і прокруток. Тут уже є жива анімація,
+            короткий блок рідкості та окремий результат останнього обертання.
           </p>
         </div>
 
         <div class="roulette-layout">
           <div class="roulette-machine glass">
+            <div class="roulette-machine__top">
+              <div>
+                <div class="eyebrow">Прокрутка</div>
+                <h2>Спробуй удачу</h2>
+              </div>
+              <span class="badge">Демо режим</span>
+            </div>
+
             <div class="roulette-pointer"></div>
 
             <div class="roulette-track-wrap">
@@ -66,7 +77,7 @@
             </div>
 
             <div class="roulette-controls">
-              <button class="btn btn--primary" id="spinBtn">Крутити</button>
+              <button class="btn btn--primary" id="spinBtn" type="button">Крутити</button>
               <span class="roulette-price">Вартість: 5 DC</span>
             </div>
           </div>
@@ -75,7 +86,7 @@
             <div class="eyebrow">Останній виграш</div>
             <h2 id="rouletteResult">Натисни “Крутити”</h2>
             <p id="rouletteResultText">
-              Тут з’явиться демо-результат прокрутки. Без бекенду, але з живою анімацією.
+              Після натискання тут з’явиться демо-результат обертання разом із коротким описом призу.
             </p>
 
             <div class="roulette-prizes">
@@ -83,11 +94,30 @@
               <div><span>Rare</span><strong>DC / VIP</strong></div>
               <div><span>Epic</span><strong>Авто / Будинок</strong></div>
             </div>
+
+            <div class="roulette-side__bottom">
+              <a class="btn btn--ghost" href="cabinet.html">Назад у кабінет</a>
+            </div>
           </aside>
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div>
+        <strong>GTAINE</strong>
+        <p>Демо-рулетка в єдиному стилі проєкту.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="index.html">Головна</a>
+        <a href="download.html">Завантажити</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/script.js"></script>
 </body>
