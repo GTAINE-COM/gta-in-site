@@ -1,53 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Вхід — GTAINE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTAINE — Вхід</title>
+  <meta name="description" content="Сторінка входу GTAINE. Поки що демо-версія без бекенду." />
   <link rel="stylesheet" href="assets/style.css" />
-  <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar__inner">
-      <a class="brand" href="index.html">
-        <div>
-          <div class="brand__title">GTAINE</div>
-          <div class="brand__sub">Вхід</div>
+  <div class="site-bg"></div>
+
+  <header class="header">
+    <div class="container header__wrap">
+      <a class="brand" href="index.html" aria-label="GTAINE">
+        <div class="brand__logo">GTI</div>
+        <div class="brand__text">
+          <strong>GTAINE</strong>
+          <span>Вхід у кабінет</span>
         </div>
       </a>
-      <nav class="nav">
+
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
-        <a href="forum.html">Форум</a>
-        <a href="wiki/index.html">Wiki</a>
-        <a href="giveaway.html">Розіграш</a>
         <a href="download.html">Завантажити</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+        <a href="cabinet.html" class="nav__cabinet">Кабінет</a>
       </nav>
-      <div class="row">
-        <a class="btn" href="cabinet.html">Кабінет</a>
-      </div>
     </div>
   </header>
 
-  <main class="container">
-    <div class="card" style="max-width:520px;margin:0 auto;">
-      <div class="h1">Вхід</div>
-      <div class="p muted">Поки демо-авторизація: <b>admin</b> / <b>1234</b>.</div>
+  <main class="page-center">
+    <div class="auth-card glass">
+      <div class="eyebrow">Demo • Auth</div>
+      <h1>Вхід у GTAINE</h1>
+      <p class="auth-card__text">
+        Поки що це демо-авторизація. Для перевірки можеш використати:
+        <strong>admin</strong> / <strong>1234</strong>.
+      </p>
 
-      <form id="loginForm" class="mt2">
-        <label class="muted">Логін</label>
-        <input id="login" class="input mt" autocomplete="username" />
+      <form class="auth-form" id="loginForm">
+        <label class="auth-label" for="login">Логін</label>
+        <input id="login" class="input" type="text" autocomplete="username" placeholder="Введи логін" />
 
-        <div class="mt"></div>
-        <label class="muted">Пароль</label>
-        <input id="password" type="password" class="input mt" autocomplete="current-password" />
+        <label class="auth-label" for="password">Пароль</label>
+        <input id="password" class="input" type="password" autocomplete="current-password" placeholder="Введи пароль" />
 
-        <div class="row mt2">
+        <div class="auth-actions">
           <button id="loginBtn" class="btn btn--primary" type="submit">Увійти</button>
-          <a class="btn" href="index.html">Назад</a>
+          <a class="btn btn--ghost" href="index.html">Назад</a>
         </div>
       </form>
     </div>
   </main>
+
+  <script src="assets/script.js"></script>
 </body>
 </html>
