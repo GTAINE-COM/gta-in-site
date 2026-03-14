@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GTAINE — Демо-кабінет</title>
+  <meta name="description" content="Демо-кабінет гравця GTAINE: статистика, майно, Forbes і швидкий перехід у рулетку." />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -11,7 +12,7 @@
 
   <header class="header">
     <div class="container header__wrap">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="GTAINE">
         <div class="brand__logo">GTI</div>
         <div class="brand__text">
           <strong>GTAINE</strong>
@@ -19,13 +20,14 @@
         </div>
       </a>
 
-      <button class="burger" id="burgerBtn" aria-label="Меню">
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
         <span></span><span></span><span></span>
       </button>
 
       <nav class="nav" id="mainNav">
         <a href="index.html">Головна</a>
         <a href="download.html">Завантажити</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
       </nav>
     </div>
   </header>
@@ -35,11 +37,12 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Demo</div>
+            <div class="eyebrow">Demo • Cabinet</div>
             <h1>Кабінет гравця</h1>
           </div>
           <p class="section-head__text">
-            Це демо-версія без реальної авторизації. Виглядає як повноцінний кабінет, але поки що без бекенду.
+            Демо-версія без реальної авторизації. Виглядає як повноцінний кабінет гравця,
+            але поки що без бекенду та синхронізації з ігровим акаунтом.
           </p>
         </div>
 
@@ -145,6 +148,7 @@
 
               <div class="forbes-list">
                 <div><span>1. MasterChief</span><strong>95 999 999 000 000 ₴</strong></div>
+                <div><span>2. Влад Педро</span><strong>62 450 000 ₴</strong></div>
                 <div><span>3. GhostRider</span><strong>42 200 000 ₴</strong></div>
                 <div><span>4. Falcon</span><strong>31 000 000 ₴</strong></div>
                 <div><span>5. Hades</span><strong>27 450 000 ₴</strong></div>
@@ -154,21 +158,29 @@
             <div class="cabinet-panel glass" data-cabinet-content="roulette">
               <div class="eyebrow">Швидкий перехід</div>
               <h2>Рулетка</h2>
-              <p>Окрема сторінка рулетки вже готова. Кнопка нижче веде на неї.</p>
+              <p>Окрема сторінка рулетки вже готова. Кнопка нижче веде прямо на демо-екран прокрутки.</p>
               <a class="btn btn--primary" href="roulette.html">Відкрити рулетку</a>
-            </div>
-
-            <div class="cabinet-panel glass" data-cabinet-content="wiki">
-              <div class="eyebrow">Довідник</div>
-              <h2>Wiki</h2>
-              <p>Усі роботи, держорганізації та правила винесені в окрему Wiki без поломки твого коду.</p>
-              <a class="btn btn--primary" href="wiki/index.html">Відкрити Wiki</a>
             </div>
           </section>
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__wrap">
+      <div>
+        <strong>GTAINE</strong>
+        <p>Демо-кабінет у єдиному стилі проєкту.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="index.html">Головна</a>
+        <a href="download.html">Завантажити</a>
+        <a href="http://gtaine.xyz:20384/index.php">Форум</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="assets/script.js"></script>
 </body>
